@@ -1,5 +1,23 @@
 ---
 import HomePage from '../templates/HomePage.astro';
+import { withBase } from '../i18n/utils';
+
+const enHome = withBase('/en');
 ---
 
 <HomePage locale="zh" path={Astro.url.pathname} />
+
+<script is:inline define:vars={{ enHome }}>
+  const locales = navigator.languages && navigator.languages.length > 0
+    ? navigator.languages
+    : [navigator.language || ''];
+
+  const prefersChinese = locales.some((locale) => /^zh\b/i.test(locale));
+
+  if (!prefersChinese) {
+    const target = new URL(enHome, window.location.origin);
+    target.search = window.location.search;
+    target.hash = window.location.hash;
+    window.location.replace(target.toString());
+  }
+</script>
