@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCopy } from '../i18n/copy';
+import type { Locale } from '../i18n/utils';
+
+interface Props {
+  locale: Locale;
+  path: string;
+}
+
+const { locale, path } = Astro.props;
+const t = getCopy(locale);
+---
+
+<BaseLayout
+  title={`${t.privacyPage.title} | Flow the Moment`}
+  description={t.meta.description}
+  locale={locale}
+  path={path}
+>
+  <section class="shell page-hero privacy">
+    <p class="eyebrow">{locale === 'zh' ? '政策' : 'Policy'}</p>
+    <h1>{t.privacyPage.title}</h1>
+    <p class="lead">{t.privacyPage.updated}</p>
+  </section>
+
+  <section class="shell prose-card card">
+    {t.privacyPage.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+  </section>
+</BaseLayout>

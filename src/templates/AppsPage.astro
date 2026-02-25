@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FlowMotif from '../components/FlowMotif.astro';
+import { getCopy } from '../i18n/copy';
+import type { Locale } from '../i18n/utils';
+
+interface Props {
+  locale: Locale;
+  path: string;
+}
+
+const { locale, path } = Astro.props;
+const t = getCopy(locale);
+const motifs: Array<'wave' | 'rings' | 'breathe'> = ['breathe', 'wave', 'rings', 'wave'];
+---
+
+<BaseLayout title={`${t.appsPage.title} | Flow the Moment`} description={t.appsPage.intro} locale={locale} path={path}>
+  <section class="shell page-hero">
+    <p class="eyebrow">Flow the Moment</p>
+    <h1>{t.appsPage.title}</h1>
+    <p class="lead">{t.appsPage.intro}</p>
+  </section>
+
+  <section class="shell" aria-labelledby="apps-section-title">
+    <div class="section-intro">
+      <h2 id="apps-section-title">{t.appsPage.sectionTitle}</h2>
+    </div>
+    <div class="stack-grid">
+      {t.apps.items.map((app, index) => (
+        <article class="card app-detail" id={app.id}>
+          <div>
+            <p class="eyebrow">{app.nameEn}</p>
+            <h3>{app.name}</h3>
+            <p class="lead-sm">{app.oneLine}</p>
+            <p>{app.detail}</p>
+            <ul>
+              {app.bullets.slice(0, 3).map((item) => <li>{item}</li>)}
+            </ul>
+          </div>
+          <FlowMotif kind={motifs[index] ?? 'wave'} />
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="shell faq" aria-labelledby="faq-title">
+    <div class="section-intro">
+      <h2 id="faq-title">{t.appsPage.faqTitle}</h2>
+    </div>
+    <div class="faq-list">
+      {t.appsPage.faqs.map((item) => (
+        <details class="card">
+          <summary>{item.q}</summary>
+          <p>{item.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

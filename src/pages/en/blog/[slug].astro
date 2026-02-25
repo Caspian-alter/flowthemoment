@@ -1,0 +1,66 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getCopy } from '../../../i18n/copy';
+import { formatDate, withBase } from '../../../i18n/utils';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => data.lang === 'en');
+
+  return posts.map((post) => ({
+    params: { slug: post.slug.replace(/^en\//, '') },
+    props: { post }
+  }));
+}
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const t = getCopy('en');
+const { Content, headings } = await render(post);
+const tags = post.data.tags ?? [];
+---
+
+<BaseLayout
+  title={`${post.data.title} | ${t.blog.title}`}
+  description={post.data.description}
+  locale="en"
+  path={Astro.url.pathname}
+>
+  <article class="shell post-layout">
+    <a href={withBase('/en/blog')} class="text-link back-link">{t.blog.back}</a>
+    <header class="post-head">
+      <h1>{post.data.title}</h1>
+      <p>{post.data.description}</p>
+      <p class="post-date">
+        {t.blog.postedOn} {formatDate(post.data.date, 'en')}
+      </p>
+      {tags.length > 0 && (
+        <p class="tag-list" aria-label={t.blog.tags}>
+          {tags.map((tag) => (
+            <span>#{tag}</span>
+          ))}
+        </p>
+      )}
+    </header>
+
+    {headings.length > 0 && (
+      <aside class="card toc">
+        <strong>Contents</strong>
+        <ul>
+          {headings.map((heading) => (
+            <li>
+              <a href={`#${heading.slug}`}>{heading.text}</a>
+            </li>
+          ))}
+        </ul>
+      </aside>
+    )}
+
+    <div class="prose">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>

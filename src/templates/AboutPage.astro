@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCopy } from '../i18n/copy';
+import type { Locale } from '../i18n/utils';
+
+interface Props {
+  locale: Locale;
+  path: string;
+}
+
+const { locale, path } = Astro.props;
+const t = getCopy(locale);
+---
+
+<BaseLayout title={`${t.aboutPage.title} | Flow the Moment`} description={t.aboutPage.intro} locale={locale} path={path}>
+  <section class="shell page-hero about">
+    <p class="eyebrow">Flow the Moment</p>
+    <h1>{t.aboutPage.title}</h1>
+    <p class="lead">{t.aboutPage.intro}</p>
+  </section>
+
+  <section class="shell prose-card card">
+    {t.aboutPage.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+  </section>
+</BaseLayout>

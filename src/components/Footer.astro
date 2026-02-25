@@ -1,0 +1,30 @@
+---
+import { getCopy } from '../i18n/copy';
+import { pathFor, type Locale, withBase } from '../i18n/utils';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+
+interface Props {
+  locale: Locale;
+  pathname: string;
+}
+
+const { locale, pathname } = Astro.props;
+const t = getCopy(locale);
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="shell footer-grid">
+    <div>
+      <p class="footer-note">{t.footer.studioNote}</p>
+      <p class="copyright">{t.footer.copyright.replace('{year}', String(year))}</p>
+    </div>
+    <div class="footer-links" aria-label={t.common.footerLinksLabel}>
+      <a href={withBase(pathFor(locale, 'apps'))}>{t.nav.apps}</a>
+      <a href={withBase(pathFor(locale, 'blog'))}>{t.nav.blog}</a>
+      <a href={withBase(pathFor(locale, 'privacy'))}>{t.nav.privacy}</a>
+      <a href="#" aria-disabled="true">{t.footer.social}</a>
+    </div>
+    <LanguageSwitcher locale={locale} pathname={pathname} />
+  </div>
+</footer>

@@ -1,0 +1,23 @@
+---
+import { getCopy } from '../i18n/copy';
+import { toLocalePath, type Locale } from '../i18n/utils';
+
+interface Props {
+  locale: Locale;
+  pathname: string;
+}
+
+const { locale, pathname } = Astro.props;
+const t = getCopy(locale);
+const zhPath = toLocalePath(pathname, 'zh');
+const enPath = toLocalePath(pathname, 'en');
+---
+
+<div class="lang-switch" aria-label={t.common.langLabel}>
+  <a href={zhPath} class={locale === 'zh' ? 'active' : ''} lang="zh-CN">
+    {t.common.switchToZh}
+  </a>
+  <a href={enPath} class={locale === 'en' ? 'active' : ''} lang="en">
+    {t.common.switchToEn}
+  </a>
+</div>

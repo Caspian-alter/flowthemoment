@@ -1,0 +1,19 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="96" y1="88" x2="1088" y2="564" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F6F7F1" />
+      <stop offset="1" stop-color="#E5F1EA" />
+    </linearGradient>
+    <linearGradient id="line" x1="204" y1="290" x2="1012" y2="410" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8BBCA4" />
+      <stop offset="1" stop-color="#5F9B82" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" rx="36" fill="url(#bg)" />
+  <path d="M120 402C272 258 372 490 582 334C784 186 926 438 1080 272" stroke="url(#line)" stroke-width="18" stroke-linecap="round" />
+  <path d="M120 468C272 324 372 556 582 400C784 252 926 504 1080 338" stroke="#C9E1D5" stroke-width="9" stroke-linecap="round" />
+  <circle cx="918" cy="158" r="58" fill="#D4EBDD" />
+  <text x="120" y="210" fill="#2B3A35" font-family="Inter, Noto Sans SC, sans-serif" font-size="66" font-weight="700">Flow the Moment</text>
+  <text x="120" y="284" fill="#4F635B" font-family="Inter, Noto Sans SC, sans-serif" font-size="42" font-weight="500">流动此刻</text>
+  <text x="120" y="350" fill="#5B7068" font-family="Inter, Noto Sans SC, sans-serif" font-size="30">Bring attention back to the present moment.</text>
+</svg>

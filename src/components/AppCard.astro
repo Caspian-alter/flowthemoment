@@ -1,0 +1,34 @@
+---
+import { withBase, type Locale } from '../i18n/utils';
+
+interface Props {
+  app: {
+    id: string;
+    name: string;
+    nameEn: string;
+    oneLine: string;
+    status: string;
+    bullets: string[];
+  };
+  locale: Locale;
+  badgeComing: string;
+  badgeProgress: string;
+  learnMore: string;
+}
+
+const { app, locale, badgeComing, badgeProgress, learnMore } = Astro.props;
+const badge = app.status === 'progress' ? badgeProgress : badgeComing;
+const appsPath = locale === 'zh' ? '/apps' : '/en/apps';
+---
+
+<article class="card app-card" id={`card-${app.id}`}>
+  <div class="card-head">
+    <h3>{app.name} <span class="sub-name">/ {app.nameEn}</span></h3>
+    <span class="badge">{badge}</span>
+  </div>
+  <p>{app.oneLine}</p>
+  <ul>
+    {app.bullets.slice(0, 3).map((item) => <li>{item}</li>)}
+  </ul>
+  <a href={`${withBase(appsPath)}#${app.id}`} class="text-link">{learnMore}</a>
+</article>

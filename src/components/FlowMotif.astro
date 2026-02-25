@@ -1,0 +1,36 @@
+---
+interface Props {
+  kind?: 'wave' | 'rings' | 'breathe';
+}
+
+const { kind = 'wave' } = Astro.props;
+---
+
+{kind === 'wave' && (
+  <svg class="motif" viewBox="0 0 240 120" aria-hidden="true">
+    <defs>
+      <linearGradient id="waveGrad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="var(--accent-soft)" />
+        <stop offset="100%" stop-color="var(--accent)" />
+      </linearGradient>
+    </defs>
+    <path d="M10 70C42 30 66 96 110 58C153 22 185 90 230 52" fill="none" stroke="url(#waveGrad)" stroke-width="6" stroke-linecap="round" />
+    <path d="M10 90C42 50 66 116 110 78C153 42 185 110 230 72" fill="none" stroke="var(--accent-soft)" stroke-width="3" stroke-linecap="round" />
+  </svg>
+)}
+
+{kind === 'rings' && (
+  <svg class="motif" viewBox="0 0 160 160" aria-hidden="true">
+    <circle cx="80" cy="80" r="24" fill="none" stroke="var(--accent)" stroke-width="4" />
+    <circle cx="80" cy="80" r="42" fill="none" stroke="var(--accent-soft)" stroke-width="3" />
+    <circle cx="80" cy="80" r="62" fill="none" stroke="var(--border-strong)" stroke-width="2" />
+  </svg>
+)}
+
+{kind === 'breathe' && (
+  <svg class="motif" viewBox="0 0 200 120" aria-hidden="true">
+    <ellipse cx="68" cy="62" rx="54" ry="36" fill="var(--accent-soft)" opacity="0.55" />
+    <ellipse cx="132" cy="62" rx="54" ry="36" fill="var(--accent)" opacity="0.35" />
+    <path d="M38 96C78 68 122 68 162 96" fill="none" stroke="var(--accent-deep)" stroke-width="3" stroke-linecap="round" />
+  </svg>
+)}

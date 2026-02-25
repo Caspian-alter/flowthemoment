@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import type { CollectionEntry } from 'astro:content';
+import { getCopy } from '../i18n/copy';
+import { formatDate, type Locale, withBase } from '../i18n/utils';
+
+interface Props {
+  locale: Locale;
+  path: string;
+  posts: CollectionEntry<'blog'>[];
+}
+
+const { locale, path, posts } = Astro.props;
+const t = getCopy(locale);
+---
+
+<BaseLayout title={`${t.blog.title} | Flow the Moment`} description={t.blog.intro} locale={locale} path={path}>
+  <section class="shell page-hero">
+    <p class="eyebrow">{locale === 'zh' ? '日志' : 'Journal'}</p>
+    <h1>{t.blog.title}</h1>
+    <p class="lead">{t.blog.intro}</p>
+  </section>
+
+  <section class="shell">
+    {posts.length === 0 ? (
+      <p class="empty-state card">{t.blog.empty}</p>
+    ) : (
+      <div class="stack-grid">
+        {posts.map((post) => {
+          const slug = post.slug.replace(/^(zh|en)\//, '');
+          const href = locale === 'zh' ? `/blog/${slug}` : `/en/blog/${slug}`;
+          return (
+            <article class="card post-card">
+              <p class="post-date">{formatDate(post.data.date, locale)}</p>
+              <h2>{post.data.title}</h2>
+              <p>{post.data.description}</p>
+              <div class="post-meta">
+                {post.data.example && <span class="badge">{t.blog.exampleBadge}</span>}
+                <div class="tag-list" aria-label={t.blog.tags}>
+                  {post.data.tags.map((tag) => (
+                    <span>#{tag}</span>
+                  ))}
+                </div>
+              </div>
+              <a href={withBase(href)} class="text-link">{t.blog.readMore}</a>
+            </article>
+          );
+        })}
+      </div>
+    )}
+  </section>
+</BaseLayout>

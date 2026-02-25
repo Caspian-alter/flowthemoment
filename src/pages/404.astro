@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCopy } from '../i18n/copy';
+import { withBase } from '../i18n/utils';
+
+const zh = getCopy('zh');
+const en = getCopy('en');
+---
+
+<BaseLayout
+  title="404 | Flow the Moment"
+  description="Page not found"
+  locale="zh"
+  path={Astro.url.pathname}
+>
+  <section class="shell not-found card">
+    <h1>404</h1>
+    <h2>{zh.notFound.title} / {en.notFound.title}</h2>
+    <p>{zh.notFound.body}</p>
+    <p>{en.notFound.body}</p>
+    <div class="hero-cta">
+      <a href={withBase('/')} class="btn btn-primary">{zh.notFound.home}</a>
+      <a href={withBase('/en')} class="btn btn-secondary">{en.notFound.enHome}</a>
+    </div>
+  </section>
+</BaseLayout>

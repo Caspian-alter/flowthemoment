@@ -1,0 +1,10 @@
+---
+import { getCollection } from 'astro:content';
+import BlogListPage from '../../../templates/BlogListPage.astro';
+
+const posts = (await getCollection('blog', ({ data }) => data.lang === 'en')).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+---
+
+<BlogListPage locale="en" path={Astro.url.pathname} posts={posts} />
