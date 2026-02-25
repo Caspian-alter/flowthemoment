@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase, type Locale } from '../i18n/utils';
+import type { AppLegalPageData } from '../i18n/app-legal';
+
+interface Props {
+  locale: Locale;
+  path: string;
+  page: AppLegalPageData;
+}
+
+const { locale, path, page } = Astro.props;
+const backToApps = locale === 'zh' ? '/apps' : '/en/apps';
+const description =
+  locale === 'zh'
+    ? `${page.appName} ${page.title}，适用于应用使用与数据处理说明。`
+    : `${page.title} for ${page.appName}, including app usage and data handling details.`;
+---
+
+<BaseLayout title={`${page.title} | ${page.appName} | Flow the Moment`} description={description} locale={locale} path={path}>
+  <section class="shell page-hero legal-hero">
+    <p class="eyebrow">{page.appName}</p>
+    <h1>{page.title}</h1>
+    <p class="lead">{locale === 'zh' ? '用于 App Store 审核与用户查阅的独立法律页面。' : 'A standalone legal page for App Store review and user access.'}</p>
+    <a href={withBase(backToApps)} class="text-link">{locale === 'zh' ? '返回应用页' : 'Back to Apps'}</a>
+  </section>
+
+  <section class="shell">
+    <article class="card legal-document">
+      <div class="legal-document-body">{page.body}</div>
+    </article>
+  </section>
+</BaseLayout>

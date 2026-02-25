@@ -2,7 +2,8 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FlowMotif from '../components/FlowMotif.astro';
 import { getCopy } from '../i18n/copy';
-import type { Locale } from '../i18n/utils';
+import { withBase, type Locale } from '../i18n/utils';
+import { getAppLegalLinks } from '../i18n/app-legal';
 
 interface Props {
   locale: Locale;
@@ -26,20 +27,34 @@ const motifs: Array<'wave' | 'rings' | 'breathe'> = ['breathe', 'wave', 'rings',
       <h2 id="apps-section-title">{t.appsPage.sectionTitle}</h2>
     </div>
     <div class="stack-grid">
-      {t.apps.items.map((app, index) => (
-        <article class="card app-detail" id={app.id}>
-          <div>
-            <p class="eyebrow">{app.nameEn}</p>
-            <h3>{app.name}</h3>
-            <p class="lead-sm">{app.oneLine}</p>
-            <p>{app.detail}</p>
-            <ul>
-              {app.bullets.slice(0, 3).map((item) => <li>{item}</li>)}
-            </ul>
-          </div>
-          <FlowMotif kind={motifs[index] ?? 'wave'} />
-        </article>
-      ))}
+      {t.apps.items.map((app, index) => {
+        const legalLinks = getAppLegalLinks(locale, app.id);
+        return (
+          <article class="card app-detail" id={app.id}>
+            <div>
+              <p class="eyebrow">{app.nameEn}</p>
+              <h3>{app.name}</h3>
+              <p class="lead-sm">{app.oneLine}</p>
+              <p>{app.detail}</p>
+              <ul>
+                {app.bullets.slice(0, 3).map((item) => <li>{item}</li>)}
+              </ul>
+              {legalLinks && (
+                <div class="legal-links">
+                  <p class="legal-links-title">{locale === 'zh' ? '法律文档' : 'Legal Documents'}</p>
+                  <a class="text-link" href={withBase(legalLinks.privacyPath)}>
+                    {legalLinks.privacyLabel}
+                  </a>
+                  <a class="text-link" href={withBase(legalLinks.termsPath)}>
+                    {legalLinks.termsLabel}
+                  </a>
+                </div>
+              )}
+            </div>
+            <FlowMotif kind={motifs[index] ?? 'wave'} />
+          </article>
+        );
+      })}
     </div>
   </section>
 

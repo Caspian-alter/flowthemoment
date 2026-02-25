@@ -405,6 +405,20 @@ section {
   align-items: center;
 }
 
+.legal-links {
+  margin-top: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  align-items: center;
+}
+
+.legal-links-title {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
 .faq-list {
   display: grid;
   gap: 0.7rem;
@@ -421,6 +435,20 @@ details p {
 
 .prose-card {
   max-width: 760px;
+}
+
+.legal-hero {
+  padding-bottom: 1.8rem;
+}
+
+.legal-document {
+  max-width: 900px;
+}
+
+.legal-document-body {
+  white-space: pre-wrap;
+  line-height: 1.82;
+  font-size: 0.98rem;
 }
 
 .empty-state {

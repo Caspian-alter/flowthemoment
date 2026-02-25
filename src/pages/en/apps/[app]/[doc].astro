@@ -1,0 +1,16 @@
+---
+import AppLegalPage from '../../../../templates/AppLegalPage.astro';
+import { getLegalStaticPaths, type AppLegalPageData } from '../../../../i18n/app-legal';
+
+export function getStaticPaths() {
+  return getLegalStaticPaths('en');
+}
+
+interface Props {
+  page: AppLegalPageData;
+}
+
+const { page } = Astro.props;
+---
+
+<AppLegalPage locale="en" path={Astro.url.pathname} page={page} />
