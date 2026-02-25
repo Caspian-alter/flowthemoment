@@ -128,7 +128,7 @@ const sharedAppsZh: AppItem[] = [
   {
     id: 'sunshine-breath',
     name: '阳光呼吸',
-    nameEn: 'Sunshine Breath',
+    nameEn: 'Sunny Breath',
     oneLine: '给早晨一个温柔开机动作：呼吸、光线与小仪式。',
     status: 'coming',
     bullets: ['2 分钟晨间呼吸引导', '柔和唤醒节奏，减少起床焦虑', '可自定义“开始一天”微仪式'],
@@ -170,13 +170,13 @@ const sharedAppsZh: AppItem[] = [
 const sharedAppsEn: AppItem[] = [
   {
     id: 'sunshine-breath',
-    name: 'Sunshine Breath',
+    name: 'Sunny Breath',
     nameEn: '阳光呼吸',
     oneLine: 'A soft morning start with breath, light, and tiny rituals.',
     status: 'coming',
     bullets: ['2-minute guided breathing', 'Gentle wake rhythm to ease morning anxiety', 'Personalizable start-of-day ritual'],
     detail:
-      'Sunshine Breath is for the first minutes after waking up. It does not push you to perform. It helps your body and attention meet before the day gets loud.'
+      'Sunny Breath is for the first minutes after waking up. It does not push you to perform. It helps your body and attention meet before the day gets loud.'
   },
   {
     id: 'attention-up',
