@@ -4,6 +4,7 @@ import FlowMotif from '../components/FlowMotif.astro';
 import { getCopy } from '../i18n/copy';
 import { withBase, type Locale } from '../i18n/utils';
 import { getAppLegalLinks } from '../i18n/app-legal';
+import { getProfilePath } from '../i18n/app-profiles';
 
 interface Props {
   locale: Locale;
@@ -29,6 +30,7 @@ const motifs: Array<'wave' | 'rings' | 'breathe'> = ['breathe', 'wave', 'rings',
     <div class="stack-grid">
       {t.apps.items.map((app, index) => {
         const legalLinks = getAppLegalLinks(locale, app.id);
+        const profilePath = getProfilePath(locale, app.id);
         return (
           <article class="card app-detail" id={app.id}>
             <div>
@@ -39,6 +41,14 @@ const motifs: Array<'wave' | 'rings' | 'breathe'> = ['breathe', 'wave', 'rings',
               <ul>
                 {app.bullets.slice(0, 3).map((item) => <li>{item}</li>)}
               </ul>
+              {profilePath && (
+                <div class="legal-links">
+                  <p class="legal-links-title">{locale === 'zh' ? '应用详情页' : 'Product Page'}</p>
+                  <a class="text-link" href={withBase(profilePath)}>
+                    {locale === 'zh' ? '查看独立介绍页' : 'Open standalone page'}
+                  </a>
+                </div>
+              )}
               {legalLinks && (
                 <div class="legal-links">
                   <p class="legal-links-title">{locale === 'zh' ? '法律文档' : 'Legal Documents'}</p>

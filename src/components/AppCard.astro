@@ -1,5 +1,6 @@
 ---
 import { withBase, type Locale } from '../i18n/utils';
+import { getProfilePath } from '../i18n/app-profiles';
 
 interface Props {
   app: {
@@ -19,6 +20,8 @@ interface Props {
 const { app, locale, badgeComing, badgeProgress, learnMore } = Astro.props;
 const badge = app.status === 'progress' ? badgeProgress : badgeComing;
 const appsPath = locale === 'zh' ? '/apps' : '/en/apps';
+const profilePath = getProfilePath(locale, app.id);
+const targetHref = profilePath ? withBase(profilePath) : `${withBase(appsPath)}#${app.id}`;
 ---
 
 <article class="card app-card" id={`card-${app.id}`}>
@@ -30,5 +33,5 @@ const appsPath = locale === 'zh' ? '/apps' : '/en/apps';
   <ul>
     {app.bullets.slice(0, 3).map((item) => <li>{item}</li>)}
   </ul>
-  <a href={`${withBase(appsPath)}#${app.id}`} class="text-link">{learnMore}</a>
+  <a href={targetHref} class="text-link">{learnMore}</a>
 </article>

@@ -1,0 +1,16 @@
+---
+import AppProfilePage from '../../../templates/AppProfilePage.astro';
+import { getAppProfileStaticPaths, type AppProfile } from '../../../i18n/app-profiles';
+
+export function getStaticPaths() {
+  return getAppProfileStaticPaths('zh');
+}
+
+interface Props {
+  profile: AppProfile;
+}
+
+const { profile } = Astro.props;
+---
+
+<AppProfilePage locale="zh" path={Astro.url.pathname} profile={profile} />

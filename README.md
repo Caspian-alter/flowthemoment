@@ -13,6 +13,7 @@ Bilingual Astro website for `flowthemoment.com` (Chinese default + English).
 - `/` (中文首页)
 - `/en` (English home)
 - `/apps` and `/en/apps`
+- `/apps/sunny-breath` and `/en/apps/sunny-breath`
 - `/apps/sunny-breath/privacy` and `/en/apps/sunny-breath/privacy`
 - `/apps/sunny-breath/terms` and `/en/apps/sunny-breath/terms`
 - `/about` and `/en/about`

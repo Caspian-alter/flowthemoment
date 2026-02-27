@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getAppLegalLinks } from '../i18n/app-legal';
+import { withBase, type Locale } from '../i18n/utils';
+import type { AppProfile } from '../i18n/app-profiles';
+
+interface Props {
+  locale: Locale;
+  path: string;
+  profile: AppProfile;
+}
+
+const { locale, path, profile } = Astro.props;
+const legalLinks = getAppLegalLinks(locale, profile.appId);
+const backHome = locale === 'zh' ? '/' : '/en';
+const backApps = locale === 'zh' ? '/apps' : '/en/apps';
+const description =
+  locale === 'zh'
+    ? `${profile.name}（${profile.altName}）独立介绍页。${profile.intro}`
+    : `${profile.name} (${profile.altName}) product page. ${profile.intro}`;
+---
+
+<BaseLayout title={`${profile.name} | Flow the Moment`} description={description} locale={locale} path={path}>
+  <section class="shell page-hero app-profile-hero">
+    <p class="eyebrow">{profile.altName}</p>
+    <h1>{profile.name}</h1>
+    <p class="lead">{profile.tagline}</p>
+    <p>{profile.intro}</p>
+    <div class="hero-cta">
+      <a href={withBase(backHome)} class="btn btn-primary">{locale === 'zh' ? '回到主页' : 'Back to Home'}</a>
+      <a href={withBase(backApps)} class="btn btn-secondary">{locale === 'zh' ? '回到应用列表' : 'Back to Apps'}</a>
+    </div>
+  </section>
+
+  <section class="shell app-profile-opening">
+    <article class="card prose-card">
+      {profile.opening.map((item) => <p>{item}</p>)}
+    </article>
+  </section>
+
+  <section class="shell" aria-labelledby="profile-principles-title">
+    <div class="section-intro">
+      <h2 id="profile-principles-title">{profile.principlesTitle}</h2>
+    </div>
+    <div class="stack-grid">
+      {profile.principles.map((item) => (
+        <article class="card">
+          <h3>{item.title}</h3>
+          <p>{item.body}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="shell" aria-labelledby="profile-flow-title">
+    <div class="section-intro">
+      <h2 id="profile-flow-title">{profile.flowTitle}</h2>
+    </div>
+    <div class="stack-grid">
+      {profile.flow.map((step) => (
+        <article class="card">
+          <h3>{step.title}</h3>
+          <p>{step.body}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="shell" aria-labelledby="profile-features-title">
+    <div class="section-intro">
+      <h2 id="profile-features-title">{profile.featureTitle}</h2>
+    </div>
+    <article class="card">
+      <ul>
+        {profile.features.map((item) => <li>{item}</li>)}
+      </ul>
+    </article>
+  </section>
+
+  <section class="shell" aria-labelledby="profile-audience-title">
+    <div class="section-intro">
+      <h2 id="profile-audience-title">{profile.audienceTitle}</h2>
+    </div>
+    <article class="card">
+      <ul>
+        {profile.audience.map((item) => <li>{item}</li>)}
+      </ul>
+    </article>
+  </section>
+
+  {legalLinks && (
+    <section class="shell" aria-labelledby="profile-legal-title">
+      <article class="card">
+        <h2 id="profile-legal-title">{profile.legalTitle}</h2>
+        <p>{profile.legalIntro}</p>
+        <div class="legal-links">
+          <a class="btn btn-secondary" href={withBase(legalLinks.privacyPath)}>{profile.legalPrivacyLabel}</a>
+          <a class="btn btn-secondary" href={withBase(legalLinks.termsPath)}>{profile.legalTermsLabel}</a>
+        </div>
+      </article>
+    </section>
+  )}
+</BaseLayout>

@@ -437,6 +437,18 @@ details p {
   max-width: 760px;
 }
 
+.app-profile-hero .lead {
+  margin-bottom: 0.5rem;
+}
+
+.app-profile-opening {
+  padding-top: 1.1rem;
+}
+
+.app-profile-opening .prose-card {
+  max-width: 860px;
+}
+
 .legal-hero {
   padding-bottom: 1.8rem;
 }
