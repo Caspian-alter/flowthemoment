@@ -98,7 +98,35 @@ const sunnyBreathDocs: Record<Locale, AppLegalDocumentSet> = {
 六、适用法律与争议解决
 本条款适用中华人民共和国法律（不含冲突规范）。争议应先协商，协商不成可向开发者所在地有管辖权人民法院提起诉讼。
 
-七、联系我们
+七、内置音乐授权与来源说明
+本应用部分内置音频来自 Pixabay，并依据 Pixabay Terms of Service / Content License 使用：
+https://pixabay.com/service/terms/
+
+曲目与许可信息如下（下载时间均为 UTC）：
+1. Peaceful
+   URL: https://pixabay.com/music/corporate-peaceful-437953/
+   Audio File ID: 437953
+   Licensor: https://pixabay.com/users/nastelbom-48128234/
+   Date of download: 2026-03-01 09:28:40 UTC
+2. Meditation
+   URL: https://pixabay.com/music/meditationspiritual-meditation-463389/
+   Audio File ID: 463389
+   Licensor: https://pixabay.com/users/nastelbom-48128234/
+   Date of download: 2026-03-01 09:28:33 UTC
+3. Gentle
+   URL: https://pixabay.com/music/modern-classical-gentle-442633/
+   Audio File ID: 442633
+   Licensor: https://pixabay.com/users/nastelbom-48128234/
+   Date of download: 2026-03-01 09:28:26 UTC
+4. Calm Nature Music
+   URL: https://pixabay.com/music/acoustic-group-calm-nature-music-471361/
+   Audio File ID: 471361
+   Licensor: https://pixabay.com/users/andriig-54059306/
+   Date of download: 2026-03-01 09:27:39 UTC
+
+上述作品版权归原作者及其权利人所有。若相关授权范围、可用性或平台政策发生变化，我们将按要求调整、替换或下线对应内容。
+
+八、联系我们
 邮箱：landingfeather@163.com`
   },
   en: {
@@ -167,7 +195,35 @@ The app is provided “as is.” Alarm/reminder behavior may be affected by devi
 6. Governing Law and Disputes
 These terms are governed by the laws of the People’s Republic of China (excluding conflict rules). Disputes should first be resolved through consultation; otherwise, either party may file suit in a competent court at the developer’s location.
 
-7. Contact
+7. Built-in Audio Licensing and Sources
+Some built-in audio tracks in this app are sourced from Pixabay and used under the Pixabay Terms of Service / Content License:
+https://pixabay.com/service/terms/
+
+Track and license details (download times in UTC):
+1. Peaceful
+   URL: https://pixabay.com/music/corporate-peaceful-437953/
+   Audio File ID: 437953
+   Licensor: https://pixabay.com/users/nastelbom-48128234/
+   Date of download: 2026-03-01 09:28:40 UTC
+2. Meditation
+   URL: https://pixabay.com/music/meditationspiritual-meditation-463389/
+   Audio File ID: 463389
+   Licensor: https://pixabay.com/users/nastelbom-48128234/
+   Date of download: 2026-03-01 09:28:33 UTC
+3. Gentle
+   URL: https://pixabay.com/music/modern-classical-gentle-442633/
+   Audio File ID: 442633
+   Licensor: https://pixabay.com/users/nastelbom-48128234/
+   Date of download: 2026-03-01 09:28:26 UTC
+4. Calm Nature Music
+   URL: https://pixabay.com/music/acoustic-group-calm-nature-music-471361/
+   Audio File ID: 471361
+   Licensor: https://pixabay.com/users/andriig-54059306/
+   Date of download: 2026-03-01 09:27:39 UTC
+
+Copyright remains with the original creators and rights holders. If license scope, availability, or platform policy changes, we may update, replace, or remove related content as required.
+
+8. Contact
 landingfeather@163.com`
   }
 };
