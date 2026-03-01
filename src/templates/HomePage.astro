@@ -2,7 +2,6 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import AppCard from '../components/AppCard.astro';
 import FlowMotif from '../components/FlowMotif.astro';
-import WaitlistForm from '../components/WaitlistForm.astro';
 import { getCopy } from '../i18n/copy';
 import { pathFor, type Locale, withBase } from '../i18n/utils';
 
@@ -86,9 +85,5 @@ const t = getCopy(locale);
         />
       ))}
     </div>
-  </section>
-
-  <section class="shell">
-    <WaitlistForm locale={locale} />
   </section>
 </BaseLayout>
