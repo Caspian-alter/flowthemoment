@@ -1,6 +1,7 @@
 ---
 import { withBase, type Locale } from '../i18n/utils';
 import { getProfilePath } from '../i18n/app-profiles';
+import FlowMotif from './FlowMotif.astro';
 
 interface Props {
   app: {
@@ -25,13 +26,16 @@ const targetHref = profilePath ? withBase(profilePath) : `${withBase(appsPath)}#
 ---
 
 <article class="card app-card" id={`card-${app.id}`}>
+  <div class="app-shot" aria-hidden="true">
+    <FlowMotif kind="wave" />
+  </div>
   <div class="card-head">
     <h3>{app.name} <span class="sub-name">/ {app.nameEn}</span></h3>
     <span class="badge">{badge}</span>
   </div>
   <p>{app.oneLine}</p>
   <ul>
-    {app.bullets.slice(0, 3).map((item) => <li>{item}</li>)}
+    {app.bullets.slice(0, 2).map((item) => <li>{item}</li>)}
   </ul>
   <a href={targetHref} class="text-link">{learnMore}</a>
 </article>

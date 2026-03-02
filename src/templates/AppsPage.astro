@@ -37,9 +37,8 @@ const motifs: Array<'wave' | 'rings' | 'breathe'> = ['breathe', 'wave', 'rings',
               <p class="eyebrow">{app.nameEn}</p>
               <h3>{app.name}</h3>
               <p class="lead-sm">{app.oneLine}</p>
-              <p>{app.detail}</p>
               <ul>
-                {app.bullets.slice(0, 3).map((item) => <li>{item}</li>)}
+                {app.bullets.slice(0, 2).map((item) => <li>{item}</li>)}
               </ul>
               {profilePath && (
                 <div class="legal-links">

@@ -34,7 +34,7 @@ const description =
 
   <section class="shell app-profile-opening">
     <article class="card prose-card">
-      {profile.opening.map((item) => <p>{item}</p>)}
+      <p>{profile.opening[0]}</p>
     </article>
   </section>
 
@@ -43,7 +43,7 @@ const description =
       <h2 id="profile-principles-title">{profile.principlesTitle}</h2>
     </div>
     <div class="stack-grid">
-      {profile.principles.map((item) => (
+      {profile.principles.slice(0, 3).map((item) => (
         <article class="card">
           <h3>{item.title}</h3>
           <p>{item.body}</p>
@@ -57,7 +57,7 @@ const description =
       <h2 id="profile-flow-title">{profile.flowTitle}</h2>
     </div>
     <div class="stack-grid">
-      {profile.flow.map((step) => (
+      {profile.flow.slice(0, 2).map((step) => (
         <article class="card">
           <h3>{step.title}</h3>
           <p>{step.body}</p>
@@ -72,7 +72,7 @@ const description =
     </div>
     <article class="card">
       <ul>
-        {profile.features.map((item) => <li>{item}</li>)}
+        {profile.features.slice(0, 3).map((item) => <li>{item}</li>)}
       </ul>
     </article>
   </section>

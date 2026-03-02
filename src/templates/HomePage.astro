@@ -12,6 +12,10 @@ interface Props {
 
 const { locale, path } = Astro.props;
 const t = getCopy(locale);
+const quickTags =
+  locale === 'zh'
+    ? ['#在场', '#轻结构', '#数字健康', '#ADHD友好', '#反成瘾']
+    : ['#presence', '#gentle-structure', '#digital-wellbeing', '#ADHD-friendly', '#anti-addictive'];
 ---
 
 <BaseLayout title={t.meta.siteName} description={t.meta.description} locale={locale} path={path}>
@@ -32,6 +36,15 @@ const t = getCopy(locale);
     </div>
   </section>
 
+  <section class="shell trend-strip" aria-label={locale === 'zh' ? '主题标签' : 'Topic tags'}>
+    <p class="strip-title">{locale === 'zh' ? '探索方向' : 'Browse topics'}</p>
+    <div class="tag-row">
+      {quickTags.map((tag) => (
+        <span class="tag-pill">{tag}</span>
+      ))}
+    </div>
+  </section>
+
   <section class="shell story" id={t.story.id}>
     <div class="section-intro">
       <p class="eyebrow">{locale === 'zh' ? '品牌故事' : 'Brand Story'}</p>
@@ -39,10 +52,10 @@ const t = getCopy(locale);
       <p>{t.story.intro}</p>
     </div>
     <div class="story-grid">
-      {t.story.blocks.map((block) => (
+      {t.story.blocks.slice(0, 3).map((block) => (
         <article class="story-block card">
           <h3>{block.title}</h3>
-          {block.body.map((paragraph) => <p>{paragraph}</p>)}
+          <p>{block.body[0]}</p>
         </article>
       ))}
     </div>

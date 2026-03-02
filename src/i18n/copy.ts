@@ -231,12 +231,12 @@ export const copy: Record<Locale, LocaleCopy> = {
       tagline: '把注意力带回当下。把噪音变成宁静，把结构变成自由。',
       primaryCta: '查看应用',
       secondaryCta: '阅读故事',
-      calmNote: '一个关于在场、注意力与数字健康的温柔工作室。'
+      calmNote: '为在场而设计的温柔产品工作室。'
     },
     story: {
       id: 'story',
       title: '为什么叫「流动此刻」',
-      intro: '这不是口号，而是一种对人的态度。',
+      intro: '一句话：在复杂里，仍把注意力还给自己。',
       blocks: [
         {
           title: '从噪音到在场',
@@ -272,7 +272,7 @@ export const copy: Record<Locale, LocaleCopy> = {
     },
     principles: {
       title: '设计原则',
-      intro: '每个产品都遵循同一套温柔而清晰的标准。',
+      intro: '少一点刺激，多一点可持续。',
       items: [
         {
           icon: '🌿',
@@ -303,7 +303,7 @@ export const copy: Record<Locale, LocaleCopy> = {
     },
     apps: {
       title: '即将到来的应用',
-      intro: '四个方向，服务同一个目标：让注意力更自由地流动。',
+      intro: '四个产品，同一方向：更自由的注意力。',
       badgeComing: '即将上线',
       badgeProgress: '开发中',
       learnMore: '了解更多',
@@ -325,7 +325,7 @@ export const copy: Record<Locale, LocaleCopy> = {
     },
     appsPage: {
       title: '应用：为在场而设计的工具',
-      intro: '这些工具不是为了把你变成更快的机器，而是帮你在现实生活里更稳定地呼吸、专注与选择。',
+      intro: '不是催促效率，而是帮你在日常里更稳地呼吸、专注与选择。',
       sectionTitle: '产品方向',
       faqTitle: '常见问题',
       faqs: [
@@ -353,7 +353,7 @@ export const copy: Record<Locale, LocaleCopy> = {
     },
     aboutPage: {
       title: '关于这个工作室',
-      intro: 'Flow the Moment 是一个个人品牌与产品实验室。',
+      intro: '一个围绕在场与数字健康的个人工作室。',
       paragraphs: [
         '我长期关注注意力、数字行为与心理负担之间的关系，尤其是信息过载和 ADHD 场景中的“温柔结构”。',
         '这个工作室希望构建一组小而真实的工具：不制造焦虑，不绑架时间，帮助人回到此刻、回到自主。',
@@ -362,7 +362,7 @@ export const copy: Record<Locale, LocaleCopy> = {
     },
     blog: {
       title: '博客',
-      intro: '记录关于在场、设计与温柔改变的思考。',
+      intro: '关于在场、设计与可持续改变的短文。',
       empty: '暂时还没有文章，正在准备中。',
       readMore: '阅读全文',
       exampleBadge: '选读',
@@ -399,7 +399,7 @@ export const copy: Record<Locale, LocaleCopy> = {
       siteName: 'Flow the Moment',
       tagline: 'Bring attention back to the present moment. Turn noise into calm, structure into freedom.',
       description:
-        'Flow the Moment is a personal brand and product studio designing gentle, respectful tools for presence, attention, and digital wellbeing.'
+        'Flow the Moment is a gentle product studio building respectful tools for presence, attention, and digital wellbeing.'
     },
     nav: {
       home: 'Home',
@@ -414,7 +414,7 @@ export const copy: Record<Locale, LocaleCopy> = {
       tagline: 'Bring attention back to the present moment. Turn noise into calm, structure into freedom.',
       primaryCta: 'Explore Apps',
       secondaryCta: 'Read the Story',
-      calmNote: 'A gentle studio for presence, attention, and digital wellbeing.'
+      calmNote: 'A gentle studio designing for presence.'
     },
     story: {
       id: 'story',
@@ -508,8 +508,7 @@ export const copy: Record<Locale, LocaleCopy> = {
     },
     appsPage: {
       title: 'Apps: tools for presence',
-      intro:
-        'These products are not built to turn you into a faster machine. They are built to support breathing room, agency, and sustainable habits.',
+      intro: 'Built for breathing room, agency, and sustainable habits.',
       sectionTitle: 'Product directions',
       faqTitle: 'FAQ',
       faqs: [
@@ -537,7 +536,7 @@ export const copy: Record<Locale, LocaleCopy> = {
     },
     aboutPage: {
       title: 'About the Studio',
-      intro: 'Flow the Moment is a personal brand and product studio.',
+      intro: 'A personal studio for mindful digital tools.',
       paragraphs: [
         'I work at the intersection of attention, digital behavior, and emotional load, especially in environments shaped by information overload and ADHD realities.',
         'This studio builds small but meaningful tools: no panic mechanics, no time hijacking, no moral pressure.',
@@ -546,7 +545,7 @@ export const copy: Record<Locale, LocaleCopy> = {
     },
     blog: {
       title: 'Blog',
-      intro: 'Notes on presence, humane design, and sustainable change.',
+      intro: 'Short notes on presence and humane design.',
       empty: 'No posts yet. New writing is in progress.',
       readMore: 'Read post',
       exampleBadge: 'Note',
