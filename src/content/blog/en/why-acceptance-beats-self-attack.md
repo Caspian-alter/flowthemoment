@@ -1,13 +1,11 @@
 ---
 lang: en
 title: "Why acceptance beats self-attack"
-description: "Example post: sustainable change grows from safety and permission, not shame pressure."
+description: "Sustainable change grows from safety and permission, not shame pressure."
 date: 2026-02-24
 tags: ["acceptance", "habit", "mental health"]
 example: true
 ---
-
-> Example content (placeholder): this is the second English sample post.
 
 When distraction appears, many people default to self-attack: "I should be better."
 

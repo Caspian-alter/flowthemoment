@@ -103,8 +103,8 @@ const sunnyBreathProfile: AppProfileDefinition = {
         '想建立规律，但不想再被打卡焦虑和自责叙事消耗的人',
         '希望用温和结构慢慢变稳的创作者、自由职业者与学生'
       ],
-      legalTitle: '法律与合规页面',
-      legalIntro: '用于用户查阅与 App Store Connect 审核提交。',
+      legalTitle: '法律文档',
+      legalIntro: '这里收录了与 Sunny Breath 相关的隐私与使用条款。',
       legalPrivacyLabel: '隐私协议',
       legalTermsLabel: '使用条款',
       showcaseTitle: '宣传图',
@@ -186,8 +186,8 @@ const sunnyBreathProfile: AppProfileDefinition = {
         'People who want consistency without streak pressure and self-attack loops',
         'Creators, freelancers, and students who prefer gentle structure over brute force'
       ],
-      legalTitle: 'Legal and compliance pages',
-      legalIntro: 'Use these standalone URLs for user reference and App Store Connect review.',
+      legalTitle: 'Legal Documents',
+      legalIntro: 'Privacy and terms for Sunny Breath are collected here.',
       legalPrivacyLabel: 'Privacy Policy',
       legalTermsLabel: 'Terms of Use'
     }

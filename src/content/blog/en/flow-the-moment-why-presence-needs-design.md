@@ -1,15 +1,13 @@
 ---
 lang: en
 title: "Flow the Moment: why presence needs design"
-description: "Example post: in the attention economy, presence is not a slogan. It is a design problem."
+description: "In the attention economy, presence is not a slogan. It is a design problem."
 date: 2026-02-25
 tags: ["presence", "design", "attention"]
 example: true
 ---
 
-> Example content (placeholder): this short post exists to demonstrate the blog system.
-
-Presence is often framed as a personal virtue, but environment shapes behavior before intention arrives.
+In an attention-heavy environment, presence rarely survives on willpower alone.
 
 If products are built to pull attention continuously, asking people to "just focus" becomes unfair. Presence needs design:
 

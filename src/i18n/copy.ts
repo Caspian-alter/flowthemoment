@@ -316,11 +316,11 @@ export const copy: Record<Locale, LocaleCopy> = {
       button: '订阅更新',
       privacy: '仅用于项目更新，不发送营销轰炸。你可以随时离开。',
       success: '谢谢你。更新准备好后，我会温柔地通知你。',
-      fallback: '静态站点当前使用 mailto 作为提交方式，后续可接入 API。'
+      fallback: '你可以通过邮件接收更新通知。'
     },
     footer: {
       studioNote: 'Flow the Moment / 流动此刻 · 一个温柔、清醒、面向人的产品工作室。',
-      social: '社交（即将开放）',
+      social: '社交媒体',
       copyright: '© {year} Flow the Moment. All rights reserved.'
     },
     appsPage: {
@@ -365,13 +365,13 @@ export const copy: Record<Locale, LocaleCopy> = {
       intro: '记录关于在场、设计与温柔改变的思考。',
       empty: '暂时还没有文章，正在准备中。',
       readMore: '阅读全文',
-      exampleBadge: '示例内容',
+      exampleBadge: '选读',
       back: '返回博客',
       postedOn: '发布于',
       tags: '标签'
     },
     privacyPage: {
-      title: '隐私说明（占位）',
+      title: '隐私说明',
       updated: '最后更新：2026 年 2 月 25 日',
       paragraphs: [
         'Flow the Moment 重视你的隐私。当前网站为静态展示站，默认不追踪个人行为。',
@@ -499,11 +499,11 @@ export const copy: Record<Locale, LocaleCopy> = {
       button: 'Join waitlist',
       privacy: 'Used only for product updates. No spam, no pressure.',
       success: 'Thank you. I will reach out gently when there is real progress.',
-      fallback: 'This static site currently uses a mailto fallback. API integration can be added later.'
+      fallback: 'You can receive updates by email.'
     },
     footer: {
       studioNote: 'Flow the Moment · A gentle studio for mindful tools and digital wellbeing.',
-      social: 'Social (coming soon)',
+      social: 'Social',
       copyright: '© {year} Flow the Moment. All rights reserved.'
     },
     appsPage: {
@@ -549,13 +549,13 @@ export const copy: Record<Locale, LocaleCopy> = {
       intro: 'Notes on presence, humane design, and sustainable change.',
       empty: 'No posts yet. New writing is in progress.',
       readMore: 'Read post',
-      exampleBadge: 'Example',
+      exampleBadge: 'Note',
       back: 'Back to blog',
       postedOn: 'Posted on',
       tags: 'Tags'
     },
     privacyPage: {
-      title: 'Privacy (Placeholder)',
+      title: 'Privacy',
       updated: 'Last updated: February 25, 2026',
       paragraphs: [
         'Flow the Moment respects your privacy. This is currently a static website with no default behavioral tracking.',
