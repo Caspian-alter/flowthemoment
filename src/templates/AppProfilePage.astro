@@ -21,6 +21,8 @@ const description =
     : `${profile.name} (${profile.altName}) product page. ${profile.intro}`;
 const featuredShowcase = profile.showcaseImages?.[0];
 const galleryShowcase = profile.showcaseImages?.slice(1) ?? [];
+const openingInHero = profile.opening[0];
+const remainingOpening = profile.opening.slice(1);
 ---
 
 <BaseLayout title={`${profile.name} | Flow the Moment`} description={description} locale={locale} path={path}>
@@ -30,6 +32,7 @@ const galleryShowcase = profile.showcaseImages?.slice(1) ?? [];
       <h1>{profile.name}</h1>
       <p class="lead">{profile.tagline}</p>
       <p>{profile.intro}</p>
+      {openingInHero && <p class="hero-intro-extra">{openingInHero}</p>}
       <div class="hero-cta">
         <a href={withBase(backHome)} class="btn btn-primary">{locale === 'zh' ? '回到主页' : 'Back to Home'}</a>
         <a href={withBase(backApps)} class="btn btn-secondary">{locale === 'zh' ? '回到应用列表' : 'Back to Apps'}</a>
@@ -65,12 +68,13 @@ const galleryShowcase = profile.showcaseImages?.slice(1) ?? [];
     </div>
   </section>
 
-  <section class="shell app-profile-opening">
-    <article class="card prose-card">
-      <p>{profile.opening[0]}</p>
-      {profile.opening[1] && <p>{profile.opening[1]}</p>}
-    </article>
-  </section>
+  {remainingOpening.length > 0 && (
+    <section class="shell app-profile-opening">
+      <article class="card prose-card">
+        {remainingOpening.map((item) => <p>{item}</p>)}
+      </article>
+    </section>
+  )}
 
   <section class="shell" aria-labelledby="profile-principles-title">
     <div class="section-intro">
@@ -126,8 +130,8 @@ const galleryShowcase = profile.showcaseImages?.slice(1) ?? [];
     <section class="shell showcase-section" aria-labelledby="profile-showcase-title">
       <h2 id="profile-showcase-title" class="sr-only">{locale === 'zh' ? '阳光呼吸分图展示' : 'Sunny Breath gallery'}</h2>
       <div class="promo-grid promo-grid-rich">
-        {galleryShowcase.map((image, index) => (
-          <figure class={`card promo-card ${index % 2 === 0 ? 'promo-tall' : ''}`}>
+        {galleryShowcase.map((image) => (
+          <figure class="promo-card promo-card-plain">
             <img src={withBase(image.src)} alt={image.alt} loading="lazy" decoding="async" />
           </figure>
         ))}

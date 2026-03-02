@@ -666,6 +666,11 @@ details p {
   gap: 0.7rem;
 }
 
+.hero-intro-extra {
+  margin-top: 0.45rem;
+  color: var(--muted);
+}
+
 .app-profile-opening {
   padding-top: 1.1rem;
 }
@@ -704,6 +709,19 @@ details p {
   border-color: rgba(129, 108, 94, 0.2);
 }
 
+.promo-card-plain {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.promo-card-plain:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: transparent;
+}
+
 .promo-card img {
   display: block;
   width: 100%;
@@ -728,11 +746,6 @@ details p {
 .promo-featured figcaption {
   font-size: 1rem;
   color: var(--text);
-}
-
-.promo-tall img {
-  aspect-ratio: 3 / 5;
-  object-fit: cover;
 }
 
 .legal-hero {
@@ -967,10 +980,6 @@ details p {
 
   .promo-grid-rich {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .promo-grid-rich .promo-tall {
-    grid-row: span 2;
   }
 
   .promo-featured {
