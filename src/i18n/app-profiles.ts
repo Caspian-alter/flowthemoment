@@ -189,7 +189,31 @@ const sunnyBreathProfile: AppProfileDefinition = {
       legalTitle: 'Legal Documents',
       legalIntro: 'Privacy and terms for Sunny Breath are collected here.',
       legalPrivacyLabel: 'Privacy Policy',
-      legalTermsLabel: 'Terms of Use'
+      legalTermsLabel: 'Terms of Use',
+      showcaseTitle: 'Showcase',
+      showcaseIntro: 'A visual walk-through of the morning flow: setup, wake, record, and gentle control.',
+      showcaseImages: [
+        {
+          src: '/images/sunny-breath/en/en-1.png',
+          alt: 'Sunny Breath promotional image 1: morning home view',
+          caption: 'Your morning, your pace.'
+        },
+        {
+          src: '/images/sunny-breath/en/en-2.png',
+          alt: 'Sunny Breath promotional image 2: records view',
+          caption: 'Capture what matters, leave what does not.'
+        },
+        {
+          src: '/images/sunny-breath/en/en-3.png',
+          alt: 'Sunny Breath promotional image 3: flow session view',
+          caption: 'Wake naturally, with a trigger when you need it.'
+        },
+        {
+          src: '/images/sunny-breath/en/en-4.png',
+          alt: 'Sunny Breath promotional image 4: alarm edit view',
+          caption: 'Small rituals, steady mornings.'
+        }
+      ]
     }
   }
 };
