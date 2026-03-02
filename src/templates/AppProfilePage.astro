@@ -88,6 +88,21 @@ const description =
     </article>
   </section>
 
+  {profile.showcaseImages && profile.showcaseImages.length > 0 && (
+    <section class="shell" aria-labelledby="profile-showcase-title">
+      <div class="section-intro">
+        <h2 id="profile-showcase-title">{profile.showcaseTitle ?? (locale === 'zh' ? '宣传图' : 'Showcase')}</h2>
+      </div>
+      <div class="promo-grid">
+        {profile.showcaseImages.map((image) => (
+          <figure class="card promo-card">
+            <img src={withBase(image.src)} alt={image.alt} loading="lazy" decoding="async" />
+          </figure>
+        ))}
+      </div>
+    </section>
+  )}
+
   {legalLinks && (
     <section class="shell" aria-labelledby="profile-legal-title">
       <article class="card">

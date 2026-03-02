@@ -30,6 +30,11 @@ export interface AppProfile {
   legalIntro: string;
   legalPrivacyLabel: string;
   legalTermsLabel: string;
+  showcaseTitle?: string;
+  showcaseImages?: Array<{
+    src: string;
+    alt: string;
+  }>;
 }
 
 interface AppProfileDefinition {
@@ -99,7 +104,26 @@ const sunnyBreathProfile: AppProfileDefinition = {
       legalTitle: '法律与合规页面',
       legalIntro: '用于用户查阅与 App Store Connect 审核提交。',
       legalPrivacyLabel: '隐私协议',
-      legalTermsLabel: '使用条款'
+      legalTermsLabel: '使用条款',
+      showcaseTitle: '宣传图',
+      showcaseImages: [
+        {
+          src: '/images/sunny-breath/zh/zh-1.png',
+          alt: '阳光呼吸中文宣传图 1：主页面展示'
+        },
+        {
+          src: '/images/sunny-breath/zh/zh-2.png',
+          alt: '阳光呼吸中文宣传图 2：记录页展示'
+        },
+        {
+          src: '/images/sunny-breath/zh/zh-3.png',
+          alt: '阳光呼吸中文宣传图 3：流程页展示'
+        },
+        {
+          src: '/images/sunny-breath/zh/zh-4.png',
+          alt: '阳光呼吸中文宣传图 4：闹钟编辑页展示'
+        }
+      ]
     },
     en: {
       appId: 'sunshine-breath',
