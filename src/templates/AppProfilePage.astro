@@ -55,7 +55,6 @@ const galleryShowcase = profile.showcaseImages?.slice(1) ?? [];
       {featuredShowcase ? (
         <figure class="cover-figure">
           <img src={withBase(featuredShowcase.src)} alt={featuredShowcase.alt} loading="eager" decoding="async" />
-          {featuredShowcase.caption && <figcaption>{featuredShowcase.caption}</figcaption>}
         </figure>
       ) : (
         <div class="cover-fallback" aria-hidden="true">
@@ -125,15 +124,11 @@ const galleryShowcase = profile.showcaseImages?.slice(1) ?? [];
 
   {galleryShowcase.length > 0 && (
     <section class="shell showcase-section" aria-labelledby="profile-showcase-title">
-      <div class="section-intro">
-        <h2 id="profile-showcase-title">{profile.showcaseTitle ?? (locale === 'zh' ? '宣传图' : 'Showcase')}</h2>
-        {profile.showcaseIntro && <p>{profile.showcaseIntro}</p>}
-      </div>
+      <h2 id="profile-showcase-title" class="sr-only">{locale === 'zh' ? '阳光呼吸分图展示' : 'Sunny Breath gallery'}</h2>
       <div class="promo-grid promo-grid-rich">
         {galleryShowcase.map((image, index) => (
           <figure class={`card promo-card ${index % 2 === 0 ? 'promo-tall' : ''}`}>
             <img src={withBase(image.src)} alt={image.alt} loading="lazy" decoding="async" />
-            {image.caption && <figcaption>{image.caption}</figcaption>}
           </figure>
         ))}
       </div>

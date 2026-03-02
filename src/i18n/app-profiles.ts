@@ -107,28 +107,22 @@ const sunnyBreathProfile: AppProfileDefinition = {
       legalIntro: '这里收录了与 Sunny Breath 相关的隐私与使用条款。',
       legalPrivacyLabel: '隐私协议',
       legalTermsLabel: '使用条款',
-      showcaseTitle: '宣传图',
-      showcaseIntro: '这组画面不是“功能截图拼贴”，而是清晨体验的四个切面：启动、记录、呼吸与自定义。',
       showcaseImages: [
         {
           src: '/images/sunny-breath/zh/zh-1.png',
-          alt: '阳光呼吸中文宣传图 1：主页面展示',
-          caption: '你的清晨，你做主。'
+          alt: '阳光呼吸中文宣传图 1：主页面展示'
         },
         {
           src: '/images/sunny-breath/zh/zh-2.png',
-          alt: '阳光呼吸中文宣传图 2：记录页展示',
-          caption: '随心记录，也随心删除。'
+          alt: '阳光呼吸中文宣传图 2：记录页展示'
         },
         {
           src: '/images/sunny-breath/zh/zh-3.png',
-          alt: '阳光呼吸中文宣传图 3：流程页展示',
-          caption: '自然响起，也支持你主动触发。'
+          alt: '阳光呼吸中文宣传图 3：流程页展示'
         },
         {
           src: '/images/sunny-breath/zh/zh-4.png',
-          alt: '阳光呼吸中文宣传图 4：闹钟编辑页展示',
-          caption: '把启动动作定得很轻，才能走得更远。'
+          alt: '阳光呼吸中文宣传图 4：闹钟编辑页展示'
         }
       ]
     },
@@ -190,28 +184,22 @@ const sunnyBreathProfile: AppProfileDefinition = {
       legalIntro: 'Privacy and terms for Sunny Breath are collected here.',
       legalPrivacyLabel: 'Privacy Policy',
       legalTermsLabel: 'Terms of Use',
-      showcaseTitle: 'Showcase',
-      showcaseIntro: 'A visual walk-through of the morning flow: setup, wake, record, and gentle control.',
       showcaseImages: [
         {
           src: '/images/sunny-breath/en/en-1.png',
-          alt: 'Sunny Breath promotional image 1: morning home view',
-          caption: 'Your morning, your pace.'
+          alt: 'Sunny Breath promotional image 1: morning home view'
         },
         {
           src: '/images/sunny-breath/en/en-2.png',
-          alt: 'Sunny Breath promotional image 2: records view',
-          caption: 'Capture what matters, leave what does not.'
+          alt: 'Sunny Breath promotional image 2: records view'
         },
         {
           src: '/images/sunny-breath/en/en-3.png',
-          alt: 'Sunny Breath promotional image 3: flow session view',
-          caption: 'Wake naturally, with a trigger when you need it.'
+          alt: 'Sunny Breath promotional image 3: flow session view'
         },
         {
           src: '/images/sunny-breath/en/en-4.png',
-          alt: 'Sunny Breath promotional image 4: alarm edit view',
-          caption: 'Small rituals, steady mornings.'
+          alt: 'Sunny Breath promotional image 4: alarm edit view'
         }
       ]
     }
