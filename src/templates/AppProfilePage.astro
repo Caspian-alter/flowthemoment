@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { getAppLegalLinks } from '../i18n/app-legal';
 import { withBase, type Locale } from '../i18n/utils';
 import type { AppProfile } from '../i18n/app-profiles';
+import FlowMotif from '../components/FlowMotif.astro';
 
 interface Props {
   locale: Locale;
@@ -18,23 +19,57 @@ const description =
   locale === 'zh'
     ? `${profile.name}（${profile.altName}）独立介绍页。${profile.intro}`
     : `${profile.name} (${profile.altName}) product page. ${profile.intro}`;
+const featuredShowcase = profile.showcaseImages?.[0];
+const galleryShowcase = profile.showcaseImages?.slice(1) ?? [];
 ---
 
 <BaseLayout title={`${profile.name} | Flow the Moment`} description={description} locale={locale} path={path}>
-  <section class="shell page-hero app-profile-hero">
-    <p class="eyebrow">{profile.altName}</p>
-    <h1>{profile.name}</h1>
-    <p class="lead">{profile.tagline}</p>
-    <p>{profile.intro}</p>
-    <div class="hero-cta">
-      <a href={withBase(backHome)} class="btn btn-primary">{locale === 'zh' ? '回到主页' : 'Back to Home'}</a>
-      <a href={withBase(backApps)} class="btn btn-secondary">{locale === 'zh' ? '回到应用列表' : 'Back to Apps'}</a>
+  <section class="shell page-hero app-profile-hero campaign-hero">
+    <div>
+      <p class="eyebrow">{profile.altName}</p>
+      <h1>{profile.name}</h1>
+      <p class="lead">{profile.tagline}</p>
+      <p>{profile.intro}</p>
+      <div class="hero-cta">
+        <a href={withBase(backHome)} class="btn btn-primary">{locale === 'zh' ? '回到主页' : 'Back to Home'}</a>
+        <a href={withBase(backApps)} class="btn btn-secondary">{locale === 'zh' ? '回到应用列表' : 'Back to Apps'}</a>
+      </div>
+      <div class="profile-jump">
+        <a href="#profile-principles-title" class="tag-pill">
+          {locale === 'zh' ? '理念' : 'Principles'}
+        </a>
+        <a href="#profile-flow-title" class="tag-pill">
+          {locale === 'zh' ? '流程' : 'Flow'}
+        </a>
+        <a href="#profile-features-title" class="tag-pill">
+          {locale === 'zh' ? '能力' : 'Features'}
+        </a>
+        {legalLinks && (
+          <a href="#profile-legal-title" class="tag-pill">
+            {locale === 'zh' ? '法律' : 'Legal'}
+          </a>
+        )}
+      </div>
+    </div>
+    <div class="campaign-cover card">
+      {featuredShowcase ? (
+        <figure class="cover-figure">
+          <img src={withBase(featuredShowcase.src)} alt={featuredShowcase.alt} loading="eager" decoding="async" />
+          {featuredShowcase.caption && <figcaption>{featuredShowcase.caption}</figcaption>}
+        </figure>
+      ) : (
+        <div class="cover-fallback" aria-hidden="true">
+          <FlowMotif kind="breathe" />
+          <FlowMotif kind="rings" />
+        </div>
+      )}
     </div>
   </section>
 
   <section class="shell app-profile-opening">
     <article class="card prose-card">
       <p>{profile.opening[0]}</p>
+      {profile.opening[1] && <p>{profile.opening[1]}</p>}
     </article>
   </section>
 
@@ -88,15 +123,15 @@ const description =
     </article>
   </section>
 
-  {profile.showcaseImages && profile.showcaseImages.length > 0 && (
+  {galleryShowcase.length > 0 && (
     <section class="shell showcase-section" aria-labelledby="profile-showcase-title">
       <div class="section-intro">
         <h2 id="profile-showcase-title">{profile.showcaseTitle ?? (locale === 'zh' ? '宣传图' : 'Showcase')}</h2>
         {profile.showcaseIntro && <p>{profile.showcaseIntro}</p>}
       </div>
-      <div class="promo-grid">
-        {profile.showcaseImages.map((image, index) => (
-          <figure class={`card promo-card ${index === 0 ? 'promo-featured' : ''}`}>
+      <div class="promo-grid promo-grid-rich">
+        {galleryShowcase.map((image, index) => (
+          <figure class={`card promo-card ${index % 2 === 0 ? 'promo-tall' : ''}`}>
             <img src={withBase(image.src)} alt={image.alt} loading="lazy" decoding="async" />
             {image.caption && <figcaption>{image.caption}</figcaption>}
           </figure>

@@ -14,6 +14,10 @@ interface Props {
 const { locale, path } = Astro.props;
 const t = getCopy(locale);
 const motifs: Array<'wave' | 'rings' | 'breathe'> = ['breathe', 'wave', 'rings', 'wave'];
+const focusTags =
+  locale === 'zh'
+    ? ['轻启动', '微结构', '低压专注', '反成瘾']
+    : ['Gentle start', 'Micro structure', 'Low-pressure focus', 'Anti-addictive'];
 ---
 
 <BaseLayout title={`${t.appsPage.title} | Flow the Moment`} description={t.appsPage.intro} locale={locale} path={path}>
@@ -21,46 +25,55 @@ const motifs: Array<'wave' | 'rings' | 'breathe'> = ['breathe', 'wave', 'rings',
     <p class="eyebrow">Flow the Moment</p>
     <h1>{t.appsPage.title}</h1>
     <p class="lead">{t.appsPage.intro}</p>
+    <div class="tag-row">
+      {focusTags.map((tag) => (
+        <span class="tag-pill">{tag}</span>
+      ))}
+    </div>
   </section>
 
   <section class="shell" aria-labelledby="apps-section-title">
     <div class="section-intro">
       <h2 id="apps-section-title">{t.appsPage.sectionTitle}</h2>
     </div>
-    <div class="stack-grid">
+    <div class="apps-board">
       {t.apps.items.map((app, index) => {
         const legalLinks = getAppLegalLinks(locale, app.id);
         const profilePath = getProfilePath(locale, app.id);
+        const badge = app.status === 'progress' ? t.apps.badgeProgress : t.apps.badgeComing;
         return (
-          <article class="card app-detail" id={app.id}>
-            <div>
-              <p class="eyebrow">{app.nameEn}</p>
+          <article class="card app-detail app-detail-v2" id={app.id}>
+            <div class="app-detail-content">
+              <div class="card-head">
+                <p class="eyebrow">{app.nameEn}</p>
+                <span class="badge">{badge}</span>
+              </div>
               <h3>{app.name}</h3>
               <p class="lead-sm">{app.oneLine}</p>
               <ul>
                 {app.bullets.slice(0, 2).map((item) => <li>{item}</li>)}
               </ul>
-              {profilePath && (
-                <div class="legal-links">
-                  <p class="legal-links-title">{locale === 'zh' ? '应用详情页' : 'Product Page'}</p>
+              <div class="legal-links">
+                {profilePath && (
                   <a class="text-link" href={withBase(profilePath)}>
                     {locale === 'zh' ? '查看产品介绍' : 'View product story'}
                   </a>
-                </div>
-              )}
-              {legalLinks && (
-                <div class="legal-links">
-                  <p class="legal-links-title">{locale === 'zh' ? '法律文档' : 'Legal Documents'}</p>
-                  <a class="text-link" href={withBase(legalLinks.privacyPath)}>
-                    {legalLinks.privacyLabel}
-                  </a>
-                  <a class="text-link" href={withBase(legalLinks.termsPath)}>
-                    {legalLinks.termsLabel}
-                  </a>
-                </div>
-              )}
+                )}
+                {legalLinks && (
+                  <>
+                    <a class="text-link" href={withBase(legalLinks.privacyPath)}>
+                      {legalLinks.privacyLabel}
+                    </a>
+                    <a class="text-link" href={withBase(legalLinks.termsPath)}>
+                      {legalLinks.termsLabel}
+                    </a>
+                  </>
+                )}
+              </div>
             </div>
-            <FlowMotif kind={motifs[index] ?? 'wave'} />
+            <div class="app-detail-art" aria-hidden="true">
+              <FlowMotif kind={motifs[index] ?? 'wave'} />
+            </div>
           </article>
         );
       })}

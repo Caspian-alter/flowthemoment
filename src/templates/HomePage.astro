@@ -16,10 +16,11 @@ const quickTags =
   locale === 'zh'
     ? ['#在场', '#轻结构', '#数字健康', '#ADHD友好', '#反成瘾']
     : ['#presence', '#gentle-structure', '#digital-wellbeing', '#ADHD-friendly', '#anti-addictive'];
+const appMotifs: Array<'wave' | 'rings' | 'breathe'> = ['breathe', 'wave', 'rings', 'wave'];
 ---
 
 <BaseLayout title={t.meta.siteName} description={t.meta.description} locale={locale} path={path}>
-  <section class="hero shell">
+  <section class="hero hero-v2 shell">
     <div class="hero-copy">
       <p class="eyebrow">{t.hero.eyebrow}</p>
       <h1>{t.hero.title}</h1>
@@ -30,18 +31,24 @@ const quickTags =
       </div>
       <p class="calm-note">{t.hero.calmNote}</p>
     </div>
-    <div class="hero-art" aria-hidden="true">
-      <FlowMotif kind="wave" />
-      <FlowMotif kind="rings" />
-    </div>
-  </section>
-
-  <section class="shell trend-strip" aria-label={locale === 'zh' ? '主题标签' : 'Topic tags'}>
-    <p class="strip-title">{locale === 'zh' ? '探索方向' : 'Browse topics'}</p>
-    <div class="tag-row">
-      {quickTags.map((tag) => (
-        <span class="tag-pill">{tag}</span>
-      ))}
+    <div class="hero-board" aria-label={locale === 'zh' ? '品牌方向总览' : 'Brand direction overview'}>
+      <article class="hero-tile hero-tile-art">
+        <FlowMotif kind="wave" />
+        <FlowMotif kind="rings" />
+      </article>
+      <article class="hero-tile">
+        <p class="tile-kicker">{locale === 'zh' ? '正在构建' : 'Building now'}</p>
+        <h3>{t.apps.items[0].name}</h3>
+        <p>{t.apps.items[0].oneLine}</p>
+      </article>
+      <article class="hero-tile">
+        <p class="tile-kicker">{locale === 'zh' ? '探索方向' : 'Focus tags'}</p>
+        <div class="tag-row">
+          {quickTags.slice(0, 4).map((tag) => (
+            <span class="tag-pill">{tag}</span>
+          ))}
+        </div>
+      </article>
     </div>
   </section>
 
@@ -52,8 +59,9 @@ const quickTags =
       <p>{t.story.intro}</p>
     </div>
     <div class="story-grid">
-      {t.story.blocks.slice(0, 3).map((block) => (
+      {t.story.blocks.slice(0, 3).map((block, index) => (
         <article class="story-block card">
+          <p class="story-index">{String(index + 1).padStart(2, '0')}</p>
           <h3>{block.title}</h3>
           <p>{block.body[0]}</p>
         </article>
@@ -87,14 +95,16 @@ const quickTags =
       <h2 id="apps-showcase-title">{t.apps.title}</h2>
       <p>{t.apps.intro}</p>
     </div>
-    <div class="app-grid">
-      {t.apps.items.map((app) => (
+    <div class="app-grid app-grid-showcase">
+      {t.apps.items.map((app, index) => (
         <AppCard
           app={app}
           locale={locale}
           badgeComing={t.apps.badgeComing}
           badgeProgress={t.apps.badgeProgress}
           learnMore={t.apps.learnMore}
+          variant={index === 0 ? 'featured' : 'default'}
+          motif={appMotifs[index] ?? 'wave'}
         />
       ))}
     </div>

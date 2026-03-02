@@ -16,18 +16,21 @@ interface Props {
   badgeComing: string;
   badgeProgress: string;
   learnMore: string;
+  variant?: 'featured' | 'default';
+  motif?: 'wave' | 'rings' | 'breathe';
 }
 
-const { app, locale, badgeComing, badgeProgress, learnMore } = Astro.props;
+const { app, locale, badgeComing, badgeProgress, learnMore, variant = 'default', motif = 'wave' } = Astro.props;
 const badge = app.status === 'progress' ? badgeProgress : badgeComing;
 const appsPath = locale === 'zh' ? '/apps' : '/en/apps';
 const profilePath = getProfilePath(locale, app.id);
 const targetHref = profilePath ? withBase(profilePath) : `${withBase(appsPath)}#${app.id}`;
+const bulletLimit = variant === 'featured' ? 3 : 2;
 ---
 
-<article class="card app-card" id={`card-${app.id}`}>
+<article class={`card app-card ${variant === 'featured' ? 'app-card-featured' : ''}`} id={`card-${app.id}`}>
   <div class="app-shot" aria-hidden="true">
-    <FlowMotif kind="wave" />
+    <FlowMotif kind={motif} />
   </div>
   <div class="card-head">
     <h3>{app.name} <span class="sub-name">/ {app.nameEn}</span></h3>
@@ -35,7 +38,7 @@ const targetHref = profilePath ? withBase(profilePath) : `${withBase(appsPath)}#
   </div>
   <p>{app.oneLine}</p>
   <ul>
-    {app.bullets.slice(0, 2).map((item) => <li>{item}</li>)}
+    {app.bullets.slice(0, bulletLimit).map((item) => <li>{item}</li>)}
   </ul>
-  <a href={targetHref} class="text-link">{learnMore}</a>
+  <a href={targetHref} class="text-link app-card-link">{learnMore}</a>
 </article>
