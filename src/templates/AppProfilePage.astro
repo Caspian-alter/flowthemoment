@@ -89,14 +89,16 @@ const description =
   </section>
 
   {profile.showcaseImages && profile.showcaseImages.length > 0 && (
-    <section class="shell" aria-labelledby="profile-showcase-title">
+    <section class="shell showcase-section" aria-labelledby="profile-showcase-title">
       <div class="section-intro">
         <h2 id="profile-showcase-title">{profile.showcaseTitle ?? (locale === 'zh' ? '宣传图' : 'Showcase')}</h2>
+        {profile.showcaseIntro && <p>{profile.showcaseIntro}</p>}
       </div>
       <div class="promo-grid">
-        {profile.showcaseImages.map((image) => (
-          <figure class="card promo-card">
+        {profile.showcaseImages.map((image, index) => (
+          <figure class={`card promo-card ${index === 0 ? 'promo-featured' : ''}`}>
             <img src={withBase(image.src)} alt={image.alt} loading="lazy" decoding="async" />
+            {image.caption && <figcaption>{image.caption}</figcaption>}
           </figure>
         ))}
       </div>
