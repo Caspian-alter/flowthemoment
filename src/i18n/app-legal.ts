@@ -88,6 +88,8 @@ const sunnyBreathDocs: Record<Locale, AppLegalDocumentSet> = {
 1. 商品可能包括自动续订订阅与一次性买断。
 2. 商品名称、价格、币种、试用政策、地区税费以 App Store 实际展示为准。
 3. 订阅可在 Apple 账户设置中管理自动续费；退款与争议处理按 Apple 政策执行。
+4. 若你通过 iOS / iPadOS 平台下载或使用本应用，除本条款外，你对该平台版本应用的使用还应遵守 Apple 的《Licensed Application End User License Agreement（Standard EULA）》：
+https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 
 四、知识产权
 本应用及其代码、界面、文案、图形等受法律保护，未经许可不得擅自复制、传播或商业再分发。
@@ -185,6 +187,8 @@ You must use the app lawfully and must not engage in infringement, abuse, unauth
 - Product names, pricing, currencies, trial rules, taxes, and regional availability are subject to App Store listing.
 - Subscription management/cancellation is handled through Apple account settings.
 - Refunds and billing disputes follow Apple policies.
+- If you download or use this app on iOS / iPadOS, your use of that platform version is also subject to Apple’s Licensed Application End User License Agreement (Standard EULA):
+https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 
 4. Intellectual Property
 The app and related content are protected by applicable laws. No unauthorized copy, distribution, sale, rental, or commercial re-distribution is permitted.
