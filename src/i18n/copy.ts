@@ -136,14 +136,14 @@ const sharedAppsZh: AppItem[] = [
       '阳光呼吸服务于“刚醒来的那几分钟”。它不催你冲刺，而是帮你在身体和意识之间搭一座桥，让一天从稳定而非紧绷开始。'
   },
   {
-    id: 'attention-up',
-    name: '注意力UP',
-    nameEn: 'Attention Up',
-    oneLine: '把脑中一闪而过的念头，轻轻接住。',
+    id: 'light-ideas',
+    name: '轻想法',
+    nameEn: 'Light Ideas',
+    oneLine: '让漂浮的念头先有地方落下，再慢慢凝结。',
     status: 'progress',
-    bullets: ['一键捕捉微想法与灵感火花', '低负担整理，减少认知散落', '为 ADHD 用户设计的友好节奏'],
+    bullets: ['快速记录刚刚出现的微想法', '从 bubble 到 glass 的轻整理路径', '更贴近 ADHD 节奏的承接方式'],
     detail:
-      '注意力UP不是待办列表升级版，而是一个“念头缓冲区”。它帮助你先接住，再分类，避免“想到很多、留不住任何一个”的疲惫循环。'
+      '轻想法不是待办列表升级版，而是一个“漂浮到凝结”的想法板。它让你先接住念头，再决定要不要留下，而不是一开始就被迫管理。'
   },
   {
     id: 'steady-flow',
@@ -179,14 +179,14 @@ const sharedAppsEn: AppItem[] = [
       'Sunny Breath is for the first minutes after waking up. It does not push you to perform. It helps your body and attention meet before the day gets loud.'
   },
   {
-    id: 'attention-up',
-    name: 'Attention Up',
-    nameEn: '注意力UP',
-    oneLine: 'Catch tiny thoughts before they disappear.',
+    id: 'light-ideas',
+    name: 'Light Ideas',
+    nameEn: '轻想法',
+    oneLine: 'Give fleeting thoughts a place to land before they disappear.',
     status: 'progress',
-    bullets: ['One-tap capture for sparks and micro-ideas', 'Lightweight organization that lowers cognitive scatter', 'A rhythm shaped for ADHD-friendly use'],
+    bullets: ['Quick capture for just-arrived thoughts', 'A light path from bubble to glass', 'A gentler rhythm shaped for ADHD-friendly use'],
     detail:
-      'Attention Up is not another strict planner. It is a buffering space for unfinished thoughts, so ideas can land safely before you decide what they become.'
+      'Light Ideas is not another strict planner. It is a board for thoughts in transition, so ideas can land safely before you decide whether to keep, condense, or release them.'
   },
   {
     id: 'steady-flow',

@@ -42,12 +42,14 @@ export interface AppProfile {
 interface AppProfileDefinition {
   appId: string;
   slug: string;
+  routeStyle?: 'apps' | 'standalone';
   content: Record<Locale, AppProfile>;
 }
 
 const sunnyBreathProfile: AppProfileDefinition = {
   appId: 'sunshine-breath',
   slug: 'sunny-breath',
+  routeStyle: 'apps',
   content: {
     zh: {
       appId: 'sunshine-breath',
@@ -206,7 +208,133 @@ const sunnyBreathProfile: AppProfileDefinition = {
   }
 };
 
-const appProfiles: AppProfileDefinition[] = [sunnyBreathProfile];
+const lightIdeasProfile: AppProfileDefinition = {
+  appId: 'light-ideas',
+  slug: 'light-ideas',
+  routeStyle: 'standalone',
+  content: {
+    zh: {
+      appId: 'light-ideas',
+      slug: 'light-ideas',
+      name: '轻想法',
+      altName: 'Light Ideas',
+      tagline: '让念头先有地方落下，再决定它要去哪里。',
+      intro: '一个为碎片化思绪设计的轻量想法板，把突然出现的念头，从漂浮带到凝结。',
+      opening: [
+        '轻想法不是待办清单，也不是第二个会催促你的知识库。它更像一个有呼吸感的过渡空间，先帮你接住，再帮你慢慢看清。',
+        '它来自一个很简单的判断：很多人不是没有想法，而是想法来得太快、太散、太容易消失。尤其在 ADHD 或高刺激环境里，真正需要的往往不是更强控制，而是更轻的承接。'
+      ],
+      principlesTitle: '这个产品在守护什么',
+      principles: [
+        {
+          title: '先捕捉，再判断',
+          body: '新念头先以 bubble 的形式出现，不要求你立刻分类、命名或决定价值。先留下，再回看。'
+        },
+        {
+          title: '让整理像物理变化，而不是行政流程',
+          body: '当一个想法值得保留，你只需要长按，让它从 bubble 凝结为 glass。整理被做成一个可感知的动作，而不是一套表单。'
+        },
+        {
+          title: '允许消散，也允许删除',
+          body: '没有被继续照看的 bubble 会在 24 小时后自然蒸发；已经凝结的 glass 也可以被主动打破。系统不逼你囤积一切。'
+        }
+      ],
+      flowTitle: '典型使用流',
+      flow: [
+        {
+          title: '1. 快速落点',
+          body: '点右下角加号，输入刚刚冒出来的句子，它会直接进入 bubble 区，保留漂浮和未完成的状态。'
+        },
+        {
+          title: '2. 从漂浮到凝结',
+          body: '当你觉得某个想法值得留下，长按它。它会飞入下方的 glass 区，成为时间线上可回看的卡片。'
+        },
+        {
+          title: '3. 从存放到释放',
+          body: '不再需要的内容可以双击 bubble 删除，或三击 glass 打破。保留与放下都被设计成明确而轻的选择。'
+        }
+      ],
+      featureTitle: '当前核心能力',
+      features: [
+        'Bubble 区采用漂浮式布局，适合承接尚未定型的微想法',
+        'Glass 区按时间形成双列瀑布流，便于回看已经“凝结”的想法',
+        '支持快速记录、长按凝结、双击销毁、三击打破等轻交互',
+        '24 小时自然蒸发机制与本地持久化并存，减少囤积压力'
+      ],
+      audienceTitle: '适合这样的人',
+      audience: [
+        '脑中经常同时出现很多念头，但来不及整理的人',
+        '想记录灵感，却不想一打开应用就进入管理压力的人',
+        '需要更贴近 ADHD 节奏的轻量记录方式，而不是强控制系统的人'
+      ],
+      legalTitle: '法律文档',
+      legalIntro: '法律文档将在产品公开发布前补充。',
+      legalPrivacyLabel: '隐私协议',
+      legalTermsLabel: '使用条款'
+    },
+    en: {
+      appId: 'light-ideas',
+      slug: 'light-ideas',
+      name: 'Light Ideas',
+      altName: '轻想法',
+      tagline: 'Give a thought somewhere to land before asking what it should become.',
+      intro: 'A lightweight idea board for scattered thinking, designed to move thoughts from floating to condensed.',
+      opening: [
+        'Light Ideas is not a task manager and not another knowledge vault that pressures you to organize immediately. It is a transitional space that catches a thought first, then lets clarity arrive later.',
+        'It comes from a simple observation: many people do not lack ideas. They lack a calm place for ideas that arrive too quickly, too loosely, and too briefly to hold. In ADHD-shaped attention, what helps is often not harder control, but lighter containment.'
+      ],
+      principlesTitle: 'What this product protects',
+      principles: [
+        {
+          title: 'Capture first, evaluate later',
+          body: 'New thoughts appear as bubbles. You are not asked to classify, rename, or justify them on arrival. First keep them, then revisit.'
+        },
+        {
+          title: 'Make organization feel physical, not bureaucratic',
+          body: 'When an idea is worth keeping, a long press condenses it from bubble to glass. Structuring becomes a felt motion, not a paperwork ritual.'
+        },
+        {
+          title: 'Allow fading, allow release',
+          body: 'Unattended bubbles evaporate after 24 hours. Condensed glass can also be intentionally broken. The system does not force you to archive everything.'
+        }
+      ],
+      flowTitle: 'Typical use flow',
+      flow: [
+        {
+          title: '1. Quick landing',
+          body: 'Tap the bottom-right plus button and write the thought that just appeared. It enters the bubble zone in its unfinished form.'
+        },
+        {
+          title: '2. From floating to condensed',
+          body: 'When a thought deserves to stay, long-press it. It flies into the lower glass zone and becomes a card in the timeline.'
+        },
+        {
+          title: '3. From storage to release',
+          body: 'Bubble items can be removed with a double tap. Glass items can be broken with repeated taps. Keeping and letting go are both treated as lightweight choices.'
+        }
+      ],
+      featureTitle: 'Current core capabilities',
+      features: [
+        'A floating bubble zone for unfinished micro-thoughts',
+        'A dual-column glass timeline for condensed ideas you want to revisit',
+        'Quick capture, long-press condense, double-tap destroy, and break interactions',
+        '24-hour evaporation plus local persistence to reduce accumulation pressure'
+      ],
+      audienceTitle: 'Who this is for',
+      audience: [
+        'People whose minds generate many small thoughts at once',
+        'People who want to keep sparks without entering an immediate management workflow',
+        'People looking for a gentler, ADHD-friendly capture rhythm instead of a control-heavy system'
+      ],
+      legalTitle: 'Legal Documents',
+      legalIntro: 'Legal documents will be added before the public release.',
+      legalPrivacyLabel: 'Privacy Policy',
+      legalTermsLabel: 'Terms of Use'
+    }
+  }
+};
+
+const appProfiles: AppProfileDefinition[] = [sunnyBreathProfile, lightIdeasProfile];
 
 export function getAppProfile(locale: Locale, slug: string): AppProfile | null {
   const found = appProfiles.find((item) => item.slug === slug);
@@ -215,15 +343,26 @@ export function getAppProfile(locale: Locale, slug: string): AppProfile | null {
 }
 
 export function getAppProfileStaticPaths(locale: Locale) {
-  return appProfiles.map((item) => ({
-    params: { app: item.slug },
-    props: { profile: item.content[locale] }
-  }));
+  return appProfiles
+    .filter((item) => (item.routeStyle ?? 'apps') === 'apps')
+    .map((item) => ({
+      params: { app: item.slug },
+      props: { profile: item.content[locale] }
+    }));
 }
 
 export function getProfilePath(locale: Locale, appId: string): string | null {
   const found = appProfiles.find((item) => item.appId === appId);
   if (!found) return null;
+  if ((found.routeStyle ?? 'apps') === 'standalone') {
+    return locale === 'zh' ? `/${found.slug}` : `/en/${found.slug}`;
+  }
   if (locale === 'zh') return `/apps/${found.slug}`;
   return `/en/apps/${found.slug}`;
+}
+
+export function getAppProfileById(locale: Locale, appId: string): AppProfile | null {
+  const found = appProfiles.find((item) => item.appId === appId);
+  if (!found) return null;
+  return found.content[locale];
 }

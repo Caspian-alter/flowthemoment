@@ -1,0 +1,12 @@
+---
+import AppProfilePage from '../templates/AppProfilePage.astro';
+import { getAppProfileById } from '../i18n/app-profiles';
+
+const profile = getAppProfileById('zh', 'light-ideas');
+
+if (!profile) {
+  throw new Error('Light Ideas profile not found for zh locale.');
+}
+---
+
+<AppProfilePage locale="zh" path={Astro.url.pathname} profile={profile} />
