@@ -53,23 +53,25 @@ const appMotifs: Array<'wave' | 'rings' | 'breathe'> = ['breathe', 'wave', 'ring
   </section>
 
   <section class="shell story" id={t.story.id}>
-    <div class="section-intro">
-      <p class="eyebrow">{locale === 'zh' ? '品牌故事' : 'Brand Story'}</p>
-      <h2>{t.story.title}</h2>
-      <p>{t.story.intro}</p>
+    <div class="story-head">
+      <div class="section-intro story-intro">
+        <p class="eyebrow">{locale === 'zh' ? '品牌故事' : 'Brand Story'}</p>
+        <h2>{t.story.title}</h2>
+        <p>{t.story.intro}</p>
+      </div>
+      <blockquote class="quote story-quote">
+        <p>{t.story.quote}</p>
+      </blockquote>
     </div>
     <div class="story-grid">
       {t.story.blocks.slice(0, 3).map((block, index) => (
-        <article class="story-block card">
+        <article class={`story-block ${index === 0 ? 'story-block-featured' : ''}`}>
           <p class="story-index">{String(index + 1).padStart(2, '0')}</p>
           <h3>{block.title}</h3>
           <p>{block.body[0]}</p>
         </article>
       ))}
     </div>
-    <blockquote class="quote card">
-      <p>{t.story.quote}</p>
-    </blockquote>
   </section>
 
   <section class="shell">
