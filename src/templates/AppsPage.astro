@@ -18,45 +18,70 @@ const focusTags =
   locale === 'zh'
     ? ['轻启动', '微结构', '低压专注', '反成瘾']
     : ['Gentle start', 'Micro structure', 'Low-pressure focus', 'Anti-addictive'];
+const labels =
+  locale === 'zh'
+    ? {
+        suite: '产品组合',
+        faq: '常见问题',
+        productPage: '查看产品介绍'
+      }
+    : {
+        suite: 'Product suite',
+        faq: 'FAQ',
+        productPage: 'View product story'
+      };
 ---
 
 <BaseLayout title={`${t.appsPage.title} | Flow the Moment`} description={t.appsPage.intro} locale={locale} path={path}>
-  <section class="shell page-hero">
-    <p class="eyebrow">Flow the Moment</p>
-    <h1>{t.appsPage.title}</h1>
-    <p class="lead">{t.appsPage.intro}</p>
-    <div class="tag-row">
-      {focusTags.map((tag) => (
-        <span class="tag-pill">{tag}</span>
-      ))}
+  <section class="shell page-hero editorial-page-hero">
+    <div>
+      <p class="eyebrow">Flow the Moment</p>
+      <h1>{t.appsPage.title}</h1>
+    </div>
+    <div class="page-hero-side">
+      <p class="lead">{t.appsPage.intro}</p>
+      <div class="tag-row">
+        {focusTags.map((tag) => (
+          <span class="tag-pill">{tag}</span>
+        ))}
+      </div>
     </div>
   </section>
 
   <section class="shell" aria-labelledby="apps-section-title">
-    <div class="section-intro">
-      <h2 id="apps-section-title">{t.appsPage.sectionTitle}</h2>
+    <div class="section-intro section-split">
+      <div>
+        <p class="eyebrow">{labels.suite}</p>
+        <h2 id="apps-section-title">{t.appsPage.sectionTitle}</h2>
+      </div>
     </div>
-    <div class="apps-board">
+    <div class="product-list product-list-detailed">
       {t.apps.items.map((app, index) => {
         const legalLinks = getAppLegalLinks(locale, app.id);
         const profilePath = getProfilePath(locale, app.id);
         const badge = app.status === 'progress' ? t.apps.badgeProgress : t.apps.badgeComing;
         return (
-          <article class="card app-detail app-detail-v2" id={app.id}>
-            <div class="app-detail-content">
-              <div class="card-head">
-                <p class="eyebrow">{app.nameEn}</p>
+          <article class={`product-row product-row-detailed ${index === 0 ? 'product-row-featured' : ''}`} id={app.id}>
+            <div class="product-row-index">
+              <span>{String(index + 1).padStart(2, '0')}</span>
+            </div>
+            <div class="product-row-copy">
+              <div class="product-row-head">
+                <div>
+                  <p class="tile-kicker">{app.nameEn}</p>
+                  <h3>{app.name}</h3>
+                </div>
                 <span class="badge">{badge}</span>
               </div>
-              <h3>{app.name}</h3>
               <p class="lead-sm">{app.oneLine}</p>
-              <ul>
-                {app.bullets.slice(0, 2).map((item) => <li>{item}</li>)}
+              <p class="product-detail">{app.detail}</p>
+              <ul class="product-bullets">
+                {app.bullets.slice(0, 3).map((item) => <li>{item}</li>)}
               </ul>
-              <div class="legal-links">
+              <div class="product-links">
                 {profilePath && (
                   <a class="text-link" href={withBase(profilePath)}>
-                    {locale === 'zh' ? '查看产品介绍' : 'View product story'}
+                    {labels.productPage}
                   </a>
                 )}
                 {legalLinks && (
@@ -71,7 +96,7 @@ const focusTags =
                 )}
               </div>
             </div>
-            <div class="app-detail-art" aria-hidden="true">
+            <div class="product-row-art" aria-hidden="true">
               <FlowMotif kind={motifs[index] ?? 'wave'} />
             </div>
           </article>
@@ -81,13 +106,19 @@ const focusTags =
   </section>
 
   <section class="shell faq" aria-labelledby="faq-title">
-    <div class="section-intro">
-      <h2 id="faq-title">{t.appsPage.faqTitle}</h2>
+    <div class="section-intro section-split">
+      <div>
+        <p class="eyebrow">{labels.faq}</p>
+        <h2 id="faq-title">{t.appsPage.faqTitle}</h2>
+      </div>
     </div>
-    <div class="faq-list">
-      {t.appsPage.faqs.map((item) => (
-        <details class="card">
-          <summary>{item.q}</summary>
+    <div class="faq-list faq-list-editorial">
+      {t.appsPage.faqs.map((item, index) => (
+        <details class="faq-item">
+          <summary>
+            <span class="story-index">{String(index + 1).padStart(2, '0')}</span>
+            <span>{item.q}</span>
+          </summary>
           <p>{item.a}</p>
         </details>
       ))}

@@ -23,44 +23,55 @@ const featuredShowcase = profile.showcaseImages?.[0];
 const galleryShowcase = profile.showcaseImages?.slice(1) ?? [];
 const openingInHero = profile.opening[0];
 const remainingOpening = profile.opening.slice(1);
+const labels =
+  locale === 'zh'
+    ? {
+        overview: '概览',
+        principles: '理念',
+        flow: '流程',
+        capabilities: '能力',
+        audience: '适合谁',
+        visuals: '视觉',
+        legal: '法律'
+      }
+    : {
+        overview: 'Overview',
+        principles: 'Principles',
+        flow: 'Flow',
+        capabilities: 'Capabilities',
+        audience: 'Audience',
+        visuals: 'Visuals',
+        legal: 'Legal'
+      };
 ---
 
 <BaseLayout title={`${profile.name} | Flow the Moment`} description={description} locale={locale} path={path}>
-  <section class="shell page-hero app-profile-hero campaign-hero">
-    <div>
+  <section class="shell page-hero product-hero">
+    <div class="product-hero-copy">
       <p class="eyebrow">{profile.altName}</p>
       <h1>{profile.name}</h1>
       <p class="lead">{profile.tagline}</p>
-      <p>{profile.intro}</p>
+      <p class="product-hero-intro">{profile.intro}</p>
       {openingInHero && <p class="hero-intro-extra">{openingInHero}</p>}
       <div class="hero-cta">
         <a href={withBase(backHome)} class="btn btn-primary">{locale === 'zh' ? '回到主页' : 'Back to Home'}</a>
         <a href={withBase(backApps)} class="btn btn-secondary">{locale === 'zh' ? '回到应用列表' : 'Back to Apps'}</a>
       </div>
       <div class="profile-jump">
-        <a href="#profile-principles-title" class="tag-pill">
-          {locale === 'zh' ? '理念' : 'Principles'}
-        </a>
-        <a href="#profile-flow-title" class="tag-pill">
-          {locale === 'zh' ? '流程' : 'Flow'}
-        </a>
-        <a href="#profile-features-title" class="tag-pill">
-          {locale === 'zh' ? '能力' : 'Features'}
-        </a>
-        {legalLinks && (
-          <a href="#profile-legal-title" class="tag-pill">
-            {locale === 'zh' ? '法律' : 'Legal'}
-          </a>
-        )}
+        <a href="#profile-principles-title" class="tag-pill">{labels.principles}</a>
+        <a href="#profile-flow-title" class="tag-pill">{labels.flow}</a>
+        <a href="#profile-features-title" class="tag-pill">{labels.capabilities}</a>
+        {galleryShowcase.length > 0 && <a href="#profile-showcase-title" class="tag-pill">{labels.visuals}</a>}
+        {legalLinks && <a href="#profile-legal-title" class="tag-pill">{labels.legal}</a>}
       </div>
     </div>
-    <div class="campaign-cover card">
+    <div class="product-hero-visual">
       {featuredShowcase ? (
-        <figure class="cover-figure">
+        <figure class="cover-figure cover-figure-editorial">
           <img src={withBase(featuredShowcase.src)} alt={featuredShowcase.alt} loading="eager" decoding="async" />
         </figure>
       ) : (
-        <div class="cover-fallback" aria-hidden="true">
+        <div class="cover-fallback cover-fallback-editorial" aria-hidden="true">
           <FlowMotif kind="breathe" />
           <FlowMotif kind="rings" />
         </div>
@@ -69,66 +80,89 @@ const remainingOpening = profile.opening.slice(1);
   </section>
 
   {remainingOpening.length > 0 && (
-    <section class="shell app-profile-opening">
-      <article class="card prose-card">
+    <section class="shell product-overview">
+      <div class="section-intro section-split">
+        <div>
+          <p class="eyebrow">{labels.overview}</p>
+        </div>
+      </div>
+      <div class="editorial-prose">
         {remainingOpening.map((item) => <p>{item}</p>)}
-      </article>
+      </div>
     </section>
   )}
 
   <section class="shell" aria-labelledby="profile-principles-title">
-    <div class="section-intro">
-      <h2 id="profile-principles-title">{profile.principlesTitle}</h2>
+    <div class="section-intro section-split">
+      <div>
+        <p class="eyebrow">{labels.principles}</p>
+        <h2 id="profile-principles-title">{profile.principlesTitle}</h2>
+      </div>
     </div>
-    <div class="stack-grid">
-      {profile.principles.slice(0, 3).map((item) => (
-        <article class="card">
-          <h3>{item.title}</h3>
-          <p>{item.body}</p>
+    <div class="editorial-list">
+      {profile.principles.map((item, index) => (
+        <article class="editorial-row">
+          <p class="story-index">{String(index + 1).padStart(2, '0')}</p>
+          <div class="editorial-row-main">
+            <h3>{item.title}</h3>
+            <p>{item.body}</p>
+          </div>
         </article>
       ))}
     </div>
   </section>
 
   <section class="shell" aria-labelledby="profile-flow-title">
-    <div class="section-intro">
-      <h2 id="profile-flow-title">{profile.flowTitle}</h2>
+    <div class="section-intro section-split">
+      <div>
+        <p class="eyebrow">{labels.flow}</p>
+        <h2 id="profile-flow-title">{profile.flowTitle}</h2>
+      </div>
     </div>
-    <div class="stack-grid">
-      {profile.flow.slice(0, 2).map((step) => (
-        <article class="card">
-          <h3>{step.title}</h3>
-          <p>{step.body}</p>
+    <div class="editorial-list">
+      {profile.flow.map((step, index) => (
+        <article class="editorial-row">
+          <p class="story-index">{String(index + 1).padStart(2, '0')}</p>
+          <div class="editorial-row-main">
+            <h3>{step.title}</h3>
+            <p>{step.body}</p>
+          </div>
         </article>
       ))}
     </div>
   </section>
 
   <section class="shell" aria-labelledby="profile-features-title">
-    <div class="section-intro">
-      <h2 id="profile-features-title">{profile.featureTitle}</h2>
+    <div class="feature-columns">
+      <section>
+        <div class="section-intro">
+          <p class="eyebrow">{labels.capabilities}</p>
+          <h2 id="profile-features-title">{profile.featureTitle}</h2>
+        </div>
+        <ul class="editorial-bullet-list">
+          {profile.features.map((item) => <li>{item}</li>)}
+        </ul>
+      </section>
+      <section>
+        <div class="section-intro">
+          <p class="eyebrow">{labels.audience}</p>
+          <h2 id="profile-audience-title">{profile.audienceTitle}</h2>
+        </div>
+        <ul class="editorial-bullet-list">
+          {profile.audience.map((item) => <li>{item}</li>)}
+        </ul>
+      </section>
     </div>
-    <article class="card">
-      <ul>
-        {profile.features.slice(0, 3).map((item) => <li>{item}</li>)}
-      </ul>
-    </article>
-  </section>
-
-  <section class="shell" aria-labelledby="profile-audience-title">
-    <div class="section-intro">
-      <h2 id="profile-audience-title">{profile.audienceTitle}</h2>
-    </div>
-    <article class="card">
-      <ul>
-        {profile.audience.map((item) => <li>{item}</li>)}
-      </ul>
-    </article>
   </section>
 
   {galleryShowcase.length > 0 && (
     <section class="shell showcase-section" aria-labelledby="profile-showcase-title">
-      <h2 id="profile-showcase-title" class="sr-only">{locale === 'zh' ? '阳光呼吸分图展示' : 'Sunny Breath gallery'}</h2>
+      <div class="section-intro section-split">
+        <div>
+          <p class="eyebrow">{labels.visuals}</p>
+          <h2 id="profile-showcase-title" class="showcase-title-visually">{profile.name}</h2>
+        </div>
+      </div>
       <div class="promo-grid promo-grid-rich">
         {galleryShowcase.map((image) => (
           <figure class="promo-card promo-card-plain">
@@ -141,14 +175,17 @@ const remainingOpening = profile.opening.slice(1);
 
   {legalLinks && (
     <section class="shell" aria-labelledby="profile-legal-title">
-      <article class="card">
-        <h2 id="profile-legal-title">{profile.legalTitle}</h2>
-        <p>{profile.legalIntro}</p>
+      <div class="legal-bar">
+        <div>
+          <p class="eyebrow">{labels.legal}</p>
+          <h2 id="profile-legal-title">{profile.legalTitle}</h2>
+          <p>{profile.legalIntro}</p>
+        </div>
         <div class="legal-links">
           <a class="btn btn-secondary" href={withBase(legalLinks.privacyPath)}>{profile.legalPrivacyLabel}</a>
           <a class="btn btn-secondary" href={withBase(legalLinks.termsPath)}>{profile.legalTermsLabel}</a>
         </div>
-      </article>
+      </div>
     </section>
   )}
 </BaseLayout>

@@ -129,21 +129,21 @@ const sharedAppsZh: AppItem[] = [
     id: 'sunshine-breath',
     name: '阳光呼吸',
     nameEn: 'Sunny Breath',
-    oneLine: '给早晨一个温柔开机动作：呼吸、光线与小仪式。',
+    oneLine: '不是闹钟，是为清晨前 10 分钟设计的温柔启动。',
     status: 'coming',
-    bullets: ['2 分钟晨间呼吸引导', '柔和唤醒节奏，减少起床焦虑', '可自定义“开始一天”微仪式'],
+    bullets: ['渐进音乐唤醒，减少被突然惊醒的紧张', '1-3 个无压力启动动作，先跨过起身阻力', '极简情绪记录与节律辅助，不制造打卡焦虑'],
     detail:
-      '阳光呼吸服务于“刚醒来的那几分钟”。它不催你冲刺，而是帮你在身体和意识之间搭一座桥，让一天从稳定而非紧绷开始。'
+      '阳光呼吸处理的不是“如何更狠地早起”，而是醒来后最容易卡住的 0-10 分钟。它用渐进音乐、轻动作和简短记录，把慌张改成可回来的节奏。'
   },
   {
     id: 'light-ideas',
     name: '轻想法',
     nameEn: 'Light Ideas',
-    oneLine: '让漂浮的念头先有地方落下，再慢慢凝结。',
+    oneLine: 'Bubble, Glass, Break: 先接住念头，再决定留下还是放走。',
     status: 'progress',
-    bullets: ['快速记录刚刚出现的微想法', '从 bubble 到 glass 的轻整理路径', '更贴近 ADHD 节奏的承接方式'],
+    bullets: ['快速记录后先进入 Bubble 区，不强迫立刻整理', '长按凝结为 Glass 卡片，双击或三击可自然释放', '拖拽分界线、24 小时蒸发与懒加载时间线都为低压使用服务'],
     detail:
-      '轻想法不是待办列表升级版，而是一个“漂浮到凝结”的想法板。它让你先接住念头，再决定要不要留下，而不是一开始就被迫管理。'
+      '轻想法来自 ADHD 语境下的真实问题：不是没有想法，而是想法来得太快。它把想法做成有物理感的状态变化，而不是把你推进另一个需要管理的系统。'
   },
   {
     id: 'steady-flow',
@@ -172,21 +172,21 @@ const sharedAppsEn: AppItem[] = [
     id: 'sunshine-breath',
     name: 'Sunny Breath',
     nameEn: '阳光呼吸',
-    oneLine: 'A soft morning start with breath, light, and tiny rituals.',
+    oneLine: 'Not an alarm, but a gentle start for the first 10 minutes of the morning.',
     status: 'coming',
-    bullets: ['2-minute guided breathing', 'Gentle wake rhythm to ease morning anxiety', 'Personalizable start-of-day ritual'],
+    bullets: ['Gradual wake music to reduce the shock of abrupt alarms', '1-3 low-pressure starter actions to cross morning resistance', 'Minimal mood logging and rhythm support without streak anxiety'],
     detail:
-      'Sunny Breath is for the first minutes after waking up. It does not push you to perform. It helps your body and attention meet before the day gets loud.'
+      'Sunny Breath is built around the hardest part of mornings: the first 0-10 minutes. It uses gradual audio, tiny actions, and a short check-in to turn panic into a pace you can re-enter.'
   },
   {
     id: 'light-ideas',
     name: 'Light Ideas',
     nameEn: '轻想法',
-    oneLine: 'Give fleeting thoughts a place to land before they disappear.',
+    oneLine: 'Bubble, Glass, Break: catch a thought first, then decide whether it stays.',
     status: 'progress',
-    bullets: ['Quick capture for just-arrived thoughts', 'A light path from bubble to glass', 'A gentler rhythm shaped for ADHD-friendly use'],
+    bullets: ['Quick capture lands ideas in the Bubble zone without forcing structure', 'Long-press to condense into Glass, double-tap or triple-tap to let go', 'A draggable divider, 24-hour evaporation, and lazy timelines keep the board light'],
     detail:
-      'Light Ideas is not another strict planner. It is a board for thoughts in transition, so ideas can land safely before you decide whether to keep, condense, or release them.'
+      'Light Ideas responds to a real ADHD-shaped problem: not a lack of ideas, but too many arriving too quickly. It turns organization into a tactile state change instead of another management burden.'
   },
   {
     id: 'steady-flow',

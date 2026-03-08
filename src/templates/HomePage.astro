@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import AppCard from '../components/AppCard.astro';
 import FlowMotif from '../components/FlowMotif.astro';
 import { getCopy } from '../i18n/copy';
 import { pathFor, type Locale, withBase } from '../i18n/utils';
@@ -17,11 +16,53 @@ const quickTags =
     ? ['#在场', '#轻结构', '#数字健康', '#ADHD友好', '#反成瘾']
     : ['#presence', '#gentle-structure', '#digital-wellbeing', '#ADHD-friendly', '#anti-addictive'];
 const appMotifs: Array<'wave' | 'rings' | 'breathe'> = ['breathe', 'wave', 'rings', 'wave'];
+const contrastPanels =
+  locale === 'zh'
+    ? [
+        {
+          label: 'Before',
+          title: '被提示、热搜和自动化拉走',
+          lines: ['刚起念头，就被别的刺激截断。', '习惯还没开始，评价已经先到了。']
+        },
+        {
+          label: 'After',
+          title: '给注意力一点空气，再决定下一步',
+          lines: ['先接住，再整理。', '先回到当下，再进入节奏。']
+        }
+      ]
+    : [
+        {
+          label: 'Before',
+          title: 'Pulled by prompts, trends, and autoplay loops',
+          lines: ['A thought appears and is interrupted instantly.', 'Judgment arrives before any rhythm can form.']
+        },
+        {
+          label: 'After',
+          title: 'Give attention some air before deciding the next move',
+          lines: ['Catch first, then organize.', 'Return to the moment before entering the day.']
+        }
+      ];
+const labels =
+  locale === 'zh'
+    ? {
+        story: '品牌故事',
+        quote: '立场',
+        principles: '原则',
+        products: '产品方向',
+        focus: '参考方向'
+      }
+    : {
+        story: 'Brand Story',
+        quote: 'Position',
+        principles: 'Principles',
+        products: 'Products',
+        focus: 'Focus'
+      };
 ---
 
 <BaseLayout title={t.meta.siteName} description={t.meta.description} locale={locale} path={path}>
-  <section class="hero hero-v2 shell">
-    <div class="hero-copy">
+  <section class="hero hero-v2 shell editorial-hero">
+    <div class="hero-copy hero-copy-editorial">
       <p class="eyebrow">{t.hero.eyebrow}</p>
       <h1>{t.hero.title}</h1>
       <p class="lead">{t.hero.tagline}</p>
@@ -30,36 +71,41 @@ const appMotifs: Array<'wave' | 'rings' | 'breathe'> = ['breathe', 'wave', 'ring
         <a class="btn btn-secondary" href={`#${t.story.id}`}>{t.hero.secondaryCta}</a>
       </div>
       <p class="calm-note">{t.hero.calmNote}</p>
-    </div>
-    <div class="hero-board" aria-label={locale === 'zh' ? '品牌方向总览' : 'Brand direction overview'}>
-      <article class="hero-tile hero-tile-art">
-        <FlowMotif kind="wave" />
-        <FlowMotif kind="rings" />
-      </article>
-      <article class="hero-tile">
-        <p class="tile-kicker">{locale === 'zh' ? '正在构建' : 'Building now'}</p>
-        <h3>{t.apps.items[0].name}</h3>
-        <p>{t.apps.items[0].oneLine}</p>
-      </article>
-      <article class="hero-tile">
-        <p class="tile-kicker">{locale === 'zh' ? '探索方向' : 'Focus tags'}</p>
+      <div class="hero-footnote">
+        <span>{labels.focus}</span>
         <div class="tag-row">
           {quickTags.slice(0, 4).map((tag) => (
             <span class="tag-pill">{tag}</span>
           ))}
         </div>
-      </article>
+      </div>
+    </div>
+    <div class="contrast-stack" aria-label={locale === 'zh' ? '对照' : 'Contrast'}>
+      {contrastPanels.map((panel, index) => (
+        <article class={`contrast-panel ${index === 1 ? 'contrast-panel-strong' : ''}`}>
+          <p class="tile-kicker">{panel.label}</p>
+          <h3>{panel.title}</h3>
+          <div class="contrast-lines">
+            {panel.lines.map((line) => <p>{line}</p>)}
+          </div>
+        </article>
+      ))}
+      <div class="hero-motif-wrap" aria-hidden="true">
+        <FlowMotif kind="wave" />
+        <FlowMotif kind="rings" />
+      </div>
     </div>
   </section>
 
   <section class="shell story" id={t.story.id}>
     <div class="story-head">
       <div class="section-intro story-intro">
-        <p class="eyebrow">{locale === 'zh' ? '品牌故事' : 'Brand Story'}</p>
+        <p class="eyebrow">{labels.story}</p>
         <h2>{t.story.title}</h2>
         <p>{t.story.intro}</p>
       </div>
       <blockquote class="quote story-quote">
+        <p class="story-quote-label">{labels.quote}</p>
         <p>{t.story.quote}</p>
       </blockquote>
     </div>
@@ -76,38 +122,53 @@ const appMotifs: Array<'wave' | 'rings' | 'breathe'> = ['breathe', 'wave', 'ring
 
   <section class="shell">
     <div class="section-intro">
-      <p class="eyebrow">{locale === 'zh' ? '设计原则' : 'Principles'}</p>
+      <p class="eyebrow">{labels.principles}</p>
       <h2>{t.principles.title}</h2>
       <p>{t.principles.intro}</p>
     </div>
-    <div class="principle-grid">
-      {t.principles.items.map((item) => (
-        <article class="card principle-card">
+    <div class="principle-list">
+      {t.principles.items.map((item, index) => (
+        <article class="principle-row">
+          <p class="story-index">{String(index + 1).padStart(2, '0')}</p>
+          <div class="principle-row-main">
+            <h3>{item.title}</h3>
+            <p>{item.body}</p>
+          </div>
           <p class="principle-icon" aria-hidden="true">{item.icon}</p>
-          <h3>{item.title}</h3>
-          <p>{item.body}</p>
         </article>
       ))}
     </div>
   </section>
 
   <section class="shell" aria-labelledby="apps-showcase-title">
-    <div class="section-intro">
-      <p class="eyebrow">{locale === 'zh' ? '产品方向' : 'Products'}</p>
-      <h2 id="apps-showcase-title">{t.apps.title}</h2>
+    <div class="section-intro section-split">
+      <div>
+        <p class="eyebrow">{labels.products}</p>
+        <h2 id="apps-showcase-title">{t.apps.title}</h2>
+      </div>
       <p>{t.apps.intro}</p>
     </div>
-    <div class="app-grid app-grid-showcase">
+    <div class="product-list">
       {t.apps.items.map((app, index) => (
-        <AppCard
-          app={app}
-          locale={locale}
-          badgeComing={t.apps.badgeComing}
-          badgeProgress={t.apps.badgeProgress}
-          learnMore={t.apps.learnMore}
-          variant={index === 0 ? 'featured' : 'default'}
-          motif={appMotifs[index] ?? 'wave'}
-        />
+        <article class={`product-row ${index === 0 ? 'product-row-featured' : ''}`} id={`home-${app.id}`}>
+          <div class="product-row-index">
+            <span>{String(index + 1).padStart(2, '0')}</span>
+          </div>
+          <div class="product-row-copy">
+            <p class="tile-kicker">{app.nameEn}</p>
+            <h3>{app.name}</h3>
+            <p class="lead-sm">{app.oneLine}</p>
+            <ul class="product-bullets">
+              {app.bullets.slice(0, index === 0 ? 3 : 2).map((item) => <li>{item}</li>)}
+            </ul>
+            <a class="text-link" href={withBase(pathFor(locale, 'apps')) + `#${app.id}`}>
+              {t.apps.learnMore}
+            </a>
+          </div>
+          <div class="product-row-art" aria-hidden="true">
+            <FlowMotif kind={appMotifs[index] ?? 'wave'} />
+          </div>
+        </article>
       ))}
     </div>
   </section>
