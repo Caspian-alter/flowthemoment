@@ -2,6 +2,7 @@
 import { getCopy } from '../i18n/copy';
 import { pathFor, stripBase, type Locale, withBase } from '../i18n/utils';
 import LanguageSwitcher from './LanguageSwitcher.astro';
+import { getProfilePath } from '../i18n/app-profiles';
 
 interface Props {
   locale: Locale;
@@ -11,6 +12,13 @@ interface Props {
 const { locale, pathname } = Astro.props;
 const t = getCopy(locale);
 const currentPath = stripBase(pathname);
+const appRelatedPaths = t.apps.items
+  .map((item) => getProfilePath(locale, item.id))
+  .filter((item): item is string => Boolean(item))
+  .map((item) => {
+    const normalized = stripBase(item);
+    return normalized.endsWith('/') && normalized !== '/' ? normalized.slice(0, -1) : normalized;
+  });
 
 const links = [
   { href: withBase(pathFor(locale, 'home')), label: t.nav.home, internal: pathFor(locale, 'home') },
@@ -22,6 +30,13 @@ const links = [
 function activeFor(link: string): boolean {
   const normalizedPath = currentPath.endsWith('/') && currentPath !== '/' ? currentPath.slice(0, -1) : currentPath;
   const normalizedLink = link.endsWith('/') && link !== '/' ? link.slice(0, -1) : link;
+  if (normalizedLink === pathFor(locale, 'apps')) {
+    return (
+      normalizedPath === normalizedLink ||
+      normalizedPath.startsWith(`${normalizedLink}/`) ||
+      appRelatedPaths.includes(normalizedPath)
+    );
+  }
   return normalizedPath === normalizedLink;
 }
 ---
@@ -29,8 +44,11 @@ function activeFor(link: string): boolean {
 <header class="site-header">
   <div class="shell nav-shell">
     <a href={withBase(pathFor(locale, 'home'))} class="brand-mark">
-      <span aria-hidden="true">~</span>
-      <strong>Flow the Moment</strong>
+      <span class="brand-mark-symbol" aria-hidden="true">~</span>
+      <span class="brand-mark-copy">
+        <strong>Flow the Moment</strong>
+        <small>流动此刻</small>
+      </span>
     </a>
     <nav aria-label={t.common.navLabel}>
       <ul>

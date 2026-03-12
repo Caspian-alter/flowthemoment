@@ -15,14 +15,16 @@ const year = new Date().getFullYear();
 
 <footer class="site-footer">
   <div class="shell footer-grid">
-    <div>
+    <div class="footer-brand">
+      <p class="footer-kicker">Flow the Moment</p>
       <p class="footer-note">{t.footer.studioNote}</p>
       <p class="copyright">{t.footer.copyright.replace('{year}', String(year))}</p>
     </div>
     <div class="footer-links" aria-label={t.common.footerLinksLabel}>
       <a href={withBase(pathFor(locale, 'apps'))}>{t.nav.apps}</a>
+      <a href={withBase(pathFor(locale, 'about'))}>{t.nav.about}</a>
       <a href={withBase(pathFor(locale, 'privacy'))}>{t.nav.privacy}</a>
-      <a href="#" aria-disabled="true">{t.footer.social}</a>
+      <span class="footer-placeholder" aria-disabled="true">{t.footer.social}</span>
     </div>
     <LanguageSwitcher locale={locale} pathname={pathname} />
   </div>

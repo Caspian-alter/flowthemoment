@@ -38,7 +38,7 @@ body {
 }
 
 body {
-  font-family: 'Plus Jakarta Sans', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Onest', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   color: var(--text);
   background:
     radial-gradient(circle at 16% 14%, rgba(171, 196, 219, 0.15), transparent 28%),
@@ -76,7 +76,7 @@ main {
 h1,
 h2,
 h3 {
-  font-family: 'Noto Serif SC', 'Plus Jakarta Sans', serif;
+  font-family: 'Newsreader', 'Noto Serif SC', serif;
   line-height: 1.18;
   margin: 0 0 var(--space-2);
   font-weight: 600;
@@ -118,14 +118,31 @@ li {
   padding: 0 1rem;
 }
 
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  z-index: 200;
+  padding: 0.6rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(241, 245, 249, 0.95);
+  color: #152131;
+  text-decoration: none;
+  box-shadow: var(--shadow-soft);
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
 .site-header {
   position: sticky;
   top: 0;
   z-index: 50;
-  backdrop-filter: blur(24px) saturate(140%);
-  -webkit-backdrop-filter: blur(24px) saturate(140%);
-  background: rgba(16, 26, 42, 0.52);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px) saturate(130%);
+  -webkit-backdrop-filter: blur(18px) saturate(130%);
+  background: linear-gradient(180deg, rgba(10, 16, 28, 0.78), rgba(10, 16, 28, 0.52));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .nav-shell {
@@ -142,18 +159,32 @@ li {
 .brand-mark {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
+  gap: 0.65rem;
   text-decoration: none;
   white-space: nowrap;
 }
 
-.brand-mark strong {
-  letter-spacing: -0.01em;
+.brand-mark-copy {
+  display: grid;
+  gap: 0.04rem;
 }
 
-.brand-mark span {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 1.4rem;
+.brand-mark strong {
+  letter-spacing: -0.02em;
+  font-size: 0.98rem;
+  line-height: 1.05;
+}
+
+.brand-mark small {
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+.brand-mark-symbol {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 1.35rem;
+  transform: translateY(-1px);
 }
 
 .site-header nav ul {
@@ -174,43 +205,36 @@ li {
 
 .site-header nav a {
   display: inline-block;
-  padding: 0.36rem 0.72rem;
-  border-radius: 999px;
+  padding: 0.42rem 0.1rem;
   text-decoration: none;
   color: var(--muted);
-  border: 1px solid rgba(255, 255, 255, 0);
-  transition: border-color 180ms ease, background-color 180ms ease, color 180ms ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0);
+  transition: border-color 180ms ease, color 180ms ease;
 }
 
 .site-header nav a[aria-current='page'] {
   color: var(--text);
-  background: var(--surface-strong);
-  border-color: var(--surface-border);
-  box-shadow: var(--inner-highlight);
+  border-color: rgba(255, 255, 255, 0.42);
 }
 
 .site-header nav a:hover {
   color: var(--text);
-  background: rgba(241, 245, 249, 0.08);
-  border-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.18);
 }
 
 .lang-switch {
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
-  padding: 0.2rem;
+  padding: 0.14rem;
   border-radius: 999px;
-  border: 1px solid var(--line);
-  background: rgba(241, 245, 249, 0.08);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  box-shadow: var(--inner-highlight);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(241, 245, 249, 0.05);
 }
 
 .lang-switch a {
   display: inline-block;
-  padding: 0.28rem 0.62rem;
+  padding: 0.3rem 0.68rem;
   border-radius: 999px;
   text-decoration: none;
   color: var(--muted);
@@ -218,7 +242,7 @@ li {
 }
 
 .lang-switch a.active {
-  background: var(--surface-strong);
+  background: rgba(241, 245, 249, 0.12);
   color: var(--text);
 }
 
@@ -240,8 +264,8 @@ section {
 .eyebrow {
   margin: 0 0 var(--space-1);
   color: var(--muted);
-  font-size: 0.92rem;
-  letter-spacing: 0.04em;
+  font-size: 0.84rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -356,8 +380,8 @@ section {
 
 .tile-kicker {
   margin: 0 0 0.35rem;
-  font-size: 0.78rem;
-  letter-spacing: 0.04em;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #d3deef;
 }
@@ -402,15 +426,12 @@ section {
   display: inline-flex;
   align-items: center;
   border-radius: 999px;
-  background: rgba(241, 245, 249, 0.08);
-  border: 1px solid var(--surface-border);
+  background: rgba(241, 245, 249, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   color: #dde7f6;
-  padding: 0.34rem 0.72rem;
+  padding: 0.34rem 0.66rem;
   font-size: 0.82rem;
   text-decoration: none;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  box-shadow: var(--inner-highlight);
 }
 
 .story-grid,
@@ -544,11 +565,9 @@ section {
   border-radius: calc(var(--radius) + 4px);
   background:
     radial-gradient(circle at 12% 12%, rgba(255, 255, 255, 0.1), transparent 34%),
-    linear-gradient(180deg, rgba(241, 245, 249, 0.16), rgba(241, 245, 249, 0.07));
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: var(--shadow-soft), var(--inner-highlight);
-  backdrop-filter: blur(24px) saturate(140%);
-  -webkit-backdrop-filter: blur(24px) saturate(140%);
+    linear-gradient(180deg, rgba(241, 245, 249, 0.1), rgba(241, 245, 249, 0.03));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: var(--shadow-soft), inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .contrast-panel h3 {
@@ -663,11 +682,11 @@ section {
   min-height: 180px;
   padding: 1rem;
   border-radius: calc(var(--radius) + 4px);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   background:
-    radial-gradient(circle at 84% 12%, rgba(255, 255, 255, 0.08), transparent 30%),
-    linear-gradient(170deg, rgba(241, 245, 249, 0.12), rgba(241, 245, 249, 0.04));
-  box-shadow: var(--inner-highlight);
+    radial-gradient(circle at 84% 12%, rgba(255, 255, 255, 0.07), transparent 30%),
+    linear-gradient(170deg, rgba(241, 245, 249, 0.08), rgba(241, 245, 249, 0.02));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .product-row-art .motif {
@@ -769,9 +788,9 @@ section {
   overflow: hidden;
   background:
     radial-gradient(circle at 84% 12%, rgba(255, 255, 255, 0.12), transparent 32%),
-    linear-gradient(170deg, rgba(241, 245, 249, 0.16), rgba(241, 245, 249, 0.08));
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: var(--shadow-soft), var(--inner-highlight);
+    linear-gradient(170deg, rgba(241, 245, 249, 0.12), rgba(241, 245, 249, 0.05));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: var(--shadow-soft), inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .cover-figure-editorial img {
@@ -781,11 +800,11 @@ section {
 .cover-fallback-editorial {
   min-height: 320px;
   border-radius: 28px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   background:
     radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.1), transparent 34%),
-    linear-gradient(165deg, rgba(241, 245, 249, 0.14), rgba(241, 245, 249, 0.06));
-  box-shadow: var(--shadow-soft), var(--inner-highlight);
+    linear-gradient(165deg, rgba(241, 245, 249, 0.1), rgba(241, 245, 249, 0.04));
+  box-shadow: var(--shadow-soft), inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .editorial-prose {
@@ -908,13 +927,6 @@ section {
   font-size: 0.78rem;
   white-space: nowrap;
   box-shadow: var(--inner-highlight);
-}
-
-.text-link {
-  font-weight: 600;
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
 }
 
 .waitlist {
@@ -1265,15 +1277,26 @@ details p {
   border-top: 1px solid var(--line);
   margin-top: var(--space-5);
   padding: 1.4rem 0 1.8rem;
-  background: rgba(16, 26, 42, 0.34);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  background: rgba(10, 16, 28, 0.32);
 }
 
 .footer-grid {
   display: grid;
   gap: 1rem;
   align-items: center;
+}
+
+.footer-brand {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.footer-kicker {
+  margin: 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #d2deee;
 }
 
 .footer-note,
@@ -1295,6 +1318,10 @@ details p {
 
 .footer-links a:hover {
   color: var(--text);
+}
+
+.footer-placeholder {
+  color: rgba(175, 190, 209, 0.7);
 }
 
 .not-found {
