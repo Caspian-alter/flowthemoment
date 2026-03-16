@@ -232,7 +232,127 @@ landingfeather@163.com`
   }
 };
 
+const cravingCatDocs: Record<Locale, AppLegalDocumentSet> = {
+  zh: {
+    privacyTitle: '隐私协议',
+    privacyBody: `版本号：v0.1
+生效日期：2026-03-17
+更新日期：2026-03-17
+
+欢迎使用「成瘾猫（Craving Cat）」。
+本页面为成瘾猫独立网页预留的隐私协议入口，当前内容用于说明首版产品中的主要数据处理方式；正式上架前可在此基础上继续更新。
+
+一、我们处理的信息
+1. Screen Time 授权状态：用于判断你是否已允许应用调用 iOS Family Controls / DeviceActivity / ManagedSettings 相关能力。
+2. 受保护对象与规则：包括你选择的 App、分类、网页域名，以及对应的每日总量、单次上限、豁免时间等规则配置。
+3. 最近一次触发与选择状态：例如阈值触发、豁免按钮、暂停按钮等状态，用于在应用内同步显示最近一次介入结果。
+
+二、存储方式
+当前版本以本地存储与 App Group 共享存储为主，用于在主应用与 iOS 扩展之间同步必要配置和状态。
+截至本页面更新时，成瘾猫不依赖用户注册账号作为核心使用前提。
+
+三、系统能力与第三方
+成瘾猫使用 Apple 提供的 Screen Time 相关系统能力，包括但不限于 FamilyControls、DeviceActivity、ManagedSettings，以及 App Group 共享容器。
+这些能力的实际可用性受 Apple 平台权限、系统版本、签名与设备环境影响。
+
+四、你的控制权
+你可以随时在系统设置或应用内关闭授权、修改受保护对象、调整规则，或停止原生守护。
+
+五、后续更新
+当正式网页 URL、反馈渠道、内购方案或云端能力接入后，本页面会补充更完整的隐私说明。`,
+    termsTitle: '使用条款',
+    termsBody: `版本号：v0.1
+生效日期：2026-03-17
+更新日期：2026-03-17
+
+欢迎使用「成瘾猫（Craving Cat）」。
+本页面为成瘾猫独立网页预留的使用条款入口，当前版本用于说明首版产品的基本服务边界。
+
+一、服务内容
+成瘾猫提供基于 iOS Screen Time 能力的温和冲动中断体验，包括受保护对象选择、规则设置、原生 Shield 介入、猫猫陪伴页与呼吸引导等功能。
+
+二、使用说明
+1. 本应用并非医疗、治疗或紧急干预工具。
+2. 部分能力依赖 iPhone 真机、Apple 授权、Family Controls 能力与对应扩展正常签名。
+3. 若系统权限、设备状态、Apple 平台策略或签名环境异常，相关功能可能无法完整生效。
+
+三、规则与责任
+你应合法、正当地使用本应用，不得利用本应用或其扩展从事绕过系统限制、干扰设备安全或侵犯第三方权益的行为。
+
+四、内购与后续商业化
+当前网页已为订阅 / 支持方案预留位置。若未来接入试用、订阅或买断，具体商品名称、价格、币种、试用政策与退款规则以 App Store 实际展示为准。
+若你通过 iOS / iPadOS 平台下载或使用本应用，还应遵守 Apple 的《Licensed Application End User License Agreement（Standard EULA）》：
+https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+
+五、页面性质
+本页面当前已可作为独立 URL 使用，但仍属于首版预留法律页。正式上架或接入新能力前，开发者可能继续补充、修订和细化内容。`
+  },
+  en: {
+    privacyTitle: 'Privacy Policy',
+    privacyBody: `Version: v0.1
+Effective Date: 2026-03-17
+Updated: 2026-03-17
+
+Welcome to Craving Cat.
+This page is the reserved privacy entry for the standalone Craving Cat product page. The current text describes the main data-handling scope of the MVP and can be refined before release.
+
+1. Information We Handle
+- Screen Time authorization state, so the app can determine whether iOS Family Controls / DeviceActivity / ManagedSettings access has been granted.
+- Protected targets and rules, including selected apps, categories, web domains, and rule values such as daily totals, single-session caps, and exemption windows.
+- Recent trigger and choice states, such as threshold events or shield-button outcomes, so the app can reflect the latest intervention state.
+
+2. Storage
+The current MVP relies primarily on local storage and App Group shared storage so the main app and iOS extensions can sync necessary configuration and state.
+As of this update, Craving Cat does not depend on user account registration as a core requirement.
+
+3. System Capabilities and Third Parties
+Craving Cat uses Apple-provided Screen Time related capabilities, including FamilyControls, DeviceActivity, ManagedSettings, and App Group shared containers.
+Actual availability depends on Apple platform permissions, OS version, signing, and device environment.
+
+4. Your Control
+You can stop protection, modify protected targets, adjust rules, or revoke permissions through the app or system settings.
+
+5. Future Updates
+When the official product URL, feedback channel, purchases, or cloud features are finalized, this page will be expanded into a fuller privacy policy.`,
+    termsTitle: 'Terms of Use',
+    termsBody: `Version: v0.1
+Effective Date: 2026-03-17
+Updated: 2026-03-17
+
+Welcome to Craving Cat.
+This page is the reserved terms entry for the standalone Craving Cat product page. The current version outlines the MVP service boundary.
+
+1. Services
+Craving Cat provides a gentle Screen Time intervention experience built on iOS capabilities, including protected target selection, rule tuning, native shield interruption, cat companion moments, and breathing guidance.
+
+2. Use Notes
+- The app is not a medical, therapeutic, or emergency intervention tool.
+- Some features require a physical iPhone, Apple authorization, Family Controls capability, and correctly signed extensions.
+- If permissions, device state, Apple platform policy, or signing conditions are unavailable, parts of the experience may not function fully.
+
+3. Acceptable Use
+You must use the app lawfully and may not use the app or its extensions to bypass platform restrictions, interfere with device security, or infringe third-party rights.
+
+4. Purchases and Future Commercialization
+The product already reserves space for subscription and support plans. If trials, subscriptions, or lifetime unlock products are added later, names, prices, currencies, trial rules, and refund handling will follow the App Store listing.
+If you download or use the app on iOS / iPadOS, your use is also subject to Apple’s Licensed Application End User License Agreement (Standard EULA):
+https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+
+5. Page Status
+This page already works as a standalone URL, but it is still a first-release legal placeholder. The text may be expanded or refined before public release or major feature updates.`
+  }
+};
+
 const legalApps: LegalAppDefinition[] = [
+  {
+    id: 'craving-cat',
+    slug: 'craving-cat',
+    names: {
+      zh: '成瘾猫 / Craving Cat',
+      en: 'Craving Cat / 成瘾猫'
+    },
+    documents: cravingCatDocs
+  },
   {
     id: 'sunshine-breath',
     slug: 'sunny-breath',

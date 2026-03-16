@@ -13,7 +13,7 @@ interface Props {
 
 const { locale, path } = Astro.props;
 const t = getCopy(locale);
-const motifs: Array<'wave' | 'rings' | 'breathe'> = ['breathe', 'wave', 'rings', 'wave'];
+const motifs: Array<'cat' | 'wave' | 'rings' | 'breathe'> = ['cat', 'breathe', 'wave', 'rings'];
 const focusTags =
   locale === 'zh'
     ? ['轻启动', '微结构', '低压专注', '反成瘾']

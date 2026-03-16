@@ -1,6 +1,6 @@
 ---
 interface Props {
-  kind?: 'wave' | 'rings' | 'breathe';
+  kind?: 'wave' | 'rings' | 'breathe' | 'cat';
 }
 
 const { kind = 'wave' } = Astro.props;
@@ -32,5 +32,32 @@ const { kind = 'wave' } = Astro.props;
     <ellipse cx="68" cy="62" rx="54" ry="36" fill="var(--accent-soft)" opacity="0.55" />
     <ellipse cx="132" cy="62" rx="54" ry="36" fill="var(--accent)" opacity="0.35" />
     <path d="M38 96C78 68 122 68 162 96" fill="none" stroke="var(--accent-deep)" stroke-width="3" stroke-linecap="round" />
+  </svg>
+)}
+
+{kind === 'cat' && (
+  <svg class="motif motif-cat" viewBox="0 0 240 200" aria-hidden="true">
+    <defs>
+      <linearGradient id="catBodyGrad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#f4c9a8" />
+        <stop offset="100%" stop-color="#d89068" />
+      </linearGradient>
+    </defs>
+    <circle cx="120" cy="92" r="54" fill="url(#catBodyGrad)" />
+    <path d="M82 58L100 24L112 58Z" fill="#d89068" />
+    <path d="M128 58L140 24L158 58Z" fill="#d89068" />
+    <ellipse cx="120" cy="108" rx="34" ry="22" fill="#fff7ef" opacity="0.9" />
+    <circle cx="102" cy="88" r="7" fill="#2c3340" />
+    <circle cx="138" cy="88" r="7" fill="#2c3340" />
+    <path d="M120 98L113 108H127Z" fill="#c88469" />
+    <path d="M108 120C112 126 117 128 120 128C123 128 128 126 132 120" fill="none" stroke="#2c3340" stroke-width="3.4" stroke-linecap="round" />
+    <path d="M90 106C72 102 62 102 46 106" fill="none" stroke="#2c3340" stroke-width="2.6" stroke-linecap="round" opacity="0.55" />
+    <path d="M90 114C72 116 62 118 46 124" fill="none" stroke="#2c3340" stroke-width="2.6" stroke-linecap="round" opacity="0.55" />
+    <path d="M150 106C168 102 178 102 194 106" fill="none" stroke="#2c3340" stroke-width="2.6" stroke-linecap="round" opacity="0.55" />
+    <path d="M150 114C168 116 178 118 194 124" fill="none" stroke="#2c3340" stroke-width="2.6" stroke-linecap="round" opacity="0.55" />
+    <circle cx="188" cy="56" r="20" fill="var(--accent-soft)" opacity="0.7" />
+    <rect x="180" y="48" width="6" height="16" rx="3" fill="var(--accent-deep)" />
+    <rect x="190" y="48" width="6" height="16" rx="3" fill="var(--accent-deep)" />
+    <path d="M170 152C204 126 222 140 216 174C196 186 182 174 170 152Z" fill="none" stroke="#d6a07b" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" opacity="0.85" />
   </svg>
 )}

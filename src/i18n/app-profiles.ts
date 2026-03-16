@@ -46,6 +46,132 @@ interface AppProfileDefinition {
   content: Record<Locale, AppProfile>;
 }
 
+const cravingCatProfile: AppProfileDefinition = {
+  appId: 'craving-cat',
+  slug: 'craving-cat',
+  routeStyle: 'apps',
+  content: {
+    zh: {
+      appId: 'craving-cat',
+      slug: 'craving-cat',
+      name: '成瘾猫',
+      altName: 'Craving Cat',
+      tagline: '让暂停更像被陪着，而不是被惩罚。',
+      intro: '一个基于 iOS Screen Time 原生能力的温和冲动中断应用，用猫猫陪伴替代羞辱式防沉迷。',
+      opening: [
+        '成瘾猫不是为了把你“管住”，而是为了在冲动开始加速前，先轻轻把你接住。',
+        '它不做羞耻排行榜，也不把人当成需要被修正的对象。它只在你快要滑回惯性时，留出一个真实、温柔、还能自己决定下一步的停顿。'
+      ],
+      principlesTitle: '这个产品在守护什么',
+      principles: [
+        {
+          title: '先打断冲动，再归还选择',
+          body: '守护的目标不是让你服从规则，而是让那个几乎没有意识的自动动作，重新变成一个可以被看见的选择。'
+        },
+        {
+          title: '像陪伴，不像惩罚',
+          body: 'Shield 文案、豁免按钮和猫猫陪伴页都避免羞耻语言。即使你选择“再给一点时间”，产品也不把这次判断成失败。'
+        },
+        {
+          title: '规则可以细，感受要轻',
+          body: '你可以按 App 单独设置每日总量、单次上限和单次豁免时间，但界面和语言都保持温和，不把限制做成压迫感。'
+        }
+      ],
+      flowTitle: '典型使用流',
+      flow: [
+        {
+          title: '1. 授权并选择对象',
+          body: '先完成 iOS Screen Time 授权，再用官方 Family Activity Picker 选出最容易让你失去时间感的 App、分类或网站。'
+        },
+        {
+          title: '2. 设定轻规则',
+          body: '按 App 逐个设置每日总量、单次连续使用上限和单次豁免时间，不需要一下子把所有入口都管住。'
+        },
+        {
+          title: '3. 冲动来时先被猫猫叫住',
+          body: '当阈值触发，系统弹出 Shield。你可以再给一点时间、这次先放下，或者进入猫猫陪伴与一次呼吸，把注意力慢慢拿回来。'
+        }
+      ],
+      featureTitle: '当前核心能力',
+      features: [
+        'Flutter MVP + 原生 iOS Screen Time 栈：FamilyControls、DeviceActivity、ManagedSettings',
+        '支持按 App 单独配置每日总量、单次上限与单次豁免时间，而不是只给一组粗暴总规则',
+        '内置 Shield 调试预览、猫猫陪伴页与呼吸 Sheet，可先在 App 内验证文案和介入体验',
+        '使用 App Group 共享存储连接主 App 与扩展；关键能力在真实 iPhone 上可跑通'
+      ],
+      audienceTitle: '适合这样的人',
+      audience: [
+        '容易在短视频、社交或购物 App 里失去时间感的人',
+        '不想被“你又失败了”这类产品语言二次伤害的人',
+        '需要温和边界、而不是强硬封锁或家长式控制的人'
+      ],
+      legalTitle: '法律文档',
+      legalIntro: '隐私协议和使用条款页面已经预留，后续可以直接替换为正式版本。',
+      legalPrivacyLabel: '隐私协议',
+      legalTermsLabel: '使用条款'
+    },
+    en: {
+      appId: 'craving-cat',
+      slug: 'craving-cat',
+      name: 'Craving Cat',
+      altName: '成瘾猫',
+      tagline: 'A pause that feels like company, not punishment.',
+      intro: 'A gentle impulse-interruption app built on native iOS Screen Time capabilities, using cat companionship instead of shame-based blocking.',
+      opening: [
+        'Craving Cat is not here to keep you under control. It is here to catch you right before the craving gains speed.',
+        'It avoids shame dashboards and does not treat people like problems to be fixed. When autopilot is about to take over, it leaves a real, kind pause where your next step is still yours.'
+      ],
+      principlesTitle: 'What this product protects',
+      principles: [
+        {
+          title: 'Interrupt the impulse, return the choice',
+          body: 'The goal is not obedience. The goal is to make an almost unconscious action visible again, so a real choice can re-enter.'
+        },
+        {
+          title: 'Companion, not punishment',
+          body: 'Shield copy, exemption actions, and the cat companion flow all avoid shame. Even “allow a little more” is treated as a choice, not a moral failure.'
+        },
+        {
+          title: 'Detailed rules, light emotional load',
+          body: 'Each app can carry its own daily total, single-session limit, and one-time exemption window, while the interface stays soft and non-threatening.'
+        }
+      ],
+      flowTitle: 'Typical use flow',
+      flow: [
+        {
+          title: '1. Authorize and choose targets',
+          body: 'Start with iOS Screen Time authorization, then use the official Family Activity Picker to choose the apps, categories, or domains most likely to blur your sense of time.'
+        },
+        {
+          title: '2. Set light rules',
+          body: 'Tune each app with its own daily total, single-session cap, and exemption window. You do not need to lock down everything at once.'
+        },
+        {
+          title: '3. Let the cat catch the moment',
+          body: 'When a threshold is reached, the native shield appears. You can allow a little more time, put it down for now, or open the cat companion and one guided breath.'
+        }
+      ],
+      featureTitle: 'Current core capabilities',
+      features: [
+        'Flutter MVP backed by the native iOS Screen Time stack: FamilyControls, DeviceActivity, and ManagedSettings',
+        'Per-app rule rows with daily totals, single-session caps, and one-time exemption windows instead of one blunt global limit',
+        'Built-in shield preview, cat companion, and breathing sheet to tune the intervention experience before real native triggers',
+        'App Group shared storage across the main app and extensions, with the core stack already wired for real-device testing'
+      ],
+      audienceTitle: 'Who this is for',
+      audience: [
+        'People who lose time easily inside short-form, social, or shopping apps',
+        'People who do not want to be scolded by the very tool that is supposed to help',
+        'People who need gentler boundaries instead of hard blocks or parental language'
+      ],
+      legalTitle: 'Legal Documents',
+      legalIntro: 'Privacy and terms pages are already reserved here and can be swapped with the final legal text later.',
+      legalPrivacyLabel: 'Privacy Policy',
+      legalTermsLabel: 'Terms of Use'
+    }
+  }
+};
+
 const sunnyBreathProfile: AppProfileDefinition = {
   appId: 'sunshine-breath',
   slug: 'sunny-breath',
@@ -334,7 +460,7 @@ const lightIdeasProfile: AppProfileDefinition = {
   }
 };
 
-const appProfiles: AppProfileDefinition[] = [sunnyBreathProfile, lightIdeasProfile];
+const appProfiles: AppProfileDefinition[] = [cravingCatProfile, sunnyBreathProfile, lightIdeasProfile];
 
 export function getAppProfile(locale: Locale, slug: string): AppProfile | null {
   const found = appProfiles.find((item) => item.slug === slug);

@@ -126,6 +126,16 @@ type LocaleCopy = {
 
 const sharedAppsZh: AppItem[] = [
   {
+    id: 'craving-cat',
+    name: '成瘾猫',
+    nameEn: 'Craving Cat',
+    oneLine: '让暂停更像被陪着，而不是被惩罚。',
+    status: 'progress',
+    bullets: ['原生 iOS Screen Time 守护与温和打断', '按 App 单独设置每日总量、单次上限和豁免时间', '猫猫陪伴 + 一次呼吸，把冲动变成可选择的停顿'],
+    detail:
+      '成瘾猫不是强硬封锁器，也不是羞耻统计面板。它在你快要滑回惯性时，替你留出一个真实、温柔、还能自己决定下一步的停顿。'
+  },
+  {
     id: 'sunshine-breath',
     name: '阳光呼吸',
     nameEn: 'Sunny Breath',
@@ -154,20 +164,20 @@ const sharedAppsZh: AppItem[] = [
     bullets: ['趋势词自动降噪处理', '生成自然感壁纸与静心卡片', '把“被打扰”变成“被安顿”'],
     detail:
       '稳流不否认信息洪流存在，而是把它重新编排成可承受的节律。你依然看见世界，但不再被每一次推送牵着走。'
-  },
-  {
-    id: 'app-overdose',
-    name: '应用Overdose',
-    nameEn: 'App Overdose',
-    oneLine: '用有意识的摩擦，帮你拿回时间主导权。',
-    status: 'progress',
-    bullets: ['温和拦截高频刷屏场景', '建立“我想用”而不是“我被拉走”', '不羞辱，只提供选择和恢复空间'],
-    detail:
-      '应用Overdose采用“尊重式限制”。它不是全面禁止，而是把自动化滑动变成可觉察的动作，让你在关键几秒里重新选择。'
   }
 ];
 
 const sharedAppsEn: AppItem[] = [
+  {
+    id: 'craving-cat',
+    name: 'Craving Cat',
+    nameEn: '成瘾猫',
+    oneLine: 'A pause that feels like company, not punishment.',
+    status: 'progress',
+    bullets: ['Native iOS Screen Time protection with gentle interruption', 'Per-app daily caps, session limits, and one-time exemptions', 'Cat companion + one guided breath before the craving takes over'],
+    detail:
+      'Craving Cat is not a hard lock and not a shame dashboard. It leaves a real, kind pause right before autopilot takes over, so you can still make the next choice yourself.'
+  },
   {
     id: 'sunshine-breath',
     name: 'Sunny Breath',
@@ -197,16 +207,6 @@ const sharedAppsEn: AppItem[] = [
     bullets: ['Trend keywords pass through a calming filter', 'Generate nature-like wallpapers and focus cards', 'Turn interruption into a quiet visual pause'],
     detail:
       'Steady Flow does not deny the information stream. It reframes it into patterns your nervous system can hold, so awareness stays open without overload.'
-  },
-  {
-    id: 'app-overdose',
-    name: 'App Overdose',
-    nameEn: '应用Overdose',
-    oneLine: 'Mindful friction that helps you reclaim time.',
-    status: 'progress',
-    bullets: ['Gentle checks in high-scroll moments', 'From autopilot use to intentional use', 'No shame, only choice and recovery space'],
-    detail:
-      'App Overdose uses respectful friction. It does not punish usage. It creates a small pause so your next action can be chosen, not reflexive.'
   }
 ];
 

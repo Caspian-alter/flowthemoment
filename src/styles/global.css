@@ -807,6 +807,52 @@ section {
   box-shadow: var(--shadow-soft), inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
+.cover-fallback-cat {
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+  padding: 1.4rem;
+  background:
+    radial-gradient(circle at 22% 18%, rgba(244, 197, 110, 0.18), transparent 28%),
+    radial-gradient(circle at 78% 18%, rgba(216, 144, 104, 0.18), transparent 24%),
+    linear-gradient(165deg, rgba(247, 235, 223, 0.16), rgba(159, 182, 164, 0.08));
+}
+
+.cat-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(248, 241, 231, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #fff6ef;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+}
+
+.cat-hero-notes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.55rem;
+}
+
+.cat-hero-notes span {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff3eb;
+  font-size: 0.78rem;
+}
+
+.motif-cat {
+  width: min(100%, 260px);
+}
+
 .editorial-prose {
   display: grid;
   gap: 1rem;
