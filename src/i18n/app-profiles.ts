@@ -108,7 +108,13 @@ const cravingCatProfile: AppProfileDefinition = {
       legalTitle: '法律文档',
       legalIntro: '隐私协议和使用条款页面已经预留，后续可以直接替换为正式版本。',
       legalPrivacyLabel: '隐私协议',
-      legalTermsLabel: '使用条款'
+      legalTermsLabel: '使用条款',
+      showcaseImages: [
+        {
+          src: '/images/craving-cat/cat-icon.png',
+          alt: '成瘾猫图标：温和陪伴的三花猫形象'
+        }
+      ]
     },
     en: {
       appId: 'craving-cat',
@@ -167,7 +173,13 @@ const cravingCatProfile: AppProfileDefinition = {
       legalTitle: 'Legal Documents',
       legalIntro: 'Privacy and terms pages are already reserved here and can be swapped with the final legal text later.',
       legalPrivacyLabel: 'Privacy Policy',
-      legalTermsLabel: 'Terms of Use'
+      legalTermsLabel: 'Terms of Use',
+      showcaseImages: [
+        {
+          src: '/images/craving-cat/cat-icon.png',
+          alt: 'Craving Cat icon featuring a calm calico cat companion'
+        }
+      ]
     }
   }
 };

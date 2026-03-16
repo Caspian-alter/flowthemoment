@@ -797,6 +797,35 @@ section {
   border-radius: 0;
 }
 
+.cover-figure-icon {
+  display: grid;
+  place-items: center;
+  min-height: 420px;
+  padding: 1.4rem;
+  background:
+    radial-gradient(circle at 22% 18%, rgba(244, 197, 110, 0.18), transparent 28%),
+    radial-gradient(circle at 78% 18%, rgba(216, 144, 104, 0.16), transparent 24%),
+    linear-gradient(165deg, rgba(247, 235, 223, 0.12), rgba(159, 182, 164, 0.06));
+}
+
+.cat-icon-stage {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.cat-icon-image {
+  width: min(100%, 280px);
+  height: auto;
+  border-radius: 28px;
+  background: rgba(255, 248, 240, 0.92);
+  padding: 0.7rem;
+  box-shadow:
+    0 24px 40px rgba(16, 26, 42, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
 .cover-fallback-editorial {
   min-height: 320px;
   border-radius: 28px;
