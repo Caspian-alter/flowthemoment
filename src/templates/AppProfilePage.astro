@@ -64,6 +64,14 @@ const labels =
         {galleryShowcase.length > 0 && <a href="#profile-showcase-title" class="tag-pill">{labels.visuals}</a>}
         {legalLinks && <a href="#profile-legal-title" class="tag-pill">{labels.legal}</a>}
       </div>
+      <div class="product-meta-grid">
+        {profile.features.slice(0, 3).map((item, index) => (
+          <article class="product-meta-card">
+            <p class="story-index">{String(index + 1).padStart(2, '0')}</p>
+            <p>{item}</p>
+          </article>
+        ))}
+      </div>
     </div>
     <div class="product-hero-visual">
       {profile.appId === 'craving-cat' && featuredShowcase ? (

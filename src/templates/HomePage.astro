@@ -12,37 +12,13 @@ interface Props {
 
 const { locale, path } = Astro.props;
 const t = getCopy(locale);
+const featuredApp = t.apps.items[0];
+const spotlightApps = t.apps.items.slice(1, 4);
 const quickTags =
   locale === 'zh'
     ? ['#在场', '#轻结构', '#数字健康', '#ADHD友好', '#反成瘾']
     : ['#presence', '#gentle-structure', '#digital-wellbeing', '#ADHD-friendly', '#anti-addictive'];
 const appMotifs: Array<'cat' | 'wave' | 'rings' | 'breathe'> = ['cat', 'breathe', 'wave', 'rings'];
-const contrastPanels =
-  locale === 'zh'
-    ? [
-        {
-          label: 'Before',
-          title: '被提示、热搜和自动化拉走',
-          lines: ['刚起念头，就被别的刺激截断。', '习惯还没开始，评价已经先到了。']
-        },
-        {
-          label: 'After',
-          title: '给注意力一点空气，再决定下一步',
-          lines: ['先接住，再整理。', '先回到当下，再进入节奏。']
-        }
-      ]
-    : [
-        {
-          label: 'Before',
-          title: 'Pulled by prompts, trends, and autoplay loops',
-          lines: ['A thought appears and is interrupted instantly.', 'Judgment arrives before any rhythm can form.']
-        },
-        {
-          label: 'After',
-          title: 'Give attention some air before deciding the next move',
-          lines: ['Catch first, then organize.', 'Return to the moment before entering the day.']
-        }
-      ];
 const labels =
   locale === 'zh'
     ? {
@@ -50,15 +26,21 @@ const labels =
         quote: '立场',
         principles: '原则',
         products: '产品方向',
-        focus: '参考方向'
+        focus: '参考方向',
+        leading: '当前主打',
+        collection: '正在形成中的产品线'
       }
     : {
         story: 'Brand Story',
         quote: 'Position',
         principles: 'Principles',
         products: 'Products',
-        focus: 'Focus'
+        focus: 'Focus',
+        leading: 'Now leading',
+        collection: 'A studio collection in progress'
       };
+const featuredBadge = featuredApp.status === 'progress' ? t.apps.badgeProgress : t.apps.badgeComing;
+const spotlightMotifs: Array<'breathe' | 'wave' | 'rings'> = ['breathe', 'wave', 'rings'];
 ---
 
 <BaseLayout title={t.meta.siteName} description={t.meta.description} locale={locale} path={path}>
@@ -81,19 +63,40 @@ const labels =
         </div>
       </div>
     </div>
-    <div class="contrast-stack" aria-label={locale === 'zh' ? '对照' : 'Contrast'}>
-      {contrastPanels.map((panel, index) => (
-        <article class={`contrast-panel ${index === 1 ? 'contrast-panel-strong' : ''}`}>
-          <p class="tile-kicker">{panel.label}</p>
-          <h3>{panel.title}</h3>
-          <div class="contrast-lines">
-            {panel.lines.map((line) => <p>{line}</p>)}
+    <div class="hero-stage" aria-label={locale === 'zh' ? '产品展板' : 'Product board'}>
+      <article class="hero-stage-main">
+        <div class="hero-stage-main-head">
+          <div>
+            <p class="tile-kicker">{labels.leading}</p>
+            <h3>{featuredApp.name}</h3>
           </div>
-        </article>
-      ))}
-      <div class="hero-motif-wrap" aria-hidden="true">
-        <FlowMotif kind="wave" />
-        <FlowMotif kind="rings" />
+          <span class="badge">{featuredBadge}</span>
+        </div>
+        <p class="hero-stage-main-copy">{featuredApp.oneLine}</p>
+        <div class="hero-stage-main-art" aria-hidden="true">
+          <FlowMotif kind="cat" />
+        </div>
+        <ul class="hero-stage-list">
+          {featuredApp.bullets.slice(0, 3).map((item) => <li>{item}</li>)}
+        </ul>
+        <a class="text-link" href={withBase(getProfilePath(locale, featuredApp.id) ?? pathFor(locale, 'apps'))}>
+          {t.apps.learnMore}
+        </a>
+      </article>
+      <div class="hero-stage-side">
+        <p class="tile-kicker">{labels.collection}</p>
+        {spotlightApps.map((app, index) => (
+          <a class="hero-stage-note" href={withBase(getProfilePath(locale, app.id) ?? pathFor(locale, 'apps'))}>
+            <div class="hero-stage-note-copy">
+              <p class="story-index">{String(index + 2).padStart(2, '0')}</p>
+              <h3>{app.name}</h3>
+              <p>{app.oneLine}</p>
+            </div>
+            <div class="hero-stage-note-art" aria-hidden="true">
+              <FlowMotif kind={spotlightMotifs[index] ?? 'wave'} />
+            </div>
+          </a>
+        ))}
       </div>
     </div>
   </section>

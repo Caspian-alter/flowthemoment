@@ -14,6 +14,7 @@ interface Props {
 const { locale, path } = Astro.props;
 const t = getCopy(locale);
 const motifs: Array<'cat' | 'wave' | 'rings' | 'breathe'> = ['cat', 'breathe', 'wave', 'rings'];
+const suiteHighlights = t.apps.items.slice(0, 3);
 const focusTags =
   locale === 'zh'
     ? ['轻启动', '微结构', '低压专注', '反成瘾']
@@ -38,11 +39,22 @@ const labels =
       <p class="eyebrow">Flow the Moment</p>
       <h1>{t.appsPage.title}</h1>
     </div>
-    <div class="page-hero-side">
+    <div class="page-hero-side page-hero-board">
       <p class="lead">{t.appsPage.intro}</p>
       <div class="tag-row">
         {focusTags.map((tag) => (
           <span class="tag-pill">{tag}</span>
+        ))}
+      </div>
+      <div class="page-hero-notes" aria-label={locale === 'zh' ? '产品摘要' : 'Product summary'}>
+        {suiteHighlights.map((app, index) => (
+          <a class="page-hero-note" href={withBase(getProfilePath(locale, app.id) ?? '#')}>
+            <span class="story-index">{String(index + 1).padStart(2, '0')}</span>
+            <div>
+              <h3>{app.name}</h3>
+              <p>{app.oneLine}</p>
+            </div>
+          </a>
         ))}
       </div>
     </div>
