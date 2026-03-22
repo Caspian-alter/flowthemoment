@@ -111,8 +111,8 @@ const cravingCatProfile: AppProfileDefinition = {
       legalTermsLabel: '使用条款',
       showcaseImages: [
         {
-          src: '/images/craving-cat/cat-icon.png',
-          alt: '成瘾猫图标：温和陪伴的三花猫形象'
+          src: '/images/craving-cat/invitation.png',
+          alt: '成瘾猫动画分镜图：三花猫的轻陪伴预览'
         }
       ]
     },
@@ -176,8 +176,8 @@ const cravingCatProfile: AppProfileDefinition = {
       legalTermsLabel: 'Terms of Use',
       showcaseImages: [
         {
-          src: '/images/craving-cat/cat-icon.png',
-          alt: 'Craving Cat icon featuring a calm calico cat companion'
+          src: '/images/craving-cat/invitation.png',
+          alt: 'Craving Cat sprite sheet preview featuring a calm calico cat'
         }
       ]
     }

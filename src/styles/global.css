@@ -894,6 +894,205 @@ section {
     linear-gradient(165deg, rgba(255, 251, 246, 0.96), rgba(236, 231, 223, 0.92));
 }
 
+.cover-figure-cat-sprite {
+  display: grid;
+  place-items: center;
+  min-height: 420px;
+  padding: 1.4rem;
+  background:
+    radial-gradient(circle at 18% 16%, rgba(244, 197, 110, 0.2), transparent 26%),
+    radial-gradient(circle at 82% 18%, rgba(171, 188, 166, 0.12), transparent 28%),
+    linear-gradient(165deg, rgba(252, 246, 238, 0.96), rgba(233, 226, 217, 0.92));
+}
+
+.cat-sprite-stage {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.cat-sprite-window {
+  position: relative;
+  width: min(100%, 320px);
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 30px;
+  padding: 0.9rem;
+  background:
+    radial-gradient(circle at 50% 32%, rgba(255, 255, 255, 0.08), transparent 36%),
+    linear-gradient(180deg, rgba(24, 21, 20, 0.98), rgba(10, 9, 8, 0.99));
+  border: 1px solid rgba(255, 238, 224, 0.18);
+  box-shadow:
+    0 24px 52px rgba(67, 52, 39, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 -18px 28px rgba(0, 0, 0, 0.28);
+}
+
+.cat-sprite-window::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background:
+    radial-gradient(circle at 50% 50%, transparent 57%, rgba(0, 0, 0, 0.2) 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 28%);
+  pointer-events: none;
+}
+
+.cat-sprite-window::after {
+  content: '';
+  position: absolute;
+  inset: 0.7rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 244, 232, 0.08);
+  pointer-events: none;
+}
+
+.cat-sprite-sheet {
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  background-image: var(--cat-sprite-image);
+  background-repeat: no-repeat;
+  background-size: 500% 500%;
+  background-position: 0% 0%;
+  animation: cat-sprite-frame 4.8s infinite;
+  image-rendering: auto;
+  will-change: background-position;
+}
+
+@keyframes cat-sprite-frame {
+  0% {
+    background-position: 0% 0%;
+    animation-timing-function: step-end;
+  }
+
+  4% {
+    background-position: 25% 0%;
+    animation-timing-function: step-end;
+  }
+
+  8% {
+    background-position: 50% 0%;
+    animation-timing-function: step-end;
+  }
+
+  12% {
+    background-position: 75% 0%;
+    animation-timing-function: step-end;
+  }
+
+  16% {
+    background-position: 100% 0%;
+    animation-timing-function: step-end;
+  }
+
+  20% {
+    background-position: 0% 25%;
+    animation-timing-function: step-end;
+  }
+
+  24% {
+    background-position: 25% 25%;
+    animation-timing-function: step-end;
+  }
+
+  28% {
+    background-position: 50% 25%;
+    animation-timing-function: step-end;
+  }
+
+  32% {
+    background-position: 75% 25%;
+    animation-timing-function: step-end;
+  }
+
+  36% {
+    background-position: 100% 25%;
+    animation-timing-function: step-end;
+  }
+
+  40% {
+    background-position: 0% 50%;
+    animation-timing-function: step-end;
+  }
+
+  44% {
+    background-position: 25% 50%;
+    animation-timing-function: step-end;
+  }
+
+  48% {
+    background-position: 50% 50%;
+    animation-timing-function: step-end;
+  }
+
+  52% {
+    background-position: 75% 50%;
+    animation-timing-function: step-end;
+  }
+
+  56% {
+    background-position: 100% 50%;
+    animation-timing-function: step-end;
+  }
+
+  60% {
+    background-position: 0% 75%;
+    animation-timing-function: step-end;
+  }
+
+  64% {
+    background-position: 25% 75%;
+    animation-timing-function: step-end;
+  }
+
+  68% {
+    background-position: 50% 75%;
+    animation-timing-function: step-end;
+  }
+
+  72% {
+    background-position: 75% 75%;
+    animation-timing-function: step-end;
+  }
+
+  76% {
+    background-position: 100% 75%;
+    animation-timing-function: step-end;
+  }
+
+  80% {
+    background-position: 0% 100%;
+    animation-timing-function: step-end;
+  }
+
+  84% {
+    background-position: 25% 100%;
+    animation-timing-function: step-end;
+  }
+
+  88% {
+    background-position: 50% 100%;
+    animation-timing-function: step-end;
+  }
+
+  92% {
+    background-position: 75% 100%;
+    animation-timing-function: step-end;
+  }
+
+  96% {
+    background-position: 100% 100%;
+    animation-timing-function: step-end;
+  }
+
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
 .cat-icon-stage {
   display: grid;
   justify-items: center;
@@ -1022,6 +1221,18 @@ section {
   background: rgba(247, 250, 252, 0.94);
   color: var(--muted);
   font-size: 0.78rem;
+}
+
+.cat-sprite-window,
+.cat-sprite-sheet {
+  transform: translateZ(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cat-sprite-sheet {
+    animation: none;
+    background-position: 0% 0%;
+  }
 }
 
 .motif-cat {

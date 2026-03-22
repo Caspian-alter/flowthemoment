@@ -87,10 +87,20 @@ const labels =
           </div>
         </figure>
       ) : profile.appId === 'craving-cat' && featuredShowcase ? (
-        <figure class="cover-figure cover-figure-editorial cover-figure-icon">
-          <div class="cat-icon-stage">
+        <figure class="cover-figure cover-figure-editorial cover-figure-cat-sprite">
+          <div class="cat-sprite-stage">
             <div class="cat-hero-badge">{locale === 'zh' ? '温和打断 / 轻陪伴' : 'Gentle interrupt / Soft company'}</div>
-            <img src={withBase(featuredShowcase.src)} alt={featuredShowcase.alt} loading="eager" decoding="async" class="cat-icon-image" />
+            <div
+              class="cat-sprite-window"
+              role="img"
+              aria-label={locale === 'zh' ? '成瘾猫动画预览，三花猫在黑色舞台中轻轻移动' : 'Craving Cat animated preview, a calico cat moving gently in a dark frame'}
+            >
+              <div
+                class="cat-sprite-sheet"
+                style={`--cat-sprite-image: url("${withBase(featuredShowcase.src)}")`}
+                aria-hidden="true"
+              />
+            </div>
             <div class="cat-hero-notes">
               <span>{locale === 'zh' ? 'Native Screen Time' : 'Native Screen Time'}</span>
               <span>{locale === 'zh' ? '猫猫陪伴' : 'Cat companion'}</span>
