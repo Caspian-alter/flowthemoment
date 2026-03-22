@@ -1028,7 +1028,7 @@ section {
   background-size: 500% 500%;
   background-position: 0% 0%;
   background-color: transparent;
-  animation: cat-sprite-frame 2.083s infinite;
+  animation: cat-sprite-frame 2.083s infinite alternate;
   image-rendering: auto;
   will-change: background-position;
 }
