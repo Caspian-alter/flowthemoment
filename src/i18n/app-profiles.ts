@@ -184,6 +184,144 @@ const cravingCatProfile: AppProfileDefinition = {
   }
 };
 
+const anchorNowProfile: AppProfileDefinition = {
+  appId: 'anchor-now',
+  slug: 'anchor-now',
+  routeStyle: 'apps',
+  content: {
+    zh: {
+      appId: 'anchor-now',
+      slug: 'anchor-now',
+      name: '此刻锚',
+      altName: 'Anchor Now',
+      tagline: '先稳住，再处理。把恐慌、焦躁和走神拆成可执行的最小介入。',
+      intro: '一个围绕恐慌、焦躁和走神三种场景构建的低负担介入工具，把支持做成一键可用的私人缓解流程。',
+      opening: [
+        '此刻锚不是又一个让你更努力的工具。它先把人稳住，再决定该做什么。',
+        '当身体过载、思绪散开，或注意力已经开始漂移时，它提供的是一个足够轻的入口：选一个状态，落到一个模板，直接进入下一步。'
+      ],
+      principlesTitle: '这个产品在守护什么',
+      principles: [
+        {
+          title: '先稳定，再处理',
+          body: '先把身体和感受拉回到可以呼吸的范围，再去面对问题本身。'
+        },
+        {
+          title: '三种状态足够',
+          body: '恐慌、焦躁、走神已经覆盖了很多高负担时刻，不需要把系统做得更复杂。'
+        },
+        {
+          title: '小组件先行',
+          body: '把最常用的支持入口放在最容易触达的位置，让帮助离你更近。'
+        }
+      ],
+      flowTitle: '典型使用流',
+      flow: [
+        {
+          title: '1. 选择状态',
+          body: '从恐慌、焦躁、走神里选一个最接近此刻的场景，直接进入对应模板。'
+        },
+        {
+          title: '2. 调整组件',
+          body: '把呼吸、落地、清单和计时器重新拼成你更顺手的私人缓解流程。'
+        },
+        {
+          title: '3. 一键触发',
+          body: '通过 iOS 小组件或应用内快捷入口，快速进入需要的流程，而不是先绕一大圈。'
+        }
+      ],
+      featureTitle: '当前核心能力',
+      features: [
+        '三种状态模板：恐慌、焦躁、走神，围绕最常见的过载场景做最小化介入',
+        '可复用组件画布，支持呼吸、感官落地、行动清单、定锚计时等小模块',
+        'iOS 小组件预览与深链接，让支持入口固定在最容易触达的地方',
+        '本地优先存储，模板可编辑、可重排、可同步，轻量但不是一次性的'
+      ],
+      audienceTitle: '适合这样的人',
+      audience: [
+        '在焦虑、恐慌或注意力游离时，需要一个立即可用的缓冲入口的人',
+        '不想面对复杂流程，只想先把自己稳住的人',
+        '希望支持工具尊重自主，而不是制造更多压力的人'
+      ],
+      legalTitle: '法律文档',
+      legalIntro: '隐私协议和使用条款页面已预留，后续可直接补成正式版本。',
+      legalPrivacyLabel: '隐私协议',
+      legalTermsLabel: '使用条款',
+      showcaseImages: [
+        {
+          src: '/images/anchor-now/icon.png',
+          alt: 'Anchor Now app icon featuring blue geometric anchor mark'
+        }
+      ]
+    },
+    en: {
+      appId: 'anchor-now',
+      slug: 'anchor-now',
+      name: 'Anchor Now',
+      altName: '此刻锚',
+      tagline: 'Steady first, then handle the rest. Break panic, anxiety, and drift into actionable micro-interventions.',
+      intro: 'A low-load intervention tool built around panic, anxiety, and drift, turning support into a one-tap personal relief flow.',
+      opening: [
+        'Anchor Now is not another tool that asks you to try harder. It steadies the person first, then decides what comes next.',
+        'When the body is overloaded, thoughts are scattering, or attention has already started to drift, it offers a light entry point: pick a state, land in a template, and move straight into the next step.'
+      ],
+      principlesTitle: 'What this product protects',
+      principles: [
+        {
+          title: 'Steady first, then handle',
+          body: 'Bring the body and nervous system back within reach before dealing with the problem itself.'
+        },
+        {
+          title: 'Three states are enough',
+          body: 'Panic, anxiety, and drift already cover a large share of overwhelming moments. The system does not need more complexity.'
+        },
+        {
+          title: 'Widget-first access',
+          body: 'Put the most useful support entry where it is easiest to reach, so help stays close.'
+        }
+      ],
+      flowTitle: 'Typical use flow',
+      flow: [
+        {
+          title: '1. Choose a state',
+          body: 'Pick the closest match from panic, anxiety, or drift and enter the matching template right away.'
+        },
+        {
+          title: '2. Tune the components',
+          body: 'Recombine breathing, grounding, checklists, and timers into a personal relief flow that feels easier to follow.'
+        },
+        {
+          title: '3. Trigger instantly',
+          body: 'Use the iOS widget or the in-app shortcut to open the right flow without extra steps.'
+        }
+      ],
+      featureTitle: 'Current core capabilities',
+      features: [
+        'Three state templates for panic, anxiety, and drift, covering the most common overload moments',
+        'A reusable component canvas with breathing, grounding, checklist, and anchor-timer modules',
+        'iOS widget previews and deep links that keep support at the point of need',
+        'Local-first storage with editable, reorderable, and syncable templates that stay lightweight'
+      ],
+      audienceTitle: 'Who this is for',
+      audience: [
+        'People who need an immediate buffer when anxiety, panic, or drifting attention hits',
+        'People who do not want to face a complex workflow when they are already overwhelmed',
+        'People who want support tools that respect autonomy instead of adding pressure'
+      ],
+      legalTitle: 'Legal Documents',
+      legalIntro: 'Privacy and terms pages are already reserved and can be turned into formal legal text later.',
+      legalPrivacyLabel: 'Privacy Policy',
+      legalTermsLabel: 'Terms of Use',
+      showcaseImages: [
+        {
+          src: '/images/anchor-now/icon.png',
+          alt: 'Anchor Now app icon featuring a blue geometric anchor mark'
+        }
+      ]
+    }
+  }
+};
+
 const sunnyBreathProfile: AppProfileDefinition = {
   appId: 'sunshine-breath',
   slug: 'sunny-breath',
@@ -472,7 +610,12 @@ const lightIdeasProfile: AppProfileDefinition = {
   }
 };
 
-const appProfiles: AppProfileDefinition[] = [cravingCatProfile, sunnyBreathProfile, lightIdeasProfile];
+const appProfiles: AppProfileDefinition[] = [
+  anchorNowProfile,
+  cravingCatProfile,
+  sunnyBreathProfile,
+  lightIdeasProfile
+];
 
 export function getAppProfile(locale: Locale, slug: string): AppProfile | null {
   const found = appProfiles.find((item) => item.slug === slug);

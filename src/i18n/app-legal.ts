@@ -343,7 +343,115 @@ This page already works as a standalone URL, but it is still a first-release leg
   }
 };
 
+const anchorNowDocs: Record<Locale, AppLegalDocumentSet> = {
+  zh: {
+    privacyTitle: '隐私协议',
+    privacyBody: `版本号：v0.1
+生效日期：2026-03-22
+更新日期：2026-03-22
+
+欢迎使用「此刻锚（Anchor Now）」。
+本页面为独立产品页预留的隐私协议入口，当前内容说明首版产品的主要数据处理范围，后续可继续补充正式版本。
+
+一、我们处理的信息
+1. 场景与模板设置：包括你选择的状态模板、组件顺序、标题、提示语、计时分钟数与小组件短标签。
+2. 本地流程数据：包括最近一次编辑、选中的场景和用于同步小组件的必要状态。
+3. 反馈信息：如果你主动联系开发者，可能会处理你提交的反馈内容以及必要技术元数据。
+
+二、存储方式
+当前版本以本地设备存储与必要的应用共享容器为主，用于在主应用与 iOS 小组件之间同步模板和状态。
+截至本页面更新时，此产品不以用户注册账号作为核心使用前提。
+
+三、系统能力与第三方
+此刻锚使用 Apple 平台提供的小组件与本地能力，实际可用性受系统版本、权限与设备环境影响。
+
+四、你的控制权
+你可以随时修改模板、重置内容，或停止继续使用本应用。
+
+五、后续更新
+当正式网页、反馈渠道、云端同步或商业化能力接入后，本页面会补充更完整的隐私说明。`,
+    termsTitle: '使用条款',
+    termsBody: `版本号：v0.1
+生效日期：2026-03-22
+更新日期：2026-03-22
+
+欢迎使用「此刻锚（Anchor Now）」。
+本页面为独立产品页预留的使用条款入口，当前版本用于说明首版产品的基本边界。
+
+一、服务内容
+此刻锚提供围绕恐慌、焦躁、走神三种场景的低负担介入体验，包括场景选择、组件画布编辑、模板切换与 iOS 小组件深链接等功能。
+
+二、使用说明
+1. 本应用并非医疗、治疗或紧急干预工具。
+2. 部分能力依赖 iOS 设备、小组件权限与系统支持能力。
+3. 若系统权限、设备状态或平台策略异常，相关功能可能无法完整生效。
+
+三、使用规则
+你应合法、正当地使用本应用，不得利用本应用从事绕过系统限制、干扰设备安全或侵犯第三方权益的行为。
+
+四、页面性质
+本页面当前已可作为独立 URL 使用，但仍属于首版预留法律页。正式上架或接入新能力前，开发者可能继续补充、修订和细化内容。`
+  },
+  en: {
+    privacyTitle: 'Privacy Policy',
+    privacyBody: `Version: v0.1
+Effective Date: 2026-03-22
+Updated: 2026-03-22
+
+Welcome to Anchor Now.
+This page is the reserved privacy entry for the standalone product page. The current text describes the main data-handling scope of the first release and can be refined later.
+
+1. Information We Handle
+- Scene and template settings, including the selected state, component order, titles, prompts, timer duration, and widget short labels.
+- Local flow data, including the latest edits, the selected scene, and the state required to sync widget content.
+- Feedback data, if you contact the developer directly, along with the necessary technical metadata that comes with it.
+
+2. Storage
+The current version relies primarily on local device storage and the necessary app shared container so the main app and iOS widget can sync templates and state.
+As of this update, the product does not require user account registration as a core prerequisite.
+
+3. System Capabilities and Third Parties
+Anchor Now uses Apple platform widget and local capabilities. Actual availability depends on OS version, permissions, and device conditions.
+
+4. Your Control
+You can edit templates, reset content, or stop using the app at any time.
+
+5. Future Updates
+When the official website, feedback channel, cloud sync, or commercial features are introduced, this page will be expanded into a fuller privacy policy.`,
+    termsTitle: 'Terms of Use',
+    termsBody: `Version: v0.1
+Effective Date: 2026-03-22
+Updated: 2026-03-22
+
+Welcome to Anchor Now.
+This page is the reserved terms entry for the standalone product page. The current version outlines the first-release service boundary.
+
+1. Services
+Anchor Now provides a low-load intervention experience for panic, anxiety, and drift, including scene selection, component-canvas editing, template switching, and iOS widget deep links.
+
+2. Use Notes
+- The app is not a medical, therapeutic, or emergency intervention tool.
+- Some capabilities depend on iOS devices, widget permissions, and system support.
+- If permissions, device state, or platform policy are unavailable, parts of the experience may not function fully.
+
+3. Acceptable Use
+You must use the app lawfully and may not use it to bypass platform restrictions, interfere with device security, or infringe third-party rights.
+
+4. Page Status
+This page already works as a standalone URL, but it is still a first-release legal placeholder. The text may be expanded or refined before public release or major feature updates.`
+  }
+};
+
 const legalApps: LegalAppDefinition[] = [
+  {
+    id: 'anchor-now',
+    slug: 'anchor-now',
+    names: {
+      zh: '此刻锚 / Anchor Now',
+      en: 'Anchor Now / 此刻锚'
+    },
+    documents: anchorNowDocs
+  },
   {
     id: 'craving-cat',
     slug: 'craving-cat',

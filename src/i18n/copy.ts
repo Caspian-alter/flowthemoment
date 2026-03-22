@@ -126,6 +126,16 @@ type LocaleCopy = {
 
 const sharedAppsZh: AppItem[] = [
   {
+    id: 'anchor-now',
+    name: '此刻锚',
+    nameEn: 'Anchor Now',
+    oneLine: '把恐慌、焦躁和走神拆成一键可用的最小介入。',
+    status: 'progress',
+    bullets: ['三种状态模板：恐慌、焦躁、走神', '可复用组件画布 + 低负担 iOS 小组件', '把呼吸、落地、下一步做成可编辑流程'],
+    detail:
+      '此刻锚不是再多一个效率工具，而是在身体过载、思绪散开或注意力开始漂移时，先把人稳住，再把问题拆小。'
+  },
+  {
     id: 'craving-cat',
     name: '成瘾猫',
     nameEn: 'Craving Cat',
@@ -168,6 +178,16 @@ const sharedAppsZh: AppItem[] = [
 ];
 
 const sharedAppsEn: AppItem[] = [
+  {
+    id: 'anchor-now',
+    name: 'Anchor Now',
+    nameEn: '此刻锚',
+    oneLine: 'Turn panic, anxiety, and drift into one-tap, low-load intervention flows.',
+    status: 'progress',
+    bullets: ['Three state presets: panic, anxiety, and drift', 'Reusable component canvas plus a low-friction iOS widget', 'Breathing, grounding, and next-step flows you can edit'],
+    detail:
+      'Anchor Now is not another productivity tool. It is a way to steady the body first, then break a hard moment into something small enough to handle.'
+  },
   {
     id: 'craving-cat',
     name: 'Craving Cat',
@@ -303,7 +323,7 @@ export const copy: Record<Locale, LocaleCopy> = {
     },
     apps: {
       title: '即将到来的应用',
-      intro: '四个产品，同一方向：更自由的注意力。',
+      intro: '五个产品，同一方向：更自由的注意力。',
       badgeComing: '即将上线',
       badgeProgress: '开发中',
       learnMore: '了解更多',
@@ -486,7 +506,7 @@ export const copy: Record<Locale, LocaleCopy> = {
     },
     apps: {
       title: 'Upcoming Apps',
-      intro: 'Four products, one direction: freer attention in daily life.',
+      intro: 'Five products, one direction: freer attention in daily life.',
       badgeComing: 'Coming soon',
       badgeProgress: 'In progress',
       learnMore: 'Learn more',
