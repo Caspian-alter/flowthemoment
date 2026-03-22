@@ -126,6 +126,16 @@ type LocaleCopy = {
 
 const sharedAppsZh: AppItem[] = [
   {
+    id: 'craving-cat',
+    name: '成瘾猫',
+    nameEn: 'Craving Cat',
+    oneLine: '让暂停更像被陪着，而不是被惩罚。',
+    status: 'coming',
+    bullets: ['原生 iOS Screen Time 守护与温和打断', '按 App 单独设置每日总量、单次上限和豁免时间', '猫猫陪伴 + 一次呼吸，把冲动变成可选择的停顿'],
+    detail:
+      '成瘾猫不是强硬封锁器，也不是羞耻统计面板。它在你快要滑回惯性时，替你留出一个真实、温柔、还能自己决定下一步的停顿。'
+  },
+  {
     id: 'anchor-now',
     name: '此刻锚',
     nameEn: 'Anchor Now',
@@ -134,16 +144,6 @@ const sharedAppsZh: AppItem[] = [
     bullets: ['三种状态模板：恐慌、焦躁、走神', '可复用组件画布 + 低负担 iOS 小组件', '把呼吸、落地、下一步做成可编辑流程'],
     detail:
       '此刻锚不是再多一个效率工具，而是在身体过载、思绪散开或注意力开始漂移时，先把人稳住，再把问题拆小。'
-  },
-  {
-    id: 'craving-cat',
-    name: '成瘾猫',
-    nameEn: 'Craving Cat',
-    oneLine: '让暂停更像被陪着，而不是被惩罚。',
-    status: 'progress',
-    bullets: ['原生 iOS Screen Time 守护与温和打断', '按 App 单独设置每日总量、单次上限和豁免时间', '猫猫陪伴 + 一次呼吸，把冲动变成可选择的停顿'],
-    detail:
-      '成瘾猫不是强硬封锁器，也不是羞耻统计面板。它在你快要滑回惯性时，替你留出一个真实、温柔、还能自己决定下一步的停顿。'
   },
   {
     id: 'sunshine-breath',
@@ -179,6 +179,16 @@ const sharedAppsZh: AppItem[] = [
 
 const sharedAppsEn: AppItem[] = [
   {
+    id: 'craving-cat',
+    name: 'Craving Cat',
+    nameEn: '成瘾猫',
+    oneLine: 'A pause that feels like company, not punishment.',
+    status: 'coming',
+    bullets: ['Native iOS Screen Time protection with gentle interruption', 'Per-app daily caps, session limits, and one-time exemptions', 'Cat companion + one guided breath before the craving takes over'],
+    detail:
+      'Craving Cat is not a hard lock and not a shame dashboard. It leaves a real, kind pause right before autopilot takes over, so you can still make the next choice yourself.'
+  },
+  {
     id: 'anchor-now',
     name: 'Anchor Now',
     nameEn: '此刻锚',
@@ -187,16 +197,6 @@ const sharedAppsEn: AppItem[] = [
     bullets: ['Three state presets: panic, anxiety, and drift', 'Reusable component canvas plus a low-friction iOS widget', 'Breathing, grounding, and next-step flows you can edit'],
     detail:
       'Anchor Now is not another productivity tool. It is a way to steady the body first, then break a hard moment into something small enough to handle.'
-  },
-  {
-    id: 'craving-cat',
-    name: 'Craving Cat',
-    nameEn: '成瘾猫',
-    oneLine: 'A pause that feels like company, not punishment.',
-    status: 'progress',
-    bullets: ['Native iOS Screen Time protection with gentle interruption', 'Per-app daily caps, session limits, and one-time exemptions', 'Cat companion + one guided breath before the craving takes over'],
-    detail:
-      'Craving Cat is not a hard lock and not a shame dashboard. It leaves a real, kind pause right before autopilot takes over, so you can still make the next choice yourself.'
   },
   {
     id: 'sunshine-breath',

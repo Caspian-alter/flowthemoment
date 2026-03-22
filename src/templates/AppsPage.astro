@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import FlowMotif from '../components/FlowMotif.astro';
+import ProductVisual from '../components/ProductVisual.astro';
 import { getCopy } from '../i18n/copy';
 import { withBase, type Locale } from '../i18n/utils';
 import { getAppLegalLinks } from '../i18n/app-legal';
@@ -53,6 +53,9 @@ const labels =
             <div>
               <h3>{app.name}</h3>
               <p>{app.oneLine}</p>
+            </div>
+            <div class="page-hero-note-art" aria-hidden="true">
+              <ProductVisual appId={app.id} motif={motifs[index] ?? 'wave'} />
             </div>
           </a>
         ))}
@@ -109,7 +112,7 @@ const labels =
               </div>
             </div>
             <div class="product-row-art" aria-hidden="true">
-              <FlowMotif kind={motifs[index] ?? 'wave'} />
+              <ProductVisual appId={app.id} motif={motifs[index] ?? 'wave'} />
             </div>
           </article>
         );

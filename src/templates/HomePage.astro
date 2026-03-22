@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import FlowMotif from '../components/FlowMotif.astro';
+import ProductVisual from '../components/ProductVisual.astro';
 import { getCopy } from '../i18n/copy';
 import { pathFor, type Locale, withBase } from '../i18n/utils';
 import { getProfilePath } from '../i18n/app-profiles';
@@ -74,7 +74,7 @@ const spotlightMotifs: Array<'breathe' | 'wave' | 'rings'> = ['breathe', 'wave',
         </div>
         <p class="hero-stage-main-copy">{featuredApp.oneLine}</p>
         <div class="hero-stage-main-art" aria-hidden="true">
-          <FlowMotif kind="cat" />
+          <ProductVisual appId={featuredApp.id} motif="cat" />
         </div>
         <ul class="hero-stage-list">
           {featuredApp.bullets.slice(0, 3).map((item) => <li>{item}</li>)}
@@ -93,7 +93,7 @@ const spotlightMotifs: Array<'breathe' | 'wave' | 'rings'> = ['breathe', 'wave',
               <p>{app.oneLine}</p>
             </div>
             <div class="hero-stage-note-art" aria-hidden="true">
-              <FlowMotif kind={spotlightMotifs[index] ?? 'wave'} />
+              <ProductVisual appId={app.id} motif={spotlightMotifs[index] ?? 'wave'} />
             </div>
           </a>
         ))}
@@ -170,7 +170,7 @@ const spotlightMotifs: Array<'breathe' | 'wave' | 'rings'> = ['breathe', 'wave',
             </a>
           </div>
           <div class="product-row-art" aria-hidden="true">
-            <FlowMotif kind={appMotifs[index] ?? 'wave'} />
+            <ProductVisual appId={app.id} motif={appMotifs[index] ?? 'wave'} />
           </div>
         </article>
       ))}

@@ -584,10 +584,6 @@ section {
   margin-bottom: 0.18rem;
 }
 
-.hero-stage-main-art .motif {
-  width: min(100%, 230px);
-}
-
 .hero-stage-main-copy,
 .hero-stage-note p,
 .page-hero-note p {
@@ -605,6 +601,48 @@ section {
     radial-gradient(circle at 82% 16%, rgba(166, 186, 174, 0.32), transparent 28%),
     linear-gradient(160deg, rgba(254, 252, 248, 0.96), rgba(236, 230, 221, 0.92));
   border: 1px solid color-mix(in oklch, var(--surface-border) 80%, white 20%);
+}
+
+.product-visual {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.product-visual-motif .motif,
+.hero-stage-main-art .product-visual .motif {
+  width: min(100%, 230px);
+}
+
+.product-visual-cat {
+  position: relative;
+  isolation: isolate;
+}
+
+.cat-portrait-aura {
+  position: absolute;
+  inset: 16% 14%;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle, rgba(249, 205, 139, 0.45), rgba(249, 205, 139, 0) 58%),
+    radial-gradient(circle at 62% 44%, rgba(198, 224, 205, 0.32), rgba(198, 224, 205, 0) 62%);
+  filter: blur(10px);
+  z-index: 0;
+}
+
+.product-visual-cat-image {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 224px);
+  height: auto;
+  filter: drop-shadow(0 18px 28px rgba(124, 90, 61, 0.14));
+}
+
+.product-visual-anchor .anchor-glyph {
+  width: min(100%, 190px);
+  height: auto;
+  filter: drop-shadow(0 18px 30px rgba(87, 109, 117, 0.12));
 }
 
 .hero-stage-list,
@@ -648,9 +686,26 @@ section {
   place-items: center;
 }
 
-.hero-stage-note-art .motif {
+.hero-stage-note-art .product-visual,
+.page-hero-note-art .product-visual {
+  width: 100%;
+  min-height: 82px;
+}
+
+.hero-stage-note-art .product-visual .motif,
+.page-hero-note-art .product-visual .motif {
   width: min(100%, 86px);
   opacity: 0.9;
+}
+
+.hero-stage-note-art .product-visual-cat-image,
+.page-hero-note-art .product-visual-cat-image {
+  width: min(100%, 78px);
+}
+
+.hero-stage-note-art .product-visual-anchor .anchor-glyph,
+.page-hero-note-art .product-visual-anchor .anchor-glyph {
+  width: min(100%, 74px);
 }
 
 .principle-list,
@@ -743,8 +798,16 @@ section {
   box-shadow: var(--inner-highlight);
 }
 
-.product-row-art .motif {
+.product-row-art .product-visual .motif {
   width: min(100%, 220px);
+}
+
+.product-row-art .product-visual-cat-image {
+  width: min(100%, 174px);
+}
+
+.product-row-art .product-visual-anchor .anchor-glyph {
+  width: min(100%, 164px);
 }
 
 .product-bullets {
@@ -798,13 +861,19 @@ section {
 
 .page-hero-note {
   width: 100%;
-  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-columns: auto minmax(0, 1fr) 72px;
   align-items: start;
   text-decoration: none;
 }
 
 .page-hero-note .story-index {
   margin-top: 0.15rem;
+}
+
+.page-hero-note-art {
+  display: grid;
+  place-items: center;
+  align-self: center;
 }
 
 .faq-list-editorial {
@@ -920,13 +989,14 @@ section {
   border-radius: 30px;
   padding: 0.9rem;
   background:
-    radial-gradient(circle at 50% 32%, rgba(255, 255, 255, 0.08), transparent 36%),
-    linear-gradient(180deg, rgba(24, 21, 20, 0.98), rgba(10, 9, 8, 0.99));
-  border: 1px solid rgba(255, 238, 224, 0.18);
+    radial-gradient(circle at 24% 22%, rgba(249, 208, 142, 0.3), transparent 32%),
+    radial-gradient(circle at 78% 26%, rgba(196, 222, 206, 0.26), transparent 34%),
+    linear-gradient(180deg, rgba(255, 248, 239, 0.98), rgba(237, 229, 220, 0.94));
+  border: 1px solid rgba(226, 202, 181, 0.52);
   box-shadow:
-    0 24px 52px rgba(67, 52, 39, 0.18),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08),
-    inset 0 -18px 28px rgba(0, 0, 0, 0.28);
+    0 24px 52px rgba(92, 71, 49, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.46),
+    inset 0 -12px 18px rgba(198, 176, 155, 0.2);
 }
 
 .cat-sprite-window::before {
@@ -935,8 +1005,8 @@ section {
   inset: 0;
   border-radius: inherit;
   background:
-    radial-gradient(circle at 50% 50%, transparent 57%, rgba(0, 0, 0, 0.2) 100%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 28%);
+    radial-gradient(circle at 50% 44%, rgba(255, 255, 255, 0.34), transparent 48%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18), transparent 24%);
   pointer-events: none;
 }
 
@@ -945,7 +1015,7 @@ section {
   position: absolute;
   inset: 0.7rem;
   border-radius: 20px;
-  border: 1px solid rgba(255, 244, 232, 0.08);
+  border: 1px solid rgba(255, 249, 241, 0.7);
   pointer-events: none;
 }
 
@@ -957,7 +1027,8 @@ section {
   background-repeat: no-repeat;
   background-size: 500% 500%;
   background-position: 0% 0%;
-  animation: cat-sprite-frame 4.8s infinite;
+  background-color: transparent;
+  animation: cat-sprite-frame 2.083s infinite;
   image-rendering: auto;
   will-change: background-position;
 }
