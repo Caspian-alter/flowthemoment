@@ -131,7 +131,7 @@ const sharedAppsZh: AppItem[] = [
     nameEn: 'Craving Cat',
     oneLine: '让暂停更像被陪着，而不是被惩罚。',
     status: 'coming',
-    bullets: ['原生 iOS Screen Time 守护与温和打断', '按 App 单独设置每日总量、单次上限和豁免时间', '猫猫陪伴 + 一次呼吸，把冲动变成可选择的停顿'],
+    bullets: ['为最容易停不下来的入口留出一个温柔停顿', '可以按不同习惯分别设置更合身的边界', '猫猫陪伴与一次呼吸，把冲动变成还能选择的片刻'],
     detail:
       '成瘾猫不是强硬封锁器，也不是羞耻统计面板。它在你快要滑回惯性时，替你留出一个真实、温柔、还能自己决定下一步的停顿。'
   },
@@ -141,7 +141,7 @@ const sharedAppsZh: AppItem[] = [
     nameEn: 'Anchor Now',
     oneLine: '把恐慌、焦躁和走神拆成一键可用的最小介入。',
     status: 'progress',
-    bullets: ['三种状态模板：恐慌、焦躁、走神', '可复用组件画布 + 低负担 iOS 小组件', '把呼吸、落地、下一步做成可编辑流程'],
+    bullets: ['三种常见状态入口：恐慌、焦躁、走神', '把呼吸、落地和下一步拼成自己的支持流程', '把最需要的帮助放在一伸手就能到的地方'],
     detail:
       '此刻锚不是再多一个效率工具，而是在身体过载、思绪散开或注意力开始漂移时，先把人稳住，再把问题拆小。'
   },
@@ -159,9 +159,9 @@ const sharedAppsZh: AppItem[] = [
     id: 'light-ideas',
     name: '轻想法',
     nameEn: 'Light Ideas',
-    oneLine: 'Bubble, Glass, Break: 先接住念头，再决定留下还是放走。',
+    oneLine: '先接住念头，再决定留下还是放走。',
     status: 'progress',
-    bullets: ['快速记录后先进入 Bubble 区，不强迫立刻整理', '长按凝结为 Glass 卡片，双击或三击可自然释放', '拖拽分界线、24 小时蒸发与懒加载时间线都为低压使用服务'],
+    bullets: ['先记下，不要求立刻整理', '值得留下的慢慢沉淀，不需要的轻轻放走', '让念头有来处也有去处，不把整理做成负担'],
     detail:
       '轻想法来自 ADHD 语境下的真实问题：不是没有想法，而是想法来得太快。它把想法做成有物理感的状态变化，而不是把你推进另一个需要管理的系统。'
   },
@@ -184,7 +184,7 @@ const sharedAppsEn: AppItem[] = [
     nameEn: '成瘾猫',
     oneLine: 'A pause that feels like company, not punishment.',
     status: 'coming',
-    bullets: ['Native iOS Screen Time protection with gentle interruption', 'Per-app daily caps, session limits, and one-time exemptions', 'Cat companion + one guided breath before the craving takes over'],
+    bullets: ['A gentle pause for the places where you most often lose time', 'Different habits can hold different boundaries instead of one blunt limit', 'Cat company and one guided breath restore choice before autopilot wins'],
     detail:
       'Craving Cat is not a hard lock and not a shame dashboard. It leaves a real, kind pause right before autopilot takes over, so you can still make the next choice yourself.'
   },
@@ -194,7 +194,7 @@ const sharedAppsEn: AppItem[] = [
     nameEn: '此刻锚',
     oneLine: 'Turn panic, anxiety, and drift into one-tap, low-load intervention flows.',
     status: 'progress',
-    bullets: ['Three state presets: panic, anxiety, and drift', 'Reusable component canvas plus a low-friction iOS widget', 'Breathing, grounding, and next-step flows you can edit'],
+    bullets: ['Three familiar entry states: panic, anxiety, and drift', 'Shape breathing, grounding, and next steps into your own support flow', 'Keep help close enough to reach before overwhelm grows'],
     detail:
       'Anchor Now is not another productivity tool. It is a way to steady the body first, then break a hard moment into something small enough to handle.'
   },
@@ -212,9 +212,9 @@ const sharedAppsEn: AppItem[] = [
     id: 'light-ideas',
     name: 'Light Ideas',
     nameEn: '轻想法',
-    oneLine: 'Bubble, Glass, Break: catch a thought first, then decide whether it stays.',
+    oneLine: 'Catch the thought first, then decide whether it stays.',
     status: 'progress',
-    bullets: ['Quick capture lands ideas in the Bubble zone without forcing structure', 'Long-press to condense into Glass, double-tap or triple-tap to let go', 'A draggable divider, 24-hour evaporation, and lazy timelines keep the board light'],
+    bullets: ['Capture first without being forced to organize on arrival', 'Let what matters settle and let the rest go lightly', 'Give thoughts a gentle place to land without turning them into admin'],
     detail:
       'Light Ideas responds to a real ADHD-shaped problem: not a lack of ideas, but too many arriving too quickly. It turns organization into a tactile state change instead of another management burden.'
   },

@@ -57,7 +57,7 @@ const cravingCatProfile: AppProfileDefinition = {
       name: '成瘾猫',
       altName: 'Craving Cat',
       tagline: '让暂停更像被陪着，而不是被惩罚。',
-      intro: '一个基于 iOS Screen Time 原生能力的温和冲动中断应用，用猫猫陪伴替代羞辱式防沉迷。',
+      intro: '一个把冲动时刻变得更可选择的温和中断应用，用猫猫陪伴替代羞辱式防沉迷。',
       opening: [
         '成瘾猫不是为了把你“管住”，而是为了在冲动开始加速前，先轻轻把你接住。',
         '它不做羞耻排行榜，也不把人当成需要被修正的对象。它只在你快要滑回惯性时，留出一个真实、温柔、还能自己决定下一步的停顿。'
@@ -70,34 +70,34 @@ const cravingCatProfile: AppProfileDefinition = {
         },
         {
           title: '像陪伴，不像惩罚',
-          body: 'Shield 文案、豁免按钮和猫猫陪伴页都避免羞耻语言。即使你选择“再给一点时间”，产品也不把这次判断成失败。'
+          body: '每一次提醒、每一个按钮、每一段陪伴都尽量避开羞耻语言。即使你选择“再给一点时间”，产品也不把这次判断成失败。'
         },
         {
           title: '规则可以细，感受要轻',
-          body: '你可以按 App 单独设置每日总量、单次上限和单次豁免时间，但界面和语言都保持温和，不把限制做成压迫感。'
+          body: '你可以为不同习惯设置不同边界，但界面和语言都保持温和，不把限制做成压迫感。'
         }
       ],
       flowTitle: '典型使用流',
       flow: [
         {
-          title: '1. 授权并选择对象',
-          body: '先完成 iOS Screen Time 授权，再用官方 Family Activity Picker 选出最容易让你失去时间感的 App、分类或网站。'
+          title: '1. 找到最容易滑进去的入口',
+          body: '先选出那些最容易让你失去时间感的入口。不是为了把一切都关掉，而是先看见真正需要帮助的地方。'
         },
         {
           title: '2. 设定轻规则',
-          body: '按 App 逐个设置每日总量、单次连续使用上限和单次豁免时间，不需要一下子把所有入口都管住。'
+          body: '为不同习惯设置更合身的边界：今天可以多久、一次别太久、如果真的需要还能再给一点空间。不需要一下子把所有入口都管住。'
         },
         {
           title: '3. 冲动来时先被猫猫叫住',
-          body: '当阈值触发，系统弹出 Shield。你可以再给一点时间、这次先放下，或者进入猫猫陪伴与一次呼吸，把注意力慢慢拿回来。'
+          body: '当你快要滑回惯性，成瘾猫会先轻轻叫住你。你可以再给一点时间、这次先放下，或者进入猫猫陪伴与一次呼吸，把注意力慢慢拿回来。'
         }
       ],
       featureTitle: '当前核心能力',
       features: [
-        'Flutter MVP + 原生 iOS Screen Time 栈：FamilyControls、DeviceActivity、ManagedSettings',
-        '支持按 App 单独配置每日总量、单次上限与单次豁免时间，而不是只给一组粗暴总规则',
-        '内置 Shield 调试预览、猫猫陪伴页与呼吸 Sheet，可先在 App 内验证文案和介入体验',
-        '使用 App Group 共享存储连接主 App 与扩展；关键能力在真实 iPhone 上可跑通'
+        '可以为不同习惯设置不同边界，而不是只给一条粗暴总规则',
+        '提醒、放下、再给一点时间，都被做成更温和的选择，而不是羞耻测试',
+        '猫猫陪伴与一次呼吸把冲动时刻变成一个还能慢下来的空档',
+        '记录默认尽量留在你自己这边，体验轻量，也更安静'
       ],
       audienceTitle: '适合这样的人',
       audience: [
@@ -112,7 +112,7 @@ const cravingCatProfile: AppProfileDefinition = {
       showcaseImages: [
         {
           src: '/images/craving-cat/invitation.png',
-          alt: '成瘾猫动画分镜图：三花猫的轻陪伴预览'
+          alt: '成瘾猫动态预览：三花猫的轻陪伴画面'
         }
       ]
     },
@@ -122,7 +122,7 @@ const cravingCatProfile: AppProfileDefinition = {
       name: 'Craving Cat',
       altName: '成瘾猫',
       tagline: 'A pause that feels like company, not punishment.',
-      intro: 'A gentle impulse-interruption app built on native iOS Screen Time capabilities, using cat companionship instead of shame-based blocking.',
+      intro: 'A gentle interruption app that makes craving moments more choosable, using cat companionship instead of shame-based blocking.',
       opening: [
         'Craving Cat is not here to keep you under control. It is here to catch you right before the craving gains speed.',
         'It avoids shame dashboards and does not treat people like problems to be fixed. When autopilot is about to take over, it leaves a real, kind pause where your next step is still yours.'
@@ -135,34 +135,34 @@ const cravingCatProfile: AppProfileDefinition = {
         },
         {
           title: 'Companion, not punishment',
-          body: 'Shield copy, exemption actions, and the cat companion flow all avoid shame. Even “allow a little more” is treated as a choice, not a moral failure.'
+          body: 'Every reminder, button, and companion moment avoids shame. Even “a little more time” is treated as a choice, not a moral failure.'
         },
         {
           title: 'Detailed rules, light emotional load',
-          body: 'Each app can carry its own daily total, single-session limit, and one-time exemption window, while the interface stays soft and non-threatening.'
+          body: 'Different habits can carry different boundaries, while the interface stays soft, calm, and non-threatening.'
         }
       ],
       flowTitle: 'Typical use flow',
       flow: [
         {
-          title: '1. Authorize and choose targets',
-          body: 'Start with iOS Screen Time authorization, then use the official Family Activity Picker to choose the apps, categories, or domains most likely to blur your sense of time.'
+          title: '1. Notice where time disappears',
+          body: 'Start by choosing the places where your sense of time most often slips. The goal is not to close everything, but to notice where support is actually needed.'
         },
         {
           title: '2. Set light rules',
-          body: 'Tune each app with its own daily total, single-session cap, and exemption window. You do not need to lock down everything at once.'
+          body: 'Shape boundaries that fit each habit: how long feels okay today, how long is too long at once, and when you may still want a little room. You do not need to clamp down on everything at once.'
         },
         {
           title: '3. Let the cat catch the moment',
-          body: 'When a threshold is reached, the native shield appears. You can allow a little more time, put it down for now, or open the cat companion and one guided breath.'
+          body: 'When the moment starts to speed up, the cat catches it first. You can allow a little more time, put it down for now, or take one guided breath before choosing again.'
         }
       ],
       featureTitle: 'Current core capabilities',
       features: [
-        'Flutter MVP backed by the native iOS Screen Time stack: FamilyControls, DeviceActivity, and ManagedSettings',
-        'Per-app rule rows with daily totals, single-session caps, and one-time exemption windows instead of one blunt global limit',
-        'Built-in shield preview, cat companion, and breathing sheet to tune the intervention experience before real native triggers',
-        'App Group shared storage across the main app and extensions, with the core stack already wired for real-device testing'
+        'Set different boundaries for different habits instead of relying on one blunt limit',
+        'Make “pause,” “put it down,” and “a little more time” feel like calm choices instead of moral tests',
+        'Use cat companionship and one guided breath to turn a craving spike into a slower moment',
+        'Keep the experience quiet and mostly on your own device, with less noise around it'
       ],
       audienceTitle: 'Who this is for',
       audience: [
@@ -177,7 +177,7 @@ const cravingCatProfile: AppProfileDefinition = {
       showcaseImages: [
         {
           src: '/images/craving-cat/invitation.png',
-          alt: 'Craving Cat sprite sheet preview featuring a calm calico cat'
+          alt: 'Craving Cat animated preview featuring a calm calico cat'
         }
       ]
     }
@@ -211,7 +211,7 @@ const anchorNowProfile: AppProfileDefinition = {
           body: '恐慌、焦躁、走神已经覆盖了很多高负担时刻，不需要把系统做得更复杂。'
         },
         {
-          title: '小组件先行',
+          title: '入口离你更近',
           body: '把最常用的支持入口放在最容易触达的位置，让帮助离你更近。'
         }
       ],
@@ -222,20 +222,20 @@ const anchorNowProfile: AppProfileDefinition = {
           body: '从恐慌、焦躁、走神里选一个最接近此刻的场景，直接进入对应模板。'
         },
         {
-          title: '2. 调整组件',
-          body: '把呼吸、落地、清单和计时器重新拼成你更顺手的私人缓解流程。'
+          title: '2. 调整步骤',
+          body: '把呼吸、落地、清单和计时重新拼成你更顺手的私人缓解流程。'
         },
         {
           title: '3. 一键触发',
-          body: '通过 iOS 小组件或应用内快捷入口，快速进入需要的流程，而不是先绕一大圈。'
+          body: '通过桌面入口或应用内快捷入口，快速进入需要的流程，而不是先绕一大圈。'
         }
       ],
       featureTitle: '当前核心能力',
       features: [
         '三种状态模板：恐慌、焦躁、走神，围绕最常见的过载场景做最小化介入',
-        '可复用组件画布，支持呼吸、感官落地、行动清单、定锚计时等小模块',
-        'iOS 小组件预览与深链接，让支持入口固定在最容易触达的地方',
-        '本地优先存储，模板可编辑、可重排、可同步，轻量但不是一次性的'
+        '把呼吸、感官落地、行动清单、定锚计时等步骤拼成自己的支持流程',
+        '让帮助入口留在最容易触达的地方，过载时不用先绕很多步',
+        '模板可以反复调整、重排与沿用，轻量但不是一次性的'
       ],
       audienceTitle: '适合这样的人',
       audience: [
@@ -276,8 +276,8 @@ const anchorNowProfile: AppProfileDefinition = {
           body: 'Panic, anxiety, and drift already cover a large share of overwhelming moments. The system does not need more complexity.'
         },
         {
-          title: 'Widget-first access',
-          body: 'Put the most useful support entry where it is easiest to reach, so help stays close.'
+          title: 'Keep the entry close',
+          body: 'Place the most useful support entry where it is easiest to reach, so help stays close.'
         }
       ],
       flowTitle: 'Typical use flow',
@@ -287,20 +287,20 @@ const anchorNowProfile: AppProfileDefinition = {
           body: 'Pick the closest match from panic, anxiety, or drift and enter the matching template right away.'
         },
         {
-          title: '2. Tune the components',
+          title: '2. Tune the steps',
           body: 'Recombine breathing, grounding, checklists, and timers into a personal relief flow that feels easier to follow.'
         },
         {
           title: '3. Trigger instantly',
-          body: 'Use the iOS widget or the in-app shortcut to open the right flow without extra steps.'
+          body: 'Use the home screen entry or the in-app shortcut to open the right flow without extra steps.'
         }
       ],
       featureTitle: 'Current core capabilities',
       features: [
         'Three state templates for panic, anxiety, and drift, covering the most common overload moments',
-        'A reusable component canvas with breathing, grounding, checklist, and anchor-timer modules',
-        'iOS widget previews and deep links that keep support at the point of need',
-        'Local-first storage with editable, reorderable, and syncable templates that stay lightweight'
+        'Shape breathing, grounding, checklists, and anchor-timers into a support flow that feels personal',
+        'Keep help close to the point of need, so overload does not have time to build',
+        'Return to the same templates, adjust them, and keep what already works'
       ],
       audienceTitle: 'Who this is for',
       audience: [
@@ -373,7 +373,7 @@ const sunnyBreathProfile: AppProfileDefinition = {
         '首个流程可在约 90 秒内完成设置：时间、音乐、一个启动动作',
         '支持本地音乐与内置音乐，唤醒时长 3-20 分钟，循环、震动和渐亮可调',
         '轻量节律辅助包含固定起床时间提醒、可选睡前提示与逐步提前 15 分钟策略',
-        '本地优先、低后端依赖，商业模式为 7 天试用 + 订阅 / 买断并存'
+        '记录默认尽量留在自己这边，整体体验轻量，也不制造新的负担'
       ],
       audienceTitle: '适合这样的人',
       audience: [
@@ -450,7 +450,7 @@ const sunnyBreathProfile: AppProfileDefinition = {
         'Set up your first flow in about 90 seconds: wake time, music, and one starter action',
         'Built-in music and local audio import, with 3-20 minute wake duration, repeat, vibration, and optional screen brightening',
         'Light rhythm support for fixed wake reminders, optional bedtime prompts, and gradual 15-minute shifts',
-        'Local-first handling with low backend dependence, plus a 7-day trial and subscription or lifetime unlock'
+        'Keep most of the experience quiet and close to you, without turning morning support into another burden'
       ],
       audienceTitle: 'Who this is for',
       audience: [
@@ -495,7 +495,7 @@ const lightIdeasProfile: AppProfileDefinition = {
       name: '轻想法',
       altName: 'Light Ideas',
       tagline: '先接住，再凝结；不需要的，也可以让它自然消散。',
-      intro: '一个围绕 Bubble -> Glass -> Break 构建的轻量想法板，专门处理那些来得太快、太碎、太容易消失的念头。',
+      intro: '一个先接住、再慢慢归拢、最后也允许放手的轻量想法板，专门处理那些来得太快、太碎、太容易消失的念头。',
       opening: [
         '轻想法不是待办清单，也不是第二个会催促你的知识库。它把“记录”设计成一个有材质感的过渡空间，先接住，再慢慢看清。',
         '它来自一个很简单的判断：很多人不是没有想法，而是想法来得太快、太散、太容易消失。尤其在 ADHD 或高刺激环境里，真正需要的往往不是更强控制，而是更轻的承接。'
@@ -512,7 +512,7 @@ const lightIdeasProfile: AppProfileDefinition = {
         },
         {
           title: '允许消散，也允许删除',
-          body: '没有被继续照看的 Bubble 会在 24 小时后自然蒸发；已经凝结的 Glass 也可以被主动打破。系统不逼你囤积一切。'
+          body: '没有被继续照看的念头会自然淡去；已经留下的也可以主动放手。系统不逼你囤积一切。'
         }
       ],
       flowTitle: '典型使用流',
@@ -532,10 +532,10 @@ const lightIdeasProfile: AppProfileDefinition = {
       ],
       featureTitle: '当前核心能力',
       features: [
-        'Bubble 区采用漂浮式布局，Glass 区采用双列瀑布流，并支持拖拽分界线动态调整上下空间比例',
-        '支持快速记录、长按凝结飞行动画、双击销毁 Bubble、三击打破 Glass',
-        'Bubble 默认 24 小时自然蒸发，可选数量上限保护；Glass 时间线按时间增量懒加载',
-        '材质系统与背景配色系统解耦，可切换 Clear Glass、Frosted Glass、Aurora Glass、Paper Light 等预设'
+        '上方是更自由的漂浮区，下方是更安定的留存区，让想法先落地再慢慢归位',
+        '值得留下的可以长按沉淀，不需要的也能轻轻放手',
+        '没有被继续照看的念头会自然淡去，减少“什么都要留着”的压力',
+        '界面氛围可以切换，让记录空间更贴近你当下的状态'
       ],
       audienceTitle: '适合这样的人',
       audience: [
@@ -554,7 +554,7 @@ const lightIdeasProfile: AppProfileDefinition = {
       name: 'Light Ideas',
       altName: '轻想法',
       tagline: 'Catch it first, condense it later, and let it go when it no longer needs to stay.',
-      intro: 'A lightweight thought board built around Bubble -> Glass -> Break for ideas that arrive too quickly, too loosely, and too briefly.',
+      intro: 'A lightweight thought board that catches first, settles later, and still allows release when a thought no longer needs to stay.',
       opening: [
         'Light Ideas is not a task manager and not another knowledge vault that pressures you to organize immediately. It turns capture into a tactile, material transition: catch first, then let clarity arrive later.',
         'It comes from a simple observation: many people do not lack ideas. They lack a calm place for ideas that arrive too quickly, too loosely, and too briefly to hold. In ADHD-shaped attention, what helps is often not harder control, but lighter containment.'
@@ -567,11 +567,11 @@ const lightIdeasProfile: AppProfileDefinition = {
         },
         {
           title: 'Make organization feel physical, not bureaucratic',
-          body: 'When an idea is worth keeping, a long press condenses it from Bubble to Glass with a visible flight into the lower timeline. Structuring becomes a felt motion, not a paperwork ritual.'
+          body: 'When an idea is worth keeping, a long press condenses it from Bubble to Glass and lets it settle into the lower space. Structuring becomes a felt motion, not a paperwork ritual.'
         },
         {
           title: 'Allow fading, allow release',
-          body: 'Unattended Bubbles evaporate after 24 hours. Condensed Glass can also be intentionally broken. The system does not force you to archive everything.'
+          body: 'Thoughts that are not revisited can fade on their own. Saved ones can also be released intentionally. The system does not force you to archive everything.'
         }
       ],
       flowTitle: 'Typical use flow',
@@ -582,7 +582,7 @@ const lightIdeasProfile: AppProfileDefinition = {
         },
         {
           title: '2. From floating to condensed',
-          body: 'When a thought deserves to stay, long-press it. It flies into the lower Glass zone and becomes a card in the timeline.'
+          body: 'When a thought deserves to stay, long-press it. It flies into the lower Glass zone and becomes a card you can come back to.'
         },
         {
           title: '3. From storage to release',
@@ -591,10 +591,10 @@ const lightIdeasProfile: AppProfileDefinition = {
       ],
       featureTitle: 'Current core capabilities',
       features: [
-        'A floating Bubble zone and a dual-column Glass timeline, separated by a draggable divider that users can persist',
-        'Quick capture, long-press condense flight, double-tap Bubble destroy, and repeated-tap Glass break interactions',
-        '24-hour evaporation by default, optional Bubble limits, and incremental lazy loading for long-term Glass timelines',
-        'Decoupled material and background systems with presets such as Clear Glass, Frosted Glass, Aurora Glass, and Paper Light'
+        'A freer upper space for fresh thoughts and a calmer lower space for the ones you want to keep',
+        'Let thoughts settle when they matter, and let them go without drama when they do not',
+        'Reduce the pressure to keep everything by allowing some thoughts to fade on their own',
+        'Shift the atmosphere of the board so the space feels closer to your state of mind'
       ],
       audienceTitle: 'Who this is for',
       audience: [
