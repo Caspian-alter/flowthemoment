@@ -106,7 +106,7 @@ const cravingCatProfile: AppProfileDefinition = {
         '需要温和边界、而不是强硬封锁或家长式控制的人'
       ],
       legalTitle: '法律文档',
-      legalIntro: '隐私协议和使用条款页面已经预留，后续可以直接替换为正式版本。',
+      legalIntro: '这里收录了与成瘾猫当前版本相关的隐私协议和使用条款。',
       legalPrivacyLabel: '隐私协议',
       legalTermsLabel: '使用条款',
       showcaseImages: [
@@ -171,7 +171,7 @@ const cravingCatProfile: AppProfileDefinition = {
         'People who need gentler boundaries instead of hard blocks or parental language'
       ],
       legalTitle: 'Legal Documents',
-      legalIntro: 'Privacy and terms pages are already reserved here and can be swapped with the final legal text later.',
+      legalIntro: 'Privacy and terms for the current version of Craving Cat are collected here.',
       legalPrivacyLabel: 'Privacy Policy',
       legalTermsLabel: 'Terms of Use',
       showcaseImages: [
