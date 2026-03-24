@@ -15,14 +15,53 @@ const { locale, path, profile } = Astro.props;
 const legalLinks = getAppLegalLinks(locale, profile.appId);
 const backHome = locale === 'zh' ? '/' : '/en';
 const backApps = locale === 'zh' ? '/apps' : '/en/apps';
-const description =
-  locale === 'zh'
-    ? `${profile.name}（${profile.altName}）独立介绍页。${profile.intro}`
-    : `${profile.name} (${profile.altName}) product page. ${profile.intro}`;
+const siteOrigin = Astro.site?.toString() ?? 'https://flowthemoment.com';
+const pageTitle = `${profile.name} | ${profile.tagline} | Flow the Moment`;
+const pageDescription = locale === 'zh' ? `${profile.name}：${profile.intro}` : `${profile.name}: ${profile.intro}`;
 const featuredShowcase = profile.showcaseImages?.[0];
 const galleryShowcase = profile.showcaseImages?.slice(1) ?? [];
 const openingInHero = profile.opening[0];
 const remainingOpening = profile.opening.slice(1);
+const applicationCategory = profile.appId === 'light-ideas' ? 'ProductivityApplication' : 'HealthApplication';
+const pageUrl = new URL(path, siteOrigin).toString();
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: profile.name,
+    alternateName: profile.altName,
+    description: profile.intro,
+    applicationCategory,
+    mainEntityOfPage: pageUrl,
+    url: pageUrl,
+    image: featuredShowcase ? new URL(withBase(featuredShowcase.src), siteOrigin).toString() : undefined,
+    inLanguage: locale === 'zh' ? 'zh-CN' : 'en'
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: locale === 'zh' ? '首页' : 'Home',
+        item: new URL(withBase(backHome), siteOrigin).toString()
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: locale === 'zh' ? '应用' : 'Apps',
+        item: new URL(withBase(backApps), siteOrigin).toString()
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: profile.name,
+        item: pageUrl
+      }
+    ]
+  }
+];
 const labels =
   locale === 'zh'
     ? {
@@ -45,7 +84,14 @@ const labels =
       };
 ---
 
-<BaseLayout title={`${profile.name} | Flow the Moment`} description={description} locale={locale} path={path}>
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  locale={locale}
+  path={path}
+  jsonLd={jsonLd}
+  ogImage={featuredShowcase?.src}
+>
   <section class="shell page-hero product-hero">
     <div class="product-hero-copy">
       <p class="eyebrow">{profile.altName}</p>

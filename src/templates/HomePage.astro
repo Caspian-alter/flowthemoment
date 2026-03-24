@@ -14,6 +14,39 @@ const { locale, path } = Astro.props;
 const t = getCopy(locale);
 const featuredApp = t.apps.items[0];
 const spotlightApps = t.apps.items.slice(1, 4);
+const homeTitle =
+  locale === 'zh'
+    ? 'Flow the Moment | 温柔的在场、注意力与数字健康工具'
+    : 'Flow the Moment | Gentle tools for presence, attention, and digital wellbeing';
+const siteOrigin = Astro.site?.toString() ?? 'https://flowthemoment.com';
+const homeUrl = new URL(withBase(pathFor(locale, 'home')), siteOrigin).toString();
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: locale === 'zh' ? 'Flow the Moment / 流动此刻' : 'Flow the Moment',
+    url: homeUrl,
+    inLanguage: locale === 'zh' ? 'zh-CN' : 'en'
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Flow the Moment',
+    url: siteOrigin,
+    description: t.meta.description
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: locale === 'zh' ? '产品方向' : 'Product collection',
+    itemListElement: t.apps.items.map((app, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: app.name,
+      url: new URL(withBase(getProfilePath(locale, app.id) ?? pathFor(locale, 'apps')), siteOrigin).toString()
+    }))
+  }
+];
 const quickTags =
   locale === 'zh'
     ? ['#在场', '#轻结构', '#数字健康', '#ADHD友好', '#反成瘾']
@@ -43,7 +76,7 @@ const featuredBadge = featuredApp.status === 'progress' ? t.apps.badgeProgress :
 const spotlightMotifs: Array<'breathe' | 'wave' | 'rings'> = ['breathe', 'wave', 'rings'];
 ---
 
-<BaseLayout title={t.meta.siteName} description={t.meta.description} locale={locale} path={path}>
+<BaseLayout title={homeTitle} description={t.meta.description} locale={locale} path={path} jsonLd={jsonLd}>
   <section class="hero hero-v2 shell editorial-hero">
     <div class="hero-copy hero-copy-editorial">
       <p class="eyebrow">{t.hero.eyebrow}</p>

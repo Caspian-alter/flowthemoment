@@ -15,6 +15,55 @@ const { locale, path } = Astro.props;
 const t = getCopy(locale);
 const motifs: Array<'cat' | 'wave' | 'rings' | 'breathe'> = ['cat', 'breathe', 'wave', 'rings'];
 const suiteHighlights = t.apps.items.slice(0, 3);
+const siteOrigin = Astro.site?.toString() ?? 'https://flowthemoment.com';
+const pageUrl = new URL(withBase(path), siteOrigin).toString();
+const pageTitle =
+  locale === 'zh'
+    ? '应用 | 为在场、专注与数字健康设计的工具 | Flow the Moment'
+    : 'Apps | Tools for presence, focus, and digital wellbeing | Flow the Moment';
+const pageDescription =
+  locale === 'zh'
+    ? '探索 Flow the Moment 的产品：成瘾猫、此刻锚、阳光呼吸、轻想法与稳流。为在场、专注、清晨启动与数字健康设计。'
+    : 'Explore Flow the Moment apps: Craving Cat, Anchor Now, Sunny Breath, Light Ideas, and Steady Flow. Tools for presence, focus, mornings, and digital wellbeing.';
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: t.appsPage.title,
+    description: t.appsPage.intro,
+    url: pageUrl,
+    inLanguage: locale === 'zh' ? 'zh-CN' : 'en'
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: t.appsPage.sectionTitle,
+    itemListElement: t.apps.items.map((app, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: app.name,
+      url: new URL(withBase(getProfilePath(locale, app.id) ?? path), siteOrigin).toString()
+    }))
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: locale === 'zh' ? '首页' : 'Home',
+        item: new URL(withBase(locale === 'zh' ? '/' : '/en'), siteOrigin).toString()
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: locale === 'zh' ? '应用' : 'Apps',
+        item: pageUrl
+      }
+    ]
+  }
+];
 const focusTags =
   locale === 'zh'
     ? ['轻启动', '微结构', '低压专注', '反成瘾']
@@ -33,7 +82,13 @@ const labels =
       };
 ---
 
-<BaseLayout title={`${t.appsPage.title} | Flow the Moment`} description={t.appsPage.intro} locale={locale} path={path}>
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  locale={locale}
+  path={path}
+  jsonLd={jsonLd}
+>
   <section class="shell page-hero editorial-page-hero">
     <div>
       <p class="eyebrow">Flow the Moment</p>

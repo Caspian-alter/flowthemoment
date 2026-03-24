@@ -17,7 +17,13 @@ const description =
     : `${page.title} for ${page.appName}, including app usage and data handling details.`;
 ---
 
-<BaseLayout title={`${page.title} | ${page.appName} | Flow the Moment`} description={description} locale={locale} path={path}>
+<BaseLayout
+  title={`${page.title} | ${page.appName} | Flow the Moment`}
+  description={description}
+  locale={locale}
+  path={path}
+  noindex={true}
+>
   <section class="shell page-hero legal-hero">
     <p class="eyebrow">{page.appName}</p>
     <h1>{page.title}</h1>

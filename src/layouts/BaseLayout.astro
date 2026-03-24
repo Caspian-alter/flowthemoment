@@ -9,18 +9,25 @@ interface Props {
   description: string;
   locale: Locale;
   path: string;
+  ogType?: 'website' | 'article';
+  ogImage?: string;
+  noindex?: boolean;
+  jsonLd?: Record<string, unknown> | Array<Record<string, unknown>>;
 }
 
-const { title, description, locale, path } = Astro.props;
+const { title, description, locale, path, ogType = 'website', ogImage, noindex = false, jsonLd } = Astro.props;
 const lang = locale === 'zh' ? 'zh-CN' : 'en';
+const siteName = 'Flow the Moment';
 const siteOrigin = Astro.site?.toString() ?? 'https://flowthemoment.com';
 const canonical = new URL(path, siteOrigin).toString();
-const ogImage = new URL('/og-default.svg', siteOrigin).toString();
+const resolvedOgImage = new URL(ogImage ?? '/og-default.svg', siteOrigin).toString();
 const internalPath = stripBase(path);
 const zhInternalPath = locale === 'zh' ? internalPath : internalPath.replace(/^\/en/, '') || '/';
 const enInternalPath = locale === 'en' ? internalPath : `/en${internalPath === '/' ? '' : internalPath}`;
 const alternateZh = new URL(withBase(zhInternalPath), siteOrigin).toString();
 const alternateEn = new URL(withBase(enInternalPath), siteOrigin).toString();
+const robots = noindex ? 'noindex,follow' : 'index,follow,max-image-preview:large';
+const jsonLdItems = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 ---
 
 <!doctype html>
@@ -30,18 +37,21 @@ const alternateEn = new URL(withBase(enInternalPath), siteOrigin).toString();
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="robots" content={robots} />
     <link rel="canonical" href={canonical} />
 
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content={siteName} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:image" content={ogImage} />
+    <meta property="og:image" content={resolvedOgImage} />
+    <meta property="og:image:alt" content={title} />
     <meta property="og:locale" content={locale === 'zh' ? 'zh_CN' : 'en_US'} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image" content={resolvedOgImage} />
     <link rel="alternate" hreflang="zh-CN" href={alternateZh} />
     <link rel="alternate" hreflang="en" href={alternateEn} />
     <link rel="alternate" hreflang="x-default" href={alternateZh} />
@@ -52,6 +62,9 @@ const alternateEn = new URL(withBase(enInternalPath), siteOrigin).toString();
       href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600;6..72,700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
+    {jsonLdItems.map((item) => (
+      <script is:inline type="application/ld+json" set:html={JSON.stringify(item)} />
+    ))}
   </head>
   <body>
     <a class="skip-link" href="#main-content">{locale === 'zh' ? '跳到主要内容' : 'Skip to main content'}</a>
