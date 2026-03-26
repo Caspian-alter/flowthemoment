@@ -159,11 +159,11 @@ const sharedAppsZh: AppItem[] = [
     id: 'light-ideas',
     name: '轻想法',
     nameEn: 'Light Ideas',
-    oneLine: '先接住念头，再决定留下还是放走。',
+    oneLine: '让快而碎的念头，先有一个轻轻落下的地方。',
     status: 'progress',
-    bullets: ['先记下，不要求立刻整理', '值得留下的慢慢沉淀，不需要的轻轻放走', '让念头有来处也有去处，不把整理做成负担'],
+    bullets: ['先放进 Bubble，不要求立刻整理', '值得留下的再凝成 Glass，不重要的允许散去', '本地优先、空间可调，让记录更贴近自己的节奏'],
     detail:
-      '轻想法来自 ADHD 语境下的真实问题：不是没有想法，而是想法来得太快。它把想法做成有物理感的状态变化，而不是把你推进另一个需要管理的系统。'
+      '轻想法不是任务系统，而是一块安静的想法板。它把“先接住、再沉淀、也允许放下”做成清晰的体验，适合那些总在脑中冒出很多小火花的人。'
   },
   {
     id: 'steady-flow',
@@ -212,11 +212,11 @@ const sharedAppsEn: AppItem[] = [
     id: 'light-ideas',
     name: 'Light Ideas',
     nameEn: '轻想法',
-    oneLine: 'Catch the thought first, then decide whether it stays.',
+    oneLine: 'A softer landing place for fast, fragile thoughts.',
     status: 'progress',
-    bullets: ['Capture first without being forced to organize on arrival', 'Let what matters settle and let the rest go lightly', 'Give thoughts a gentle place to land without turning them into admin'],
+    bullets: ['Catch first in Bubble without organizing on arrival', 'Condense what matters into Glass and let the rest fade lightly', 'Stay local-first and adjustable, so the board can match your pace'],
     detail:
-      'Light Ideas responds to a real ADHD-shaped problem: not a lack of ideas, but too many arriving too quickly. It turns organization into a tactile state change instead of another management burden.'
+      'Light Ideas is not a task system. It is a calmer thought board built for idea overflow, gentle reflection, and ADHD-friendly capture. It turns “keep it, settle it, or let it go” into a natural flow.'
   },
   {
     id: 'steady-flow',

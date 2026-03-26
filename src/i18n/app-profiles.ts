@@ -494,57 +494,58 @@ const lightIdeasProfile: AppProfileDefinition = {
       slug: 'light-ideas',
       name: '轻想法',
       altName: 'Light Ideas',
-      tagline: '先接住，再凝结；不需要的，也可以让它自然消散。',
-      intro: '一个先接住、再慢慢归拢、最后也允许放手的轻量想法板，专门处理那些来得太快、太碎、太容易消失的念头。',
+      tagline: '让快而碎的念头，先有一个轻轻落下的地方。',
+      intro: '一个本地优先的安静想法板：先把念头放进 Bubble，再把值得留下的凝成 Glass，其余的，不必勉强。',
       opening: [
-        '轻想法不是待办清单，也不是第二个会催促你的知识库。它把“记录”设计成一个有材质感的过渡空间，先接住，再慢慢看清。',
-        '它来自一个很简单的判断：很多人不是没有想法，而是想法来得太快、太散、太容易消失。尤其在 ADHD 或高刺激环境里，真正需要的往往不是更强控制，而是更轻的承接。'
+        '轻想法不是待办清单，也不是第二个催你立刻分类的知识库。它更像一块有呼吸感的想法板，让念头先被接住，再决定要不要沉淀。',
+        '它来自一个很具体的现实：很多人不是缺少想法，而是想法来得太快、太碎、太容易从手边滑走。尤其在 ADHD 节奏或高刺激环境里，真正有帮助的常常不是更强控制，而是先给它一个轻一点的落点。'
       ],
       principlesTitle: '这个产品在守护什么',
       principles: [
         {
-          title: '先捕捉，再判断',
-          body: '新念头先以 Bubble 的形式出现，不要求你立刻分类、命名或决定价值。先留下，再回看。'
+          title: '先接住，再决定',
+          body: '新念头先以 Bubble 留在上方，不要求你一出现就命名、归档、判断价值。先让它落下，再看它要不要继续留下。'
         },
         {
-          title: '让整理像物理变化，而不是行政流程',
-          body: '当一个想法值得保留，你只需要长按，让它从 Bubble 凝结为 Glass，并带着飞行动画落到下方时间线。整理被做成一个可感知的动作，而不是一套表单。'
+          title: '让整理像材质变化，而不是行政流程',
+          body: '真正重要的内容，可以长按从 Bubble 凝成 Glass，落到下方时间线上。整理不再像填表，而像一块材料慢慢定型。'
         },
         {
-          title: '允许消散，也允许删除',
-          body: '没有被继续照看的念头会自然淡去；已经留下的也可以主动放手。系统不逼你囤积一切。'
+          title: '允许未完成，也允许散去',
+          body: '没有被继续照看的 Bubble 会按设定自然淡去；已经留下的 Glass 也可以主动删除。不是每个念头都要变成项目，也不是每个火花都要永远保存。'
         }
       ],
       flowTitle: '典型使用流',
       flow: [
         {
-          title: '1. 快速落点',
-          body: '点右下角加号，输入刚刚冒出来的句子，它会直接进入 Bubble 区，保留漂浮和未完成的状态。'
+          title: '1. 先把念头放进 Bubble',
+          body: '点右下角加号，写下刚刚冒出来的那句想法。它会先停留在上方的 Bubble 区，不需要立刻整理成“正确的笔记”。'
         },
         {
-          title: '2. 从漂浮到凝结',
-          body: '当你觉得某个想法值得留下，长按它。它会飞入下方的 Glass 区，成为时间线上可回看的卡片。'
+          title: '2. 值得留下的，再凝成 Glass',
+          body: '当某个念头开始清晰，长按它，它会飞入下方的 Glass 区，成为可以回看的卡片。新鲜感与沉淀感，被分成两个不同空间。'
         },
         {
-          title: '3. 从存放到释放',
-          body: '不再需要的内容可以双击 Bubble 删除，或三击 Glass 打破。保留与放下都被设计成明确而轻的选择。'
+          title: '3. 调整节奏，也允许放下',
+          body: '你可以拖动上下分区比例，设置 Bubble 的停留时长，切换材质和配色。需要释放时，也能用简单手势删掉内容，让空间重新变轻。'
         }
       ],
       featureTitle: '当前核心能力',
       features: [
-        '上方是更自由的漂浮区，下方是更安定的留存区，让想法先落地再慢慢归位',
-        '值得留下的可以长按沉淀，不需要的也能轻轻放手',
-        '没有被继续照看的念头会自然淡去，减少“什么都要留着”的压力',
-        '界面氛围可以切换，让记录空间更贴近你当下的状态'
+        '上方 Bubble 区留给刚出现、还未成形的念头，下方 Glass 区留给你想继续回看的内容',
+        'Bubble 可长按凝结，双击删除；Glass 可直接删除，让保留和放手都足够简单',
+        'Bubble 停留时长可设为 24 / 48 / 72 小时，让没被继续照看的内容自然淡去',
+        '免费版保持轻量；当前 iOS 版本的永久会员可解锁无限 Bubble、全部材质、全部配色与自定义配色'
       ],
       audienceTitle: '适合这样的人',
       audience: [
-        '脑中经常同时出现很多念头，但来不及整理的人',
-        '想记录灵感，却不想一打开应用就进入管理压力和整理义务的人',
-        '需要更贴近 ADHD 节奏的轻量记录方式，而不是强控制系统的人'
+        '脑中经常同时冒出很多小念头，但普通笔记太重的人',
+        '想保留灵感，却不想一打开应用就进入管理压力的人',
+        '更适合 ADHD 节奏、需要轻承接而不是强整理的人',
+        '写作者、设计师、创作者，或任何不想错过小火花的人'
       ],
       legalTitle: '法律文档',
-      legalIntro: '法律文档将在产品公开发布前补充。',
+      legalIntro: '这里收录的是依据当前代码实现撰写的隐私政策与使用条款。',
       legalPrivacyLabel: '隐私协议',
       legalTermsLabel: '使用条款'
     },
@@ -553,57 +554,58 @@ const lightIdeasProfile: AppProfileDefinition = {
       slug: 'light-ideas',
       name: 'Light Ideas',
       altName: '轻想法',
-      tagline: 'Catch it first, condense it later, and let it go when it no longer needs to stay.',
-      intro: 'A lightweight thought board that catches first, settles later, and still allows release when a thought no longer needs to stay.',
+      tagline: 'A softer landing place for fast, fragile thoughts.',
+      intro: 'A local-first thought board that lets ideas arrive as Bubbles, settle into Glass when they matter, and leave without guilt when they do not.',
       opening: [
-        'Light Ideas is not a task manager and not another knowledge vault that pressures you to organize immediately. It turns capture into a tactile, material transition: catch first, then let clarity arrive later.',
-        'It comes from a simple observation: many people do not lack ideas. They lack a calm place for ideas that arrive too quickly, too loosely, and too briefly to hold. In ADHD-shaped attention, what helps is often not harder control, but lighter containment.'
+        'Light Ideas is not a task manager and not another vault that pressures you to organize on arrival. It is a quieter board where thoughts can land before they have to make sense.',
+        'It begins from a specific observation: many people do not lack ideas. They lack a calm place for ideas that arrive too quickly, too loosely, and too briefly to hold. In ADHD-shaped attention, what helps is often not harder control, but gentler containment.'
       ],
       principlesTitle: 'What this product protects',
       principles: [
         {
-          title: 'Capture first, evaluate later',
-          body: 'New thoughts appear as Bubbles. You are not asked to classify, rename, or justify them on arrival. First keep them, then revisit.'
+          title: 'Catch first, decide later',
+          body: 'New thoughts stay in the upper Bubble area first. You do not have to classify, rename, or justify them at the moment they appear.'
         },
         {
-          title: 'Make organization feel physical, not bureaucratic',
-          body: 'When an idea is worth keeping, a long press condenses it from Bubble to Glass and lets it settle into the lower space. Structuring becomes a felt motion, not a paperwork ritual.'
+          title: 'Let structure feel material, not bureaucratic',
+          body: 'When an idea deserves to stay, a long press condenses it from Bubble into Glass and lets it settle below. Organization feels like a material shift, not paperwork.'
         },
         {
-          title: 'Allow fading, allow release',
-          body: 'Thoughts that are not revisited can fade on their own. Saved ones can also be released intentionally. The system does not force you to archive everything.'
+          title: 'Allow unfinished thoughts to fade',
+          body: 'Bubbles can expire on their own. Glass items can be removed when you no longer want them. Not every thought has to become a project, and not every spark has to stay forever.'
         }
       ],
       flowTitle: 'Typical use flow',
       flow: [
         {
-          title: '1. Quick landing',
-          body: 'Tap the bottom-right plus button and write the thought that just appeared. It enters the Bubble zone in its unfinished form.'
+          title: '1. Drop the thought into Bubble',
+          body: 'Tap the bottom-right plus button and catch the thought while it is still fresh. It stays in the upper Bubble space without needing immediate structure.'
         },
         {
-          title: '2. From floating to condensed',
-          body: 'When a thought deserves to stay, long-press it. It flies into the lower Glass zone and becomes a card you can come back to.'
+          title: '2. Condense what matters into Glass',
+          body: 'When something becomes worth keeping, long-press it. It flies downward into the Glass timeline and turns into a calmer card you can return to later.'
         },
         {
-          title: '3. From storage to release',
-          body: 'Bubble items can be removed with a double tap. Glass items can be broken with repeated taps. Keeping and letting go are both treated as lightweight choices.'
+          title: '3. Adjust the pace and release the rest',
+          body: 'You can tune the Bubble/Glass ratio, choose how long Bubbles stay alive, and shift the material or palette. When something no longer needs to stay, a simple gesture lets it go.'
         }
       ],
       featureTitle: 'Current core capabilities',
       features: [
-        'A freer upper space for fresh thoughts and a calmer lower space for the ones you want to keep',
-        'Let thoughts settle when they matter, and let them go without drama when they do not',
-        'Reduce the pressure to keep everything by allowing some thoughts to fade on their own',
-        'Shift the atmosphere of the board so the space feels closer to your state of mind'
+        'A freer upper Bubble space for fresh thoughts and a calmer lower Glass space for the ones you want to keep',
+        'Long-press to condense, simple gestures to remove, and a board that treats keeping and releasing as equally valid choices',
+        'Set Bubble lifetime to 24 / 48 / 72 hours so unattended thoughts can fade without building pressure',
+        'The free version stays light; the current iOS lifetime unlock opens unlimited bubbles, all materials, all palettes, and custom palettes'
       ],
       audienceTitle: 'Who this is for',
       audience: [
         'People whose minds generate many small thoughts at once',
-        'People who want to keep sparks without entering an immediate management workflow',
-        'People looking for a gentler, ADHD-friendly capture rhythm instead of a control-heavy system'
+        'People who want to keep sparks without entering a management workflow too early',
+        'People looking for a gentler, ADHD-friendly capture rhythm instead of a control-heavy notes system',
+        'Writers, designers, makers, and anyone who loses small sparks too easily'
       ],
       legalTitle: 'Legal Documents',
-      legalIntro: 'Legal documents will be added before the public release.',
+      legalIntro: 'These documents are written against the current codebase and the product behavior it implements today.',
       legalPrivacyLabel: 'Privacy Policy',
       legalTermsLabel: 'Terms of Use'
     }

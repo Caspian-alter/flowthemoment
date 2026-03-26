@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getProfilePath } from '../i18n/app-profiles';
 import { withBase, type Locale } from '../i18n/utils';
 import type { AppLegalPageData } from '../i18n/app-legal';
 
@@ -11,6 +12,16 @@ interface Props {
 
 const { locale, path, page } = Astro.props;
 const backToApps = locale === 'zh' ? '/apps' : '/en/apps';
+const backToProfile = getProfilePath(locale, page.appId);
+const backPath = backToProfile ?? backToApps;
+const backLabel =
+  locale === 'zh'
+    ? backToProfile
+      ? '返回产品页'
+      : '返回应用页'
+    : backToProfile
+      ? 'Back to Product'
+      : 'Back to Apps';
 const description =
   locale === 'zh'
     ? `${page.appName} ${page.title}，适用于应用使用与数据处理说明。`
@@ -28,7 +39,7 @@ const description =
     <p class="eyebrow">{page.appName}</p>
     <h1>{page.title}</h1>
     <p class="lead">{locale === 'zh' ? '与该应用相关的隐私与使用条款。' : 'Privacy and usage terms for this app.'}</p>
-    <a href={withBase(backToApps)} class="text-link">{locale === 'zh' ? '返回应用页' : 'Back to Apps'}</a>
+    <a href={withBase(backPath)} class="text-link">{backLabel}</a>
   </section>
 
   <section class="shell">

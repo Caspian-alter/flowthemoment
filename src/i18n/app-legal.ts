@@ -12,6 +12,7 @@ interface AppLegalDocumentSet {
 interface LegalAppDefinition {
   id: string;
   slug: string;
+  routeStyle?: 'apps' | 'standalone';
   names: Record<Locale, string>;
   documents: Record<Locale, AppLegalDocumentSet>;
 }
@@ -621,6 +622,285 @@ This page already works as a standalone URL, but it is still a first-release leg
   }
 };
 
+const lightIdeasDocs: Record<Locale, AppLegalDocumentSet> = {
+  zh: {
+    privacyTitle: '隐私协议',
+    privacyBody: `版本号：v1.0
+生效日期：2026-03-26
+更新日期：2026-03-26
+
+欢迎使用「轻想法（Light Ideas）」。
+本《隐私政策》依据当前代码实现撰写，用于说明本应用会在设备本地保存哪些内容、什么时候会与 Apple 的购买系统通信，以及我们默认不会收集什么。
+
+一、开发者与适用范围
+开发者主体：个人开发者（非公司主体）
+联系邮箱：landingfeather@163.com
+本政策适用于 Light Ideas 当前代码对应的应用版本及其独立法律页面。
+
+二、我们默认不做的事情
+1. 不要求你注册账号、登录账号或建立用户画像。
+2. 不提供开发者侧云同步，不把你的念头内容上传到开发者服务器。
+3. 不接入广告 SDK、统计分析 SDK、崩溃分析 SDK 或 App Tracking Transparency 跟踪。
+4. 不读取照片、通讯录、位置、麦克风、相机、短信、其他 App 内容或键盘输入。
+5. 当前代码未接入意见反馈上传、客服消息上传或社交分享上传。
+6. 当前代码也未声明需要访问相机、麦克风、照片、定位、通讯录等运行时权限。
+
+三、保存在你设备本地的信息
+1. 念头内容与状态
+为了实现 Bubble / Glass 画板，本应用会在设备本地保存你输入的念头内容，以及与之对应的必要状态信息，例如：
+- 念头文本；
+- 创建时间；
+- 当前所处状态（Bubble 或 Glass）；
+- 凝结完成时间（如有）。
+
+2. 画板与界面配置
+为了让画板维持你上次离开的样子，本应用会在设备本地保存：
+- Bubble / Glass 分区比例；
+- Bubble 停留时长设置（当前代码支持 24 / 48 / 72 小时）；
+- 当前材质预设；
+- 当前背景配色预设；
+- 你主动创建的自定义配色及其名称。
+
+3. 购买解锁所需的本地状态
+当前代码不会把你的支付信息存到开发者服务器。
+如果你在 iOS / iPadOS 设备上查看购买页、购买永久会员或恢复购买，应用会通过 Apple 的 StoreKit / App Store 读取必要的商品信息和当前解锁状态，以判断你是否拥有永久会员权限。
+
+四、联网与第三方服务
+1. 开发者侧网络收集
+基于当前代码实现，本应用没有开发者自建的联网接口，不会把你的念头文本、材质选择、配色、自定义配色、Bubble 停留时长、画板布局或使用习惯上传给开发者。
+
+2. Apple 购买链路
+在 iOS / iPadOS 上，如果你主动触发以下行为：
+- 打开永久会员购买界面并读取商品信息；
+- 发起购买；
+- 恢复购买；
+对应请求会通过 Apple 的 StoreKit / App Store 完成。商品价格、账单处理、交易验证、恢复购买和退款规则由 Apple 负责。开发者不会直接获得你的 Apple ID、银行卡号或完整支付凭据。
+
+3. Android 网络说明
+当前 Android 主发布清单未声明互联网权限。开发阶段的调试清单可能包含 INTERNET 权限，用于 Flutter 开发和热重载，这不是正式发布版本面向用户的数据收集路径。
+
+4. 当前涉及的第三方平台
+- Apple：StoreKit、App Store（仅当你在 iOS / iPadOS 上主动查看价格、购买或恢复购买时）
+
+五、数据保存期限与删除
+1. 你的念头内容和画板设置默认保存在设备本地，直到你主动修改、删除、清除应用数据或卸载应用。
+2. 如果你的设备或系统启用了系统级备份与恢复，应用本地数据是否随设备备份一起恢复，由 Apple、Google 或设备系统本身控制，不由开发者单独决定。
+3. 开发者不持有你的念头副本，因此通常无法代你远程删除设备本地内容；你可以直接在设备内删除相应内容，或卸载应用。
+
+六、你的权利与选择
+在适用法律范围内，你可以：
+- 继续以免费模式使用，或在 iOS / iPadOS 上自愿选择是否购买永久会员；
+- 直接删除单条念头、调整寿命、切换材质与配色；
+- 停止使用本应用，并通过清除应用数据或卸载应用移除本地内容；
+- 通过联系邮箱咨询与本政策有关的问题。
+
+七、未成年人
+若未成年人使用本应用，建议在监护人指导下理解本应用的本地记录性质与购买机制。涉及购买时，应遵守 Apple App Store 的账户规则和监护要求。
+
+八、政策更新
+如果后续版本新增账号体系、云同步、反馈上传、统计分析、更多网络能力、Android 支付或其他会改变个人信息处理方式的功能，我们会在上线前更新本政策。
+
+九、联系我们
+邮箱：landingfeather@163.com`,
+    termsTitle: '使用条款',
+    termsBody: `版本号：v1.0
+生效日期：2026-03-26
+更新日期：2026-03-26
+
+欢迎使用「轻想法（Light Ideas）」。
+本《使用条款》适用于你对本应用的下载、安装、访问和使用。
+
+一、服务内容
+基于当前代码实现，Light Ideas 是一款本地优先的想法板应用，主要提供以下能力：
+1. 将新念头记录到 Bubble 区；
+2. 通过长按把 Bubble 凝结为 Glass；
+3. 删除 Bubble 或 Glass 内容；
+4. 调整 Bubble / Glass 分区比例；
+5. 调整 Bubble 停留时长；
+6. 切换材质与背景配色，并在永久会员状态下使用更多材质、更多配色和自定义配色；
+7. 在 iOS / iPadOS 上查看、购买或恢复永久会员。
+
+二、免费版与永久会员
+1. 当前代码中的免费版限制包括：
+- 最多同时保留 5 个 Bubble；
+- 仅可使用默认材质；
+- 仅可使用默认配色；
+- 不能使用自定义配色。
+2. 当前代码中的付费商品仅包含 iOS / iPadOS 平台上的一次性永久会员解锁，不包含订阅、自动续费或 Android 平台支付。
+3. 永久会员当前对应的 Product ID 为：
+com.flowthemoment.lightideas.premium.lifetime
+4. 商品名称、价格、币种、税费、可售地区、是否可购买以及展示文案，以 App Store 实际页面为准。
+5. 当前购买链路依赖 StoreKit 2。根据现有代码，购买与恢复购买功能仅在 iOS 15 或更高版本可用。
+
+三、使用边界
+1. 你应合法、正当地使用本应用，不得利用本应用从事违法、侵权、骚扰、恶意破坏、欺诈或其他违反适用法律的行为。
+2. 你输入到本应用中的念头内容由你自行决定并自行负责。请不要将你无权处理的他人隐私、违法内容或需要极高安全保障的敏感资料仅依赖本应用保存。
+3. 你不得通过反向工程、恶意调用、篡改购买流程、破坏性测试或其他超出法律允许范围的方式干扰本应用及其购买机制。
+
+四、购买、恢复购买与 Apple 条款
+1. 当前代码在 iOS / iPadOS 上通过 Apple StoreKit 发起购买和恢复购买。交易处理、账单、退款以及 Apple 账户扣款由 Apple 负责。
+2. 如果你更换设备或重新安装应用，你可以在符合 Apple 规则的前提下使用“恢复购买”功能，请求 Apple 同步你已有的非消耗型购买资格。
+3. 开发者不会直接存储或处理你的 Apple ID、银行卡号或完整支付资料。
+4. 若你通过 iOS / iPadOS 平台下载或使用本应用，除本条款外，你对该平台版本应用的使用还应遵守 Apple 的《Licensed Application End User License Agreement（Standard EULA）》：
+https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+
+五、知识产权
+本应用及其代码、界面、文案、图像、动画、设计和其他相关内容，除依法属于第三方的部分外，均受适用法律保护。未经许可，你不得复制、传播、出售、出租、再许可或作商业化再分发。
+
+六、免责声明
+1. 本应用不是医疗、心理治疗、危机干预、紧急救援、法律存证或专业备份服务工具。
+2. 本应用的核心体验依赖设备本地存储。若因设备损坏、系统异常、卸载应用、系统级清理、备份恢复差异、操作失误或其他超出开发者合理控制范围的原因导致内容丢失、恢复异常或显示异常，开发者不作额外保证。
+3. 材质、配色、动画和会员状态显示可能受到设备性能、系统版本、Apple 平台行为和商品配置状态的影响。
+
+七、责任限制
+在适用法律允许的最大范围内，开发者不对因你使用或无法使用本应用而产生的间接损失、附带损失、特殊损失、惩罚性损失或结果性损失承担责任。本条不影响法律强制规定下不得排除或限制的责任。
+
+八、适用法律与争议解决
+本条款适用中华人民共和国法律（不含冲突规范）。因本应用或本条款产生的争议，双方应先友好协商；协商不成的，可向开发者所在地有管辖权的人民法院提起诉讼。
+
+九、联系我们
+邮箱：landingfeather@163.com`
+  },
+  en: {
+    privacyTitle: 'Privacy Policy',
+    privacyBody: `Version: v1.0
+Effective Date: 2026-03-26
+Updated: 2026-03-26
+
+Welcome to Light Ideas.
+This Privacy Policy is written against the current codebase. It explains what the app stores on your device, when it may communicate with Apple’s purchase systems, and what we do not collect by default.
+
+1. Developer and scope
+Developer type: Individual developer (non-corporate)
+Contact: landingfeather@163.com
+This policy applies to the current Light Ideas app implementation and its standalone legal pages.
+
+2. What we do not do by default
+1. We do not require account creation or sign-in.
+2. We do not provide developer-side cloud sync and we do not upload your thoughts to our servers.
+3. We do not integrate ads SDKs, analytics SDKs, crash analytics SDKs, or App Tracking Transparency-based tracking.
+4. We do not read your photos, contacts, location, microphone, camera, messages, keyboard input, or the content of other apps.
+5. The current code does not include feedback upload, support-message upload, or social sharing upload.
+6. The current code also does not declare runtime access to camera, microphone, photos, location, contacts, or similar sensitive permissions.
+
+3. Information stored locally on your device
+1. Thought content and state
+To run the Bubble / Glass board, the app stores the content you enter and the minimum related state locally on your device, such as:
+- the thought text;
+- creation time;
+- whether the item is currently a Bubble or Glass item; and
+- the condensation completion time, if applicable.
+
+2. Board and interface settings
+To keep the board close to the way you left it, the app stores locally:
+- the Bubble / Glass layout ratio;
+- Bubble lifetime settings (the current code supports 24 / 48 / 72 hours);
+- the selected material preset;
+- the selected background palette;
+- custom palettes and the names you assign to them.
+
+3. Purchase-unlock state needed on iOS / iPadOS
+The current code does not store your payment credentials on a developer server.
+If you view the purchase page, buy lifetime access, or restore purchases on iOS / iPadOS, the app reads the minimum product and entitlement state needed from Apple’s StoreKit / App Store services to determine whether lifetime access is unlocked.
+
+4. Network use and third parties
+1. Developer-side data collection
+Based on the current code, the app has no developer-operated network endpoint. We do not upload your thought text, material selection, palette selection, custom palettes, Bubble lifetime settings, board layout, or usage habits to the developer.
+
+2. Apple purchase flow
+On iOS / iPadOS, if you actively:
+- open the lifetime-purchase view and load product information;
+- start a purchase; or
+- restore purchases,
+those requests are handled through Apple’s StoreKit / App Store systems. Product pricing, billing, transaction verification, restore flow, and refund rules are handled by Apple. We do not directly receive your Apple ID, bank-card number, or full payment credentials.
+
+3. Android network note
+The current Android main release manifest does not declare internet permission. Development/debug manifests may include INTERNET permission for Flutter development tooling and hot reload, but that is not a production user-data collection path.
+
+4. Third parties currently involved
+- Apple: StoreKit and App Store, only when you actively load pricing, purchase, or restore purchases on iOS / iPadOS
+
+5. Retention and deletion
+1. Your thoughts and board settings stay on your device until you edit them, delete them, clear app data, or uninstall the app.
+2. If your device or operating system enables system-level backup and restore, whether app-local data is restored from device backups is controlled by Apple, Google, or the operating system itself, not by the developer alone.
+3. Because the developer does not hold your thought content remotely, we generally cannot delete device-local thoughts for you from a server. You can remove them directly inside the app or by deleting app data / uninstalling the app.
+
+6. Your choices and rights
+Subject to applicable law, you may:
+- continue using the free mode or choose whether to buy lifetime access on iOS / iPadOS;
+- delete individual thoughts, adjust lifetimes, and change materials or palettes;
+- stop using the app and remove local content by clearing app data or uninstalling the app; and
+- contact us with questions about this policy.
+
+7. Minors
+If a minor uses the app, guardian guidance is recommended so the local-storage nature of the product and the purchase flow are understood. Any purchase must also comply with Apple App Store account rules and parental requirements.
+
+8. Policy updates
+If a later version adds accounts, cloud sync, feedback upload, analytics, broader network features, Android billing, or any other feature that changes how personal information is handled, we will update this policy before those changes are made available.
+
+9. Contact
+landingfeather@163.com`,
+    termsTitle: 'Terms of Use',
+    termsBody: `Version: v1.0
+Effective Date: 2026-03-26
+Updated: 2026-03-26
+
+Welcome to Light Ideas.
+These Terms of Use govern your download, installation, access to, and use of the app.
+
+1. Services
+Based on the current codebase, Light Ideas is a local-first thought-board app that may provide:
+1. creating new thoughts in the Bubble area;
+2. condensing Bubble items into Glass items with a long press;
+3. removing Bubble or Glass items;
+4. adjusting the Bubble / Glass layout ratio;
+5. adjusting Bubble lifetime;
+6. switching materials and background palettes, and using more materials, more palettes, and custom palettes with lifetime access; and
+7. viewing, purchasing, or restoring lifetime access on iOS / iPadOS.
+
+2. Free mode and lifetime access
+1. Under the current code, free-mode limits include:
+- up to 5 Bubble items at the same time;
+- only the default material preset;
+- only the default background palette; and
+- no custom palettes.
+2. Under the current code, the only paid product is a one-time lifetime unlock on iOS / iPadOS. There is no subscription, auto-renewal product, or Android billing flow in the current build.
+3. The current Product ID for lifetime access is:
+com.flowthemoment.lightideas.premium.lifetime
+4. Product name, price, currency, taxes, regional availability, and whether the product is currently purchasable are governed by the actual App Store listing.
+5. The current purchase flow depends on StoreKit 2. Under the existing code, purchase and restore-purchase features are available only on iOS 15 or later.
+
+3. Acceptable use
+1. You must use the app lawfully and properly. You must not use it for illegal, infringing, abusive, destructive, fraudulent, or otherwise unlawful conduct.
+2. You are responsible for the content you choose to place in the app. Do not rely on the app as the only place to store content that requires unusually high security, regulatory retention, or professional backup safeguards.
+3. You must not interfere with the app or its purchase flow through reverse engineering, malicious calls, tampering, destructive testing, or any conduct beyond what applicable law permits.
+
+4. Purchases, restore flow, and Apple terms
+1. On iOS / iPadOS, the current code uses Apple StoreKit to start purchases and restore purchases. Transaction handling, billing, refunds, and Apple-account charges are handled by Apple.
+2. If you change devices or reinstall the app, you may use the restore-purchases flow, subject to Apple’s rules, to ask Apple to sync your existing non-consumable purchase entitlement.
+3. The developer does not directly store or process your Apple ID, bank-card number, or full payment credentials.
+4. If you download or use the app on iOS / iPadOS, your use of that platform version is also subject to Apple’s Licensed Application End User License Agreement (Standard EULA):
+https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+
+5. Intellectual property
+The app and its code, interface, text, graphics, animations, design, and related content, except where third-party rights apply by law, are protected by applicable law. You may not copy, distribute, sell, rent, sublicense, or commercially redistribute them without permission.
+
+6. Disclaimer
+1. The app is not a medical, psychotherapy, crisis-intervention, emergency-response, legal-record, or professional backup service.
+2. The core experience depends on device-local storage. If content is lost, restored unexpectedly, or displayed incorrectly because of device failure, OS issues, uninstall / reinstall behavior, system cleanup, backup-restore differences, user error, or other causes outside the developer’s reasonable control, the developer does not make an additional guarantee.
+3. Material appearance, palette behavior, animations, and membership-state display may be affected by device performance, OS version, Apple platform behavior, and App Store product configuration.
+
+7. Limitation of liability
+To the maximum extent permitted by applicable law, the developer is not liable for indirect, incidental, special, punitive, or consequential damages arising from your use of, or inability to use, the app. This does not affect liabilities that cannot be excluded or limited under mandatory law.
+
+8. Governing law and disputes
+These terms are governed by the laws of the People’s Republic of China, excluding conflict-of-law rules. Disputes arising from the app or these terms should first be resolved through friendly consultation. If consultation fails, either party may bring the dispute before a competent court at the developer’s location.
+
+9. Contact
+landingfeather@163.com`
+  }
+};
+
 const legalApps: LegalAppDefinition[] = [
   {
     id: 'anchor-now',
@@ -648,12 +928,43 @@ const legalApps: LegalAppDefinition[] = [
       en: 'Sunny Breath / 阳光呼吸'
     },
     documents: sunnyBreathDocs
+  },
+  {
+    id: 'light-ideas',
+    slug: 'light-ideas',
+    routeStyle: 'standalone',
+    names: {
+      zh: '轻想法 / Light Ideas',
+      en: 'Light Ideas / 轻想法'
+    },
+    documents: lightIdeasDocs
   }
 ];
 
-function legalPath(locale: Locale, appSlug: string, docType: LegalDocType): string {
+function legalPath(
+  locale: Locale,
+  appSlug: string,
+  docType: LegalDocType,
+  routeStyle: LegalAppDefinition['routeStyle'] = 'apps'
+): string {
+  if (routeStyle === 'standalone') {
+    if (locale === 'zh') return `/${appSlug}/${docType}`;
+    return `/en/${appSlug}/${docType}`;
+  }
   if (locale === 'zh') return `/apps/${appSlug}/${docType}`;
   return `/en/apps/${appSlug}/${docType}`;
+}
+
+function buildLegalPage(locale: Locale, app: LegalAppDefinition, docType: LegalDocType): AppLegalPageData {
+  const docSet = app.documents[locale];
+  return {
+    appId: app.id,
+    appSlug: app.slug,
+    appName: app.names[locale],
+    docType,
+    title: docType === 'privacy' ? docSet.privacyTitle : docSet.termsTitle,
+    body: docType === 'privacy' ? docSet.privacyBody : docSet.termsBody
+  };
 }
 
 export function getAppLegalLinks(locale: Locale, appId: string): AppLegalLinks | null {
@@ -664,37 +975,45 @@ export function getAppLegalLinks(locale: Locale, appId: string): AppLegalLinks |
   return {
     privacyLabel: docSet.privacyTitle,
     termsLabel: docSet.termsTitle,
-    privacyPath: legalPath(locale, app.slug, 'privacy'),
-    termsPath: legalPath(locale, app.slug, 'terms')
+    privacyPath: legalPath(locale, app.slug, 'privacy', app.routeStyle),
+    termsPath: legalPath(locale, app.slug, 'terms', app.routeStyle)
   };
 }
 
 export function getLegalStaticPaths(locale: Locale) {
-  return legalApps.flatMap((app) => {
-    const docSet = app.documents[locale];
+  return legalApps
+    .filter((app) => (app.routeStyle ?? 'apps') === 'apps')
+    .flatMap((app) => {
+      const pages: AppLegalPageData[] = [
+        buildLegalPage(locale, app, 'privacy'),
+        buildLegalPage(locale, app, 'terms')
+      ];
 
-    const pages: AppLegalPageData[] = [
-      {
-        appId: app.id,
-        appSlug: app.slug,
-        appName: app.names[locale],
-        docType: 'privacy',
-        title: docSet.privacyTitle,
-        body: docSet.privacyBody
-      },
-      {
-        appId: app.id,
-        appSlug: app.slug,
-        appName: app.names[locale],
-        docType: 'terms',
-        title: docSet.termsTitle,
-        body: docSet.termsBody
-      }
-    ];
+      return pages.map((page) => ({
+        params: { app: app.slug, doc: page.docType },
+        props: { page }
+      }));
+    });
+}
 
-    return pages.map((page) => ({
-      params: { app: app.slug, doc: page.docType },
-      props: { page }
-    }));
-  });
+export function getStandaloneLegalStaticPaths(locale: Locale, appId: string) {
+  const app = legalApps.find((item) => item.id === appId);
+  if (!app || (app.routeStyle ?? 'apps') !== 'standalone') {
+    return [];
+  }
+
+  return (['privacy', 'terms'] as const).map((docType) => ({
+    params: { doc: docType },
+    props: { page: buildLegalPage(locale, app, docType) }
+  }));
+}
+
+export function getAppLegalPageData(
+  locale: Locale,
+  appId: string,
+  docType: LegalDocType
+): AppLegalPageData | null {
+  const app = legalApps.find((item) => item.id === appId);
+  if (!app) return null;
+  return buildLegalPage(locale, app, docType);
 }
