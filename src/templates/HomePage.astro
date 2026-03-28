@@ -12,8 +12,9 @@ interface Props {
 
 const { locale, path } = Astro.props;
 const t = getCopy(locale);
-const featuredApp = t.apps.items[0];
-const spotlightApps = t.apps.items.slice(1, 4);
+const homeApps = t.apps.items.filter((app) => app.id !== 'sunshine-breath');
+const featuredApp = homeApps[0];
+const spotlightApps = homeApps.slice(1, 4);
 const homeTitle =
   locale === 'zh'
     ? 'Flow the Moment | 温柔的在场、注意力与数字健康工具'
@@ -35,15 +36,15 @@ const jsonLd = [
     url: siteOrigin,
     description: t.meta.description
   },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'ItemList',
-    name: locale === 'zh' ? '产品方向' : 'Product collection',
-    itemListElement: t.apps.items.map((app, index) => ({
-      '@type': 'ListItem',
-      position: index + 1,
-      name: app.name,
-      url: new URL(withBase(getProfilePath(locale, app.id) ?? pathFor(locale, 'apps')), siteOrigin).toString()
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: locale === 'zh' ? '产品方向' : 'Product collection',
+      itemListElement: homeApps.map((app, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: app.name,
+        url: new URL(withBase(getProfilePath(locale, app.id) ?? pathFor(locale, 'apps')), siteOrigin).toString()
     }))
   }
 ];
@@ -186,7 +187,7 @@ const spotlightMotifs: Array<'breathe' | 'wave' | 'rings'> = ['breathe', 'wave',
       <p>{t.apps.intro}</p>
     </div>
     <div class="product-list">
-      {t.apps.items.map((app, index) => (
+      {homeApps.map((app, index) => (
         <article class={`product-row ${index === 0 ? 'product-row-featured' : ''}`} id={`home-${app.id}`}>
           <div class="product-row-index">
             <span>{String(index + 1).padStart(2, '0')}</span>

@@ -136,26 +136,6 @@ const sharedAppsZh: AppItem[] = [
       '成瘾猫不是强硬封锁器，也不是羞耻统计面板。它在你快要滑回惯性时，替你留出一个真实、温柔、还能自己决定下一步的停顿。'
   },
   {
-    id: 'anchor-now',
-    name: '此刻锚',
-    nameEn: 'Anchor Now',
-    oneLine: '把恐慌、焦躁和走神拆成一键可用的最小介入。',
-    status: 'progress',
-    bullets: ['三种常见状态入口：恐慌、焦躁、走神', '把呼吸、落地和下一步拼成自己的支持流程', '把最需要的帮助放在一伸手就能到的地方'],
-    detail:
-      '此刻锚不是再多一个效率工具，而是在身体过载、思绪散开或注意力开始漂移时，先把人稳住，再把问题拆小。'
-  },
-  {
-    id: 'sunshine-breath',
-    name: '阳光呼吸',
-    nameEn: 'Sunny Breath',
-    oneLine: '不是闹钟，是为清晨前 10 分钟设计的温柔启动。',
-    status: 'coming',
-    bullets: ['渐进音乐唤醒，减少被突然惊醒的紧张', '1-3 个无压力启动动作，先跨过起身阻力', '极简情绪记录与节律辅助，不制造打卡焦虑'],
-    detail:
-      '阳光呼吸处理的不是“如何更狠地早起”，而是醒来后最容易卡住的 0-10 分钟。它用渐进音乐、轻动作和简短记录，把慌张改成可回来的节奏。'
-  },
-  {
     id: 'light-ideas',
     name: '轻想法',
     nameEn: 'Light Ideas',
@@ -166,6 +146,16 @@ const sharedAppsZh: AppItem[] = [
       '轻想法不是任务系统，而是一块安静的想法板。它把“先接住、再沉淀、也允许放下”做成清晰的体验，适合那些总在脑中冒出很多小火花的人。'
   },
   {
+    id: 'anchor-now',
+    name: '此刻锚',
+    nameEn: 'Anchor Now',
+    oneLine: '把恐慌、焦躁和走神拆成一键可用的最小介入。',
+    status: 'progress',
+    bullets: ['三种常见状态入口：恐慌、焦躁、走神', '把呼吸、落地和下一步拼成自己的支持流程', '把最需要的帮助放在一伸手就能到的地方'],
+    detail:
+      '此刻锚不是再多一个效率工具，而是在身体过载、思绪散开或注意力开始漂移时，先把人稳住，再把问题拆小。'
+  },
+  {
     id: 'steady-flow',
     name: '稳流',
     nameEn: 'Steady Flow',
@@ -174,6 +164,16 @@ const sharedAppsZh: AppItem[] = [
     bullets: ['趋势词自动降噪处理', '生成自然感壁纸与静心卡片', '把“被打扰”变成“被安顿”'],
     detail:
       '稳流不否认信息洪流存在，而是把它重新编排成可承受的节律。你依然看见世界，但不再被每一次推送牵着走。'
+  },
+  {
+    id: 'sunshine-breath',
+    name: '阳光呼吸',
+    nameEn: 'Sunny Breath',
+    oneLine: '不是闹钟，是为清晨前 10 分钟设计的温柔启动。',
+    status: 'coming',
+    bullets: ['渐进音乐唤醒，减少被突然惊醒的紧张', '1-3 个无压力启动动作，先跨过起身阻力', '极简情绪记录与节律辅助，不制造打卡焦虑'],
+    detail:
+      '阳光呼吸处理的不是“如何更狠地早起”，而是醒来后最容易卡住的 0-10 分钟。它用渐进音乐、轻动作和简短记录，把慌张改成可回来的节奏。'
   }
 ];
 
@@ -189,26 +189,6 @@ const sharedAppsEn: AppItem[] = [
       'Craving Cat is not a hard lock and not a shame dashboard. It leaves a real, kind pause right before autopilot takes over, so you can still make the next choice yourself.'
   },
   {
-    id: 'anchor-now',
-    name: 'Anchor Now',
-    nameEn: '此刻锚',
-    oneLine: 'Turn panic, anxiety, and drift into one-tap, low-load intervention flows.',
-    status: 'progress',
-    bullets: ['Three familiar entry states: panic, anxiety, and drift', 'Shape breathing, grounding, and next steps into your own support flow', 'Keep help close enough to reach before overwhelm grows'],
-    detail:
-      'Anchor Now is not another productivity tool. It is a way to steady the body first, then break a hard moment into something small enough to handle.'
-  },
-  {
-    id: 'sunshine-breath',
-    name: 'Sunny Breath',
-    nameEn: '阳光呼吸',
-    oneLine: 'Not an alarm, but a gentle start for the first 10 minutes of the morning.',
-    status: 'coming',
-    bullets: ['Gradual wake music to reduce the shock of abrupt alarms', '1-3 low-pressure starter actions to cross morning resistance', 'Minimal mood logging and rhythm support without streak anxiety'],
-    detail:
-      'Sunny Breath is built around the hardest part of mornings: the first 0-10 minutes. It uses gradual audio, tiny actions, and a short check-in to turn panic into a pace you can re-enter.'
-  },
-  {
     id: 'light-ideas',
     name: 'Light Ideas',
     nameEn: '轻想法',
@@ -219,6 +199,16 @@ const sharedAppsEn: AppItem[] = [
       'Light Ideas is not a task system. It is a calmer thought board built for idea overflow, gentle reflection, and ADHD-friendly capture. It turns “keep it, settle it, or let it go” into a natural flow.'
   },
   {
+    id: 'anchor-now',
+    name: 'Anchor Now',
+    nameEn: '此刻锚',
+    oneLine: 'Turn panic, anxiety, and drift into one-tap, low-load intervention flows.',
+    status: 'progress',
+    bullets: ['Three familiar entry states: panic, anxiety, and drift', 'Shape breathing, grounding, and next steps into your own support flow', 'Keep help close enough to reach before overwhelm grows'],
+    detail:
+      'Anchor Now is not another productivity tool. It is a way to steady the body first, then break a hard moment into something small enough to handle.'
+  },
+  {
     id: 'steady-flow',
     name: 'Steady Flow',
     nameEn: '稳流',
@@ -227,6 +217,16 @@ const sharedAppsEn: AppItem[] = [
     bullets: ['Trend keywords pass through a calming filter', 'Generate nature-like wallpapers and focus cards', 'Turn interruption into a quiet visual pause'],
     detail:
       'Steady Flow does not deny the information stream. It reframes it into patterns your nervous system can hold, so awareness stays open without overload.'
+  },
+  {
+    id: 'sunshine-breath',
+    name: 'Sunny Breath',
+    nameEn: '阳光呼吸',
+    oneLine: 'Not an alarm, but a gentle start for the first 10 minutes of the morning.',
+    status: 'coming',
+    bullets: ['Gradual wake music to reduce the shock of abrupt alarms', '1-3 low-pressure starter actions to cross morning resistance', 'Minimal mood logging and rhythm support without streak anxiety'],
+    detail:
+      'Sunny Breath is built around the hardest part of mornings: the first 0-10 minutes. It uses gradual audio, tiny actions, and a short check-in to turn panic into a pace you can re-enter.'
   }
 ];
 
