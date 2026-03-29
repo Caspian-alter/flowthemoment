@@ -39,6 +39,7 @@ const openingInHero = profile.opening[0];
 const remainingOpening = profile.opening.slice(1);
 const applicationCategory = profile.appId === 'light-ideas' ? 'ProductivityApplication' : 'HealthApplication';
 const pageUrl = new URL(path, siteOrigin).toString();
+const storeUrl = profile.storeUrl;
 const jsonLdImages = [
   featuredShowcase?.src ? new URL(withBase(featuredShowcase.src), siteOrigin).toString() : null,
   ...galleryShowcase.map((image) => new URL(withBase(image.src), siteOrigin).toString()),
@@ -54,6 +55,7 @@ const jsonLd = [
     applicationCategory,
     mainEntityOfPage: pageUrl,
     url: pageUrl,
+    downloadUrl: storeUrl,
     image: jsonLdImages.length > 0 ? jsonLdImages : undefined,
     inLanguage: locale === 'zh' ? 'zh-CN' : 'en'
   },
@@ -122,7 +124,14 @@ const labels =
       <p class="product-hero-intro">{profile.intro}</p>
       {openingInHero && <p class="hero-intro-extra">{openingInHero}</p>}
       <div class="hero-cta">
-        <a href={withBase(backHome)} class="btn btn-primary">{locale === 'zh' ? '回到主页' : 'Back to Home'}</a>
+        {storeUrl && (
+          <a href={storeUrl} class="btn btn-primary" target="_blank" rel="noreferrer">
+            {profile.storeLabel ?? (locale === 'zh' ? '前往下载' : 'Download')}
+          </a>
+        )}
+        <a href={withBase(backHome)} class={storeUrl ? 'btn btn-secondary' : 'btn btn-primary'}>
+          {locale === 'zh' ? '回到主页' : 'Back to Home'}
+        </a>
         <a href={withBase(backApps)} class="btn btn-secondary">{locale === 'zh' ? '回到应用列表' : 'Back to Apps'}</a>
       </div>
       <div class="profile-jump">

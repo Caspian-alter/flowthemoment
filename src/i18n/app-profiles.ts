@@ -46,6 +46,8 @@ export interface AppProfile {
   showcaseIntro?: string;
   showcaseImages?: ShowcaseImage[];
   showcaseGroups?: ShowcaseGroup[];
+  storeUrl?: string;
+  storeLabel?: string;
 }
 
 interface AppProfileDefinition {
@@ -557,8 +559,10 @@ const lightIdeasProfile: AppProfileDefinition = {
       legalIntro: '这里收录的是依据当前代码实现撰写的隐私政策与使用条款。',
       legalPrivacyLabel: '隐私协议',
       legalTermsLabel: '使用条款',
+      storeUrl: 'https://apps.apple.com/us/app/light-ideas-thought-board/id6760224660',
+      storeLabel: '前往 App Store',
       showcaseTitle: '商店预览',
-      showcaseIntro: '简体中文与英文商店素材都保留在这里，方便直接查看发布后的展示效果。',
+      showcaseIntro: '这里展示的是简体中文版商店宣传图，顺序与商店页保持一致。',
       showcaseImages: [
         {
           src: '/images/light-ideas/icon.png',
@@ -600,40 +604,6 @@ const lightIdeasProfile: AppProfileDefinition = {
             }
           ]
         },
-        {
-          title: '英文商店宣传图',
-          intro: '英文版素材与商店顺序一致，便于直接对照发布状态。',
-          images: [
-            {
-              src: '/images/light-ideas/store/en-US/01_catch-thoughts.png',
-              alt: '轻想法英文宣传图 1：catch thoughts'
-            },
-            {
-              src: '/images/light-ideas/store/en-US/02_settle-into-glass.png',
-              alt: '轻想法英文宣传图 2：settle into Glass'
-            },
-            {
-              src: '/images/light-ideas/store/en-US/03_browse-glass-timeline.png',
-              alt: '轻想法英文宣传图 3：browse the Glass timeline'
-            },
-            {
-              src: '/images/light-ideas/store/en-US/04_shape-your-space.png',
-              alt: '轻想法英文宣传图 4：shape your space'
-            },
-            {
-              src: '/images/light-ideas/store/en-US/05_materials-and-palettes.png',
-              alt: '轻想法英文宣传图 5：materials and palettes'
-            },
-            {
-              src: '/images/light-ideas/store/en-US/06_custom-color-templates.png',
-              alt: '轻想法英文宣传图 6：custom color templates'
-            },
-            {
-              src: '/images/light-ideas/store/en-US/06_lifetime-membership.png',
-              alt: '轻想法英文宣传图 7：lifetime membership'
-            }
-          ]
-        }
       ]
     },
     en: {
@@ -695,8 +665,10 @@ const lightIdeasProfile: AppProfileDefinition = {
       legalIntro: 'These documents are written against the current codebase and the product behavior it implements today.',
       legalPrivacyLabel: 'Privacy Policy',
       legalTermsLabel: 'Terms of Use',
+      storeUrl: 'https://apps.apple.com/us/app/light-ideas-thought-board/id6760224660',
+      storeLabel: 'View on the App Store',
       showcaseTitle: 'Store preview',
-      showcaseIntro: 'Both Chinese and English App Store materials are shown here so the live release can be reviewed at a glance.',
+      showcaseIntro: 'This page shows the English App Store screenshots used for the live release.',
       showcaseImages: [
         {
           src: '/images/light-ideas/icon.png',
@@ -704,40 +676,6 @@ const lightIdeasProfile: AppProfileDefinition = {
         }
       ],
       showcaseGroups: [
-        {
-          title: 'Simplified Chinese screenshots',
-          intro: 'The Chinese set follows the same release order used in the store.',
-          images: [
-            {
-              src: '/images/light-ideas/store/zh-Hans/01_catch-thoughts.png',
-              alt: 'Light Ideas Simplified Chinese screenshot 1: catch thoughts'
-            },
-            {
-              src: '/images/light-ideas/store/zh-Hans/02_settle-into-glass.png',
-              alt: 'Light Ideas Simplified Chinese screenshot 2: settle into Glass'
-            },
-            {
-              src: '/images/light-ideas/store/zh-Hans/03_browse-glass-timeline.png',
-              alt: 'Light Ideas Simplified Chinese screenshot 3: browse the Glass timeline'
-            },
-            {
-              src: '/images/light-ideas/store/zh-Hans/04_shape-your-space.png',
-              alt: 'Light Ideas Simplified Chinese screenshot 4: shape your space'
-            },
-            {
-              src: '/images/light-ideas/store/zh-Hans/05_materials-and-palettes.png',
-              alt: 'Light Ideas Simplified Chinese screenshot 5: materials and palettes'
-            },
-            {
-              src: '/images/light-ideas/store/zh-Hans/06_custom-color-templates.png',
-              alt: 'Light Ideas Simplified Chinese screenshot 6: custom color templates'
-            },
-            {
-              src: '/images/light-ideas/store/zh-Hans/06_lifetime-membership.png',
-              alt: 'Light Ideas Simplified Chinese screenshot 7: lifetime membership'
-            }
-          ]
-        },
         {
           title: 'English screenshots',
           intro: 'The English set mirrors the published App Store sequence.',
