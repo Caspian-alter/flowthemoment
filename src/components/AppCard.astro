@@ -9,19 +9,20 @@ interface Props {
     name: string;
     nameEn: string;
     oneLine: string;
-    status: string;
+    status: 'coming' | 'progress' | 'released';
     bullets: string[];
   };
   locale: Locale;
   badgeComing: string;
   badgeProgress: string;
+  badgeReleased: string;
   learnMore: string;
   variant?: 'featured' | 'default';
   motif?: 'wave' | 'rings' | 'breathe';
 }
 
-const { app, locale, badgeComing, badgeProgress, learnMore, variant = 'default', motif = 'wave' } = Astro.props;
-const badge = app.status === 'progress' ? badgeProgress : badgeComing;
+const { app, locale, badgeComing, badgeProgress, badgeReleased, learnMore, variant = 'default', motif = 'wave' } = Astro.props;
+const badge = app.status === 'released' ? badgeReleased : app.status === 'progress' ? badgeProgress : badgeComing;
 const appsPath = locale === 'zh' ? '/apps' : '/en/apps';
 const profilePath = getProfilePath(locale, app.id);
 const targetHref = profilePath ? withBase(profilePath) : `${withBase(appsPath)}#${app.id}`;

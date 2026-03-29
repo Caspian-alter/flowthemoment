@@ -19,12 +19,12 @@ const siteOrigin = Astro.site?.toString() ?? 'https://flowthemoment.com';
 const pageUrl = new URL(withBase(path), siteOrigin).toString();
 const pageTitle =
   locale === 'zh'
-    ? '应用 | 为在场、专注与数字健康设计的工具 | Flow the Moment'
-    : 'Apps | Tools for presence, focus, and digital wellbeing | Flow the Moment';
+    ? '应用 | Light Ideas 已发布的产品组合 | Flow the Moment'
+    : 'Apps | Light Ideas is live, gentle tools for presence | Flow the Moment';
 const pageDescription =
   locale === 'zh'
-    ? '探索 Flow the Moment 的产品：成瘾猫、此刻锚、阳光呼吸、轻想法与稳流。为在场、专注、清晨启动与数字健康设计。'
-    : 'Explore Flow the Moment apps: Craving Cat, Anchor Now, Sunny Breath, Light Ideas, and Steady Flow. Tools for presence, focus, mornings, and digital wellbeing.';
+    ? '探索 Flow the Moment 的产品：轻想法、成瘾猫、此刻锚、阳光呼吸与稳流。轻想法已正式上线，其余产品按不同节奏陆续推进。'
+    : 'Explore Flow the Moment apps: Light Ideas, Craving Cat, Anchor Now, Sunny Breath, and Steady Flow. Light Ideas is live, and the rest are moving at their own pace.';
 const jsonLd = [
   {
     '@context': 'https://schema.org',
@@ -62,6 +62,18 @@ const jsonLd = [
         item: pageUrl
       }
     ]
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: t.appsPage.faqs.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.a
+      }
+    }))
   }
 ];
 const focusTags =
@@ -110,7 +122,7 @@ const labels =
               <p>{app.oneLine}</p>
             </div>
             <div class="page-hero-note-art" aria-hidden="true">
-              <ProductVisual appId={app.id} motif={motifs[index] ?? 'wave'} />
+              <ProductVisual appId={app.id} locale={locale} motif={motifs[index] ?? 'wave'} />
             </div>
           </a>
         ))}
@@ -129,7 +141,12 @@ const labels =
       {t.apps.items.map((app, index) => {
         const legalLinks = getAppLegalLinks(locale, app.id);
         const profilePath = getProfilePath(locale, app.id);
-        const badge = app.status === 'progress' ? t.apps.badgeProgress : t.apps.badgeComing;
+        const badge =
+          app.status === 'released'
+            ? t.apps.badgeReleased
+            : app.status === 'progress'
+              ? t.apps.badgeProgress
+              : t.apps.badgeComing;
         return (
           <article class={`product-row product-row-detailed ${index === 0 ? 'product-row-featured' : ''}`} id={app.id}>
             <div class="product-row-index">
@@ -167,7 +184,7 @@ const labels =
               </div>
             </div>
             <div class="product-row-art" aria-hidden="true">
-              <ProductVisual appId={app.id} motif={motifs[index] ?? 'wave'} />
+              <ProductVisual appId={app.id} locale={locale} motif={motifs[index] ?? 'wave'} />
             </div>
           </article>
         );

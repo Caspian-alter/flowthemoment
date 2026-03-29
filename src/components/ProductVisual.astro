@@ -1,13 +1,15 @@
 ---
 import { withBase } from '../i18n/utils';
 import FlowMotif from './FlowMotif.astro';
+import type { Locale } from '../i18n/utils';
 
 interface Props {
   appId: string;
+  locale: Locale;
   motif?: 'wave' | 'rings' | 'breathe' | 'cat';
 }
 
-const { appId, motif = 'wave' } = Astro.props;
+const { appId, locale, motif = 'wave' } = Astro.props;
 ---
 
 {appId === 'anchor-now' ? (
@@ -49,7 +51,18 @@ const { appId, motif = 'wave' } = Astro.props;
         stroke-width="3"
         stroke-linecap="round"
       />
-    </svg>
+      </svg>
+  </div>
+) : appId === 'light-ideas' ? (
+  <div class="product-visual product-visual-light-ideas" aria-hidden="true">
+    <div class="light-ideas-aura" />
+    <div class="light-ideas-icon-shell">
+      <img src={withBase('/images/light-ideas/icon.png')} alt="" loading="lazy" decoding="async" class="light-ideas-icon-image" />
+    </div>
+    <div class="light-ideas-note-row">
+      <span>{locale === 'zh' ? '已发布' : 'Released'}</span>
+      <span>{locale === 'zh' ? 'Bubble / Glass' : 'Bubble / Glass'}</span>
+    </div>
   </div>
 ) : appId === 'craving-cat' ? (
   <div class="product-visual product-visual-cat" aria-hidden="true">

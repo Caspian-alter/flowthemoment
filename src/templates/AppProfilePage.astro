@@ -16,14 +16,34 @@ const legalLinks = getAppLegalLinks(locale, profile.appId);
 const backHome = locale === 'zh' ? '/' : '/en';
 const backApps = locale === 'zh' ? '/apps' : '/en/apps';
 const siteOrigin = Astro.site?.toString() ?? 'https://flowthemoment.com';
-const pageTitle = `${profile.name} | ${profile.tagline} | Flow the Moment`;
-const pageDescription = locale === 'zh' ? `${profile.name}：${profile.intro}` : `${profile.name}: ${profile.intro}`;
+const pageTitle =
+  profile.appId === 'light-ideas'
+    ? locale === 'zh'
+      ? '轻想法 Light Ideas | 已发布 | Flow the Moment'
+      : 'Light Ideas | Released | Flow the Moment'
+    : `${profile.name} | ${profile.tagline} | Flow the Moment`;
+const pageDescription =
+  profile.appId === 'light-ideas'
+    ? locale === 'zh'
+      ? `${profile.name}：${profile.intro} 这是一款已经正式上线的本地优先想法板。`
+      : `${profile.name}: ${profile.intro} A live, local-first thought board.`
+    : locale === 'zh'
+      ? `${profile.name}：${profile.intro}`
+      : `${profile.name}: ${profile.intro}`;
 const featuredShowcase = profile.showcaseImages?.[0];
 const galleryShowcase = profile.showcaseImages?.slice(1) ?? [];
+const storeShowcaseGroups = profile.showcaseGroups ?? [];
+const hasVisualShowcase = galleryShowcase.length > 0 || storeShowcaseGroups.length > 0;
+const showcaseAnchor = storeShowcaseGroups.length > 0 ? '#profile-store-title' : '#profile-showcase-title';
 const openingInHero = profile.opening[0];
 const remainingOpening = profile.opening.slice(1);
 const applicationCategory = profile.appId === 'light-ideas' ? 'ProductivityApplication' : 'HealthApplication';
 const pageUrl = new URL(path, siteOrigin).toString();
+const jsonLdImages = [
+  featuredShowcase?.src ? new URL(withBase(featuredShowcase.src), siteOrigin).toString() : null,
+  ...galleryShowcase.map((image) => new URL(withBase(image.src), siteOrigin).toString()),
+  ...storeShowcaseGroups.flatMap((group) => group.images.map((image) => new URL(withBase(image.src), siteOrigin).toString()))
+].filter((value): value is string => Boolean(value));
 const jsonLd = [
   {
     '@context': 'https://schema.org',
@@ -34,7 +54,7 @@ const jsonLd = [
     applicationCategory,
     mainEntityOfPage: pageUrl,
     url: pageUrl,
-    image: featuredShowcase ? new URL(withBase(featuredShowcase.src), siteOrigin).toString() : undefined,
+    image: jsonLdImages.length > 0 ? jsonLdImages : undefined,
     inLanguage: locale === 'zh' ? 'zh-CN' : 'en'
   },
   {
@@ -71,6 +91,7 @@ const labels =
         capabilities: '能力',
         audience: '适合谁',
         visuals: '视觉',
+        storePreview: '商店预览',
         legal: '法律'
       }
     : {
@@ -80,6 +101,7 @@ const labels =
         capabilities: 'Capabilities',
         audience: 'Audience',
         visuals: 'Visuals',
+        storePreview: 'Store preview',
         legal: 'Legal'
       };
 ---
@@ -107,7 +129,11 @@ const labels =
         <a href="#profile-principles-title" class="tag-pill">{labels.principles}</a>
         <a href="#profile-flow-title" class="tag-pill">{labels.flow}</a>
         <a href="#profile-features-title" class="tag-pill">{labels.capabilities}</a>
-        {galleryShowcase.length > 0 && <a href="#profile-showcase-title" class="tag-pill">{labels.visuals}</a>}
+        {hasVisualShowcase && (
+          <a href={showcaseAnchor} class="tag-pill">
+            {storeShowcaseGroups.length > 0 ? labels.storePreview : labels.visuals}
+          </a>
+        )}
         {legalLinks && <a href="#profile-legal-title" class="tag-pill">{labels.legal}</a>}
       </div>
       <div class="product-meta-grid">
@@ -120,7 +146,21 @@ const labels =
       </div>
     </div>
     <div class="product-hero-visual">
-      {profile.appId === 'anchor-now' && featuredShowcase ? (
+      {profile.appId === 'light-ideas' && featuredShowcase ? (
+        <figure class="cover-figure cover-figure-editorial cover-figure-light-ideas">
+          <div class="light-ideas-icon-stage">
+            <div class="light-ideas-hero-badge">{locale === 'zh' ? '已发布 / App Store' : 'Released / App Store'}</div>
+            <div class="light-ideas-icon-shell light-ideas-icon-shell-hero">
+              <img src={withBase(featuredShowcase.src)} alt={featuredShowcase.alt} loading="eager" decoding="async" class="light-ideas-icon-image" />
+            </div>
+            <div class="light-ideas-hero-notes">
+              <span>Bubble</span>
+              <span>Glass</span>
+              <span>{locale === 'zh' ? '本地优先' : 'Local-first'}</span>
+            </div>
+          </div>
+        </figure>
+      ) : profile.appId === 'anchor-now' && featuredShowcase ? (
         <figure class="cover-figure cover-figure-editorial cover-figure-anchor">
           <div class="anchor-icon-stage">
             <div class="anchor-hero-badge">{locale === 'zh' ? '开发中 / 低负担介入' : 'In progress / low-load intervention'}</div>
@@ -196,6 +236,38 @@ const labels =
       </div>
       <div class="editorial-prose">
         {remainingOpening.map((item) => <p>{item}</p>)}
+      </div>
+    </section>
+  )}
+
+  {storeShowcaseGroups.length > 0 && (
+    <section class="shell showcase-section showcase-section-store" aria-labelledby="profile-store-title">
+      <div class="section-intro section-split">
+        <div>
+          <p class="eyebrow">{labels.storePreview}</p>
+          <h2 id="profile-store-title">{profile.showcaseTitle ?? labels.storePreview}</h2>
+        </div>
+        {profile.showcaseIntro && <p>{profile.showcaseIntro}</p>}
+      </div>
+      <div class="store-preview-list">
+        {storeShowcaseGroups.map((group, groupIndex) => (
+          <article class="store-preview-group">
+            <div class="store-preview-group-head">
+              <p class="story-index">{String(groupIndex + 1).padStart(2, '0')}</p>
+              <div>
+                <h3>{group.title}</h3>
+                {group.intro && <p>{group.intro}</p>}
+              </div>
+            </div>
+            <div class="promo-grid promo-grid-store">
+              {group.images.map((image) => (
+                <figure class="promo-card promo-card-store">
+                  <img src={withBase(image.src)} alt={image.alt} loading="lazy" decoding="async" />
+                </figure>
+              ))}
+            </div>
+          </article>
+        ))}
       </div>
     </section>
   )}

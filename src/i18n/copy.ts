@@ -16,7 +16,7 @@ interface AppItem {
   name: string;
   nameEn: string;
   oneLine: string;
-  status: string;
+  status: 'coming' | 'progress' | 'released';
   bullets: string[];
   detail: string;
 }
@@ -64,6 +64,7 @@ type LocaleCopy = {
     intro: string;
     badgeComing: string;
     badgeProgress: string;
+    badgeReleased: string;
     learnMore: string;
     items: AppItem[];
   };
@@ -126,6 +127,16 @@ type LocaleCopy = {
 
 const sharedAppsZh: AppItem[] = [
   {
+    id: 'light-ideas',
+    name: '轻想法',
+    nameEn: 'Light Ideas',
+    oneLine: '让快而碎的念头，先有一个轻轻落下的地方。',
+    status: 'released',
+    bullets: ['先放进 Bubble，不要求立刻整理', '值得留下的再凝成 Glass，不重要的允许散去', '本地优先、空间可调，让记录更贴近自己的节奏'],
+    detail:
+      '轻想法不是任务系统，而是一块安静的想法板。它把“先接住、再沉淀、也允许放下”做成清晰的体验，适合那些总在脑中冒出很多小火花的人。'
+  },
+  {
     id: 'craving-cat',
     name: '成瘾猫',
     nameEn: 'Craving Cat',
@@ -134,16 +145,6 @@ const sharedAppsZh: AppItem[] = [
     bullets: ['为最容易停不下来的入口留出一个温柔停顿', '可以按不同习惯分别设置更合身的边界', '猫猫陪伴与一次呼吸，把冲动变成还能选择的片刻'],
     detail:
       '成瘾猫不是强硬封锁器，也不是羞耻统计面板。它在你快要滑回惯性时，替你留出一个真实、温柔、还能自己决定下一步的停顿。'
-  },
-  {
-    id: 'light-ideas',
-    name: '轻想法',
-    nameEn: 'Light Ideas',
-    oneLine: '让快而碎的念头，先有一个轻轻落下的地方。',
-    status: 'progress',
-    bullets: ['先放进 Bubble，不要求立刻整理', '值得留下的再凝成 Glass，不重要的允许散去', '本地优先、空间可调，让记录更贴近自己的节奏'],
-    detail:
-      '轻想法不是任务系统，而是一块安静的想法板。它把“先接住、再沉淀、也允许放下”做成清晰的体验，适合那些总在脑中冒出很多小火花的人。'
   },
   {
     id: 'anchor-now',
@@ -179,6 +180,16 @@ const sharedAppsZh: AppItem[] = [
 
 const sharedAppsEn: AppItem[] = [
   {
+    id: 'light-ideas',
+    name: 'Light Ideas',
+    nameEn: '轻想法',
+    oneLine: 'A softer landing place for fast, fragile thoughts.',
+    status: 'released',
+    bullets: ['Catch first in Bubble without organizing on arrival', 'Condense what matters into Glass and let the rest fade lightly', 'Stay local-first and adjustable, so the board can match your pace'],
+    detail:
+      'Light Ideas is not a task system. It is a calmer thought board built for idea overflow, gentle reflection, and ADHD-friendly capture. It turns “keep it, settle it, or let it go” into a natural flow.'
+  },
+  {
     id: 'craving-cat',
     name: 'Craving Cat',
     nameEn: '成瘾猫',
@@ -187,16 +198,6 @@ const sharedAppsEn: AppItem[] = [
     bullets: ['A gentle pause for the places where you most often lose time', 'Different habits can hold different boundaries instead of one blunt limit', 'Cat company and one guided breath restore choice before autopilot wins'],
     detail:
       'Craving Cat is not a hard lock and not a shame dashboard. It leaves a real, kind pause right before autopilot takes over, so you can still make the next choice yourself.'
-  },
-  {
-    id: 'light-ideas',
-    name: 'Light Ideas',
-    nameEn: '轻想法',
-    oneLine: 'A softer landing place for fast, fragile thoughts.',
-    status: 'progress',
-    bullets: ['Catch first in Bubble without organizing on arrival', 'Condense what matters into Glass and let the rest fade lightly', 'Stay local-first and adjustable, so the board can match your pace'],
-    detail:
-      'Light Ideas is not a task system. It is a calmer thought board built for idea overflow, gentle reflection, and ADHD-friendly capture. It turns “keep it, settle it, or let it go” into a natural flow.'
   },
   {
     id: 'anchor-now',
@@ -322,10 +323,11 @@ export const copy: Record<Locale, LocaleCopy> = {
       ]
     },
     apps: {
-      title: '即将到来的应用',
-      intro: '五个产品，同一方向：更自由的注意力。',
+      title: '当前产品',
+      intro: '一个已发布与正在形成中的产品组合，同一方向：更自由的注意力。',
       badgeComing: '即将上线',
       badgeProgress: '开发中',
+      badgeReleased: '已发布',
       learnMore: '了解更多',
       items: sharedAppsZh
     },
@@ -505,10 +507,11 @@ export const copy: Record<Locale, LocaleCopy> = {
       ]
     },
     apps: {
-      title: 'Upcoming Apps',
-      intro: 'Five products, one direction: freer attention in daily life.',
+      title: 'Products',
+      intro: 'A mix of live and in-progress products, all moving toward freer attention in daily life.',
       badgeComing: 'Coming soon',
       badgeProgress: 'In progress',
+      badgeReleased: 'Released',
       learnMore: 'Learn more',
       items: sharedAppsEn
     },

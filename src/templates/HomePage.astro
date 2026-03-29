@@ -17,8 +17,8 @@ const featuredApp = homeApps[0];
 const spotlightApps = homeApps.slice(1, 4);
 const homeTitle =
   locale === 'zh'
-    ? 'Flow the Moment | 温柔的在场、注意力与数字健康工具'
-    : 'Flow the Moment | Gentle tools for presence, attention, and digital wellbeing';
+    ? 'Light Ideas 已发布 | Flow the Moment · 温柔的在场与数字健康工具'
+    : 'Light Ideas is live | Flow the Moment · gentle tools for presence';
 const siteOrigin = Astro.site?.toString() ?? 'https://flowthemoment.com';
 const homeUrl = new URL(withBase(pathFor(locale, 'home')), siteOrigin).toString();
 const jsonLd = [
@@ -59,21 +59,26 @@ const labels =
         story: '品牌故事',
         quote: '立场',
         principles: '原则',
-        products: '产品方向',
-        focus: '参考方向',
-        leading: '当前主打',
-        collection: '正在形成中的产品线'
-      }
-    : {
+      products: '产品方向',
+      focus: '参考方向',
+      leading: '现已发布',
+      collection: '正在形成中的产品线'
+    }
+  : {
         story: 'Brand Story',
         quote: 'Position',
         principles: 'Principles',
-        products: 'Products',
-        focus: 'Focus',
-        leading: 'Now leading',
-        collection: 'A studio collection in progress'
-      };
-const featuredBadge = featuredApp.status === 'progress' ? t.apps.badgeProgress : t.apps.badgeComing;
+      products: 'Products',
+      focus: 'Focus',
+      leading: 'Now live',
+      collection: 'A studio collection in progress'
+    };
+const featuredBadge =
+  featuredApp.status === 'released'
+    ? t.apps.badgeReleased
+    : featuredApp.status === 'progress'
+      ? t.apps.badgeProgress
+      : t.apps.badgeComing;
 const spotlightMotifs: Array<'breathe' | 'wave' | 'rings'> = ['breathe', 'wave', 'rings'];
 ---
 
@@ -108,7 +113,7 @@ const spotlightMotifs: Array<'breathe' | 'wave' | 'rings'> = ['breathe', 'wave',
         </div>
         <p class="hero-stage-main-copy">{featuredApp.oneLine}</p>
         <div class="hero-stage-main-art" aria-hidden="true">
-          <ProductVisual appId={featuredApp.id} motif="cat" />
+          <ProductVisual appId={featuredApp.id} locale={locale} motif="cat" />
         </div>
         <ul class="hero-stage-list">
           {featuredApp.bullets.slice(0, 3).map((item) => <li>{item}</li>)}
@@ -127,7 +132,7 @@ const spotlightMotifs: Array<'breathe' | 'wave' | 'rings'> = ['breathe', 'wave',
               <p>{app.oneLine}</p>
             </div>
             <div class="hero-stage-note-art" aria-hidden="true">
-              <ProductVisual appId={app.id} motif={spotlightMotifs[index] ?? 'wave'} />
+              <ProductVisual appId={app.id} locale={locale} motif={spotlightMotifs[index] ?? 'wave'} />
             </div>
           </a>
         ))}
@@ -204,7 +209,7 @@ const spotlightMotifs: Array<'breathe' | 'wave' | 'rings'> = ['breathe', 'wave',
             </a>
           </div>
           <div class="product-row-art" aria-hidden="true">
-            <ProductVisual appId={app.id} motif={appMotifs[index] ?? 'wave'} />
+            <ProductVisual appId={app.id} locale={locale} motif={appMotifs[index] ?? 'wave'} />
           </div>
         </article>
       ))}

@@ -10,6 +10,18 @@ interface FlowStep {
   body: string;
 }
 
+interface ShowcaseImage {
+  src: string;
+  alt: string;
+  caption?: string;
+}
+
+interface ShowcaseGroup {
+  title: string;
+  intro?: string;
+  images: ShowcaseImage[];
+}
+
 export interface AppProfile {
   appId: string;
   slug: string;
@@ -32,11 +44,8 @@ export interface AppProfile {
   legalTermsLabel: string;
   showcaseTitle?: string;
   showcaseIntro?: string;
-  showcaseImages?: Array<{
-    src: string;
-    alt: string;
-    caption?: string;
-  }>;
+  showcaseImages?: ShowcaseImage[];
+  showcaseGroups?: ShowcaseGroup[];
 }
 
 interface AppProfileDefinition {
@@ -547,7 +556,85 @@ const lightIdeasProfile: AppProfileDefinition = {
       legalTitle: '法律文档',
       legalIntro: '这里收录的是依据当前代码实现撰写的隐私政策与使用条款。',
       legalPrivacyLabel: '隐私协议',
-      legalTermsLabel: '使用条款'
+      legalTermsLabel: '使用条款',
+      showcaseTitle: '商店预览',
+      showcaseIntro: '简体中文与英文商店素材都保留在这里，方便直接查看发布后的展示效果。',
+      showcaseImages: [
+        {
+          src: '/images/light-ideas/icon.png',
+          alt: '轻想法应用图标'
+        }
+      ],
+      showcaseGroups: [
+        {
+          title: '简体中文商店宣传图',
+          intro: '用于中文商店页的发布预览，保持内容顺序与商店一致。',
+          images: [
+            {
+              src: '/images/light-ideas/store/zh-Hans/01_catch-thoughts.png',
+              alt: '轻想法简体中文宣传图 1：接住念头'
+            },
+            {
+              src: '/images/light-ideas/store/zh-Hans/02_settle-into-glass.png',
+              alt: '轻想法简体中文宣传图 2：沉入 Glass'
+            },
+            {
+              src: '/images/light-ideas/store/zh-Hans/03_browse-glass-timeline.png',
+              alt: '轻想法简体中文宣传图 3：浏览 Glass 时间线'
+            },
+            {
+              src: '/images/light-ideas/store/zh-Hans/04_shape-your-space.png',
+              alt: '轻想法简体中文宣传图 4：整理空间'
+            },
+            {
+              src: '/images/light-ideas/store/zh-Hans/05_materials-and-palettes.png',
+              alt: '轻想法简体中文宣传图 5：材质与配色'
+            },
+            {
+              src: '/images/light-ideas/store/zh-Hans/06_custom-color-templates.png',
+              alt: '轻想法简体中文宣传图 6：自定义颜色模板'
+            },
+            {
+              src: '/images/light-ideas/store/zh-Hans/06_lifetime-membership.png',
+              alt: '轻想法简体中文宣传图 7：终身会员'
+            }
+          ]
+        },
+        {
+          title: '英文商店宣传图',
+          intro: '英文版素材与商店顺序一致，便于直接对照发布状态。',
+          images: [
+            {
+              src: '/images/light-ideas/store/en-US/01_catch-thoughts.png',
+              alt: '轻想法英文宣传图 1：catch thoughts'
+            },
+            {
+              src: '/images/light-ideas/store/en-US/02_settle-into-glass.png',
+              alt: '轻想法英文宣传图 2：settle into Glass'
+            },
+            {
+              src: '/images/light-ideas/store/en-US/03_browse-glass-timeline.png',
+              alt: '轻想法英文宣传图 3：browse the Glass timeline'
+            },
+            {
+              src: '/images/light-ideas/store/en-US/04_shape-your-space.png',
+              alt: '轻想法英文宣传图 4：shape your space'
+            },
+            {
+              src: '/images/light-ideas/store/en-US/05_materials-and-palettes.png',
+              alt: '轻想法英文宣传图 5：materials and palettes'
+            },
+            {
+              src: '/images/light-ideas/store/en-US/06_custom-color-templates.png',
+              alt: '轻想法英文宣传图 6：custom color templates'
+            },
+            {
+              src: '/images/light-ideas/store/en-US/06_lifetime-membership.png',
+              alt: '轻想法英文宣传图 7：lifetime membership'
+            }
+          ]
+        }
+      ]
     },
     en: {
       appId: 'light-ideas',
@@ -607,16 +694,94 @@ const lightIdeasProfile: AppProfileDefinition = {
       legalTitle: 'Legal Documents',
       legalIntro: 'These documents are written against the current codebase and the product behavior it implements today.',
       legalPrivacyLabel: 'Privacy Policy',
-      legalTermsLabel: 'Terms of Use'
+      legalTermsLabel: 'Terms of Use',
+      showcaseTitle: 'Store preview',
+      showcaseIntro: 'Both Chinese and English App Store materials are shown here so the live release can be reviewed at a glance.',
+      showcaseImages: [
+        {
+          src: '/images/light-ideas/icon.png',
+          alt: 'Light Ideas app icon'
+        }
+      ],
+      showcaseGroups: [
+        {
+          title: 'Simplified Chinese screenshots',
+          intro: 'The Chinese set follows the same release order used in the store.',
+          images: [
+            {
+              src: '/images/light-ideas/store/zh-Hans/01_catch-thoughts.png',
+              alt: 'Light Ideas Simplified Chinese screenshot 1: catch thoughts'
+            },
+            {
+              src: '/images/light-ideas/store/zh-Hans/02_settle-into-glass.png',
+              alt: 'Light Ideas Simplified Chinese screenshot 2: settle into Glass'
+            },
+            {
+              src: '/images/light-ideas/store/zh-Hans/03_browse-glass-timeline.png',
+              alt: 'Light Ideas Simplified Chinese screenshot 3: browse the Glass timeline'
+            },
+            {
+              src: '/images/light-ideas/store/zh-Hans/04_shape-your-space.png',
+              alt: 'Light Ideas Simplified Chinese screenshot 4: shape your space'
+            },
+            {
+              src: '/images/light-ideas/store/zh-Hans/05_materials-and-palettes.png',
+              alt: 'Light Ideas Simplified Chinese screenshot 5: materials and palettes'
+            },
+            {
+              src: '/images/light-ideas/store/zh-Hans/06_custom-color-templates.png',
+              alt: 'Light Ideas Simplified Chinese screenshot 6: custom color templates'
+            },
+            {
+              src: '/images/light-ideas/store/zh-Hans/06_lifetime-membership.png',
+              alt: 'Light Ideas Simplified Chinese screenshot 7: lifetime membership'
+            }
+          ]
+        },
+        {
+          title: 'English screenshots',
+          intro: 'The English set mirrors the published App Store sequence.',
+          images: [
+            {
+              src: '/images/light-ideas/store/en-US/01_catch-thoughts.png',
+              alt: 'Light Ideas English screenshot 1: catch thoughts'
+            },
+            {
+              src: '/images/light-ideas/store/en-US/02_settle-into-glass.png',
+              alt: 'Light Ideas English screenshot 2: settle into Glass'
+            },
+            {
+              src: '/images/light-ideas/store/en-US/03_browse-glass-timeline.png',
+              alt: 'Light Ideas English screenshot 3: browse the Glass timeline'
+            },
+            {
+              src: '/images/light-ideas/store/en-US/04_shape-your-space.png',
+              alt: 'Light Ideas English screenshot 4: shape your space'
+            },
+            {
+              src: '/images/light-ideas/store/en-US/05_materials-and-palettes.png',
+              alt: 'Light Ideas English screenshot 5: materials and palettes'
+            },
+            {
+              src: '/images/light-ideas/store/en-US/06_custom-color-templates.png',
+              alt: 'Light Ideas English screenshot 6: custom color templates'
+            },
+            {
+              src: '/images/light-ideas/store/en-US/06_lifetime-membership.png',
+              alt: 'Light Ideas English screenshot 7: lifetime membership'
+            }
+          ]
+        }
+      ]
     }
   }
 };
 
 const appProfiles: AppProfileDefinition[] = [
-  anchorNowProfile,
+  lightIdeasProfile,
   cravingCatProfile,
-  sunnyBreathProfile,
-  lightIdeasProfile
+  anchorNowProfile,
+  sunnyBreathProfile
 ];
 
 export function getAppProfile(locale: Locale, slug: string): AppProfile | null {
