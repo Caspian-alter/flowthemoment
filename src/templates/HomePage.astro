@@ -36,10 +36,10 @@ const jsonLd = [
     url: siteOrigin,
     description: t.meta.description
   },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'ItemList',
-      name: locale === 'zh' ? '产品方向' : 'Product collection',
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+      name: locale === 'zh' ? '产品集合' : 'Product collection',
       itemListElement: homeApps.map((app, index) => ({
         '@type': 'ListItem',
         position: index + 1,
@@ -59,19 +59,19 @@ const labels =
         story: '品牌故事',
         quote: '立场',
         principles: '原则',
-      products: '产品方向',
-      focus: '参考方向',
-      leading: '现已发布',
-      collection: '正在形成中的产品线'
+      products: '产品',
+      focus: '关心什么',
+      leading: '已发布',
+      collection: '更多产品'
     }
   : {
         story: 'Brand Story',
         quote: 'Position',
         principles: 'Principles',
       products: 'Products',
-      focus: 'Focus',
-      leading: 'Now live',
-      collection: 'A studio collection in progress'
+      focus: 'What we care about',
+      leading: 'Released',
+      collection: 'More from the studio'
     };
 const featuredBadge =
   featuredApp.status === 'released'

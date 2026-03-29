@@ -323,8 +323,8 @@ export const copy: Record<Locale, LocaleCopy> = {
       ]
     },
     apps: {
-      title: '当前产品',
-      intro: '一个已发布与正在形成中的产品组合，同一方向：更自由的注意力。',
+      title: '产品',
+      intro: '一组已经开始上线、也会继续生长的产品，围绕同一个方向：更自由的注意力。',
       badgeComing: '即将上线',
       badgeProgress: '开发中',
       badgeReleased: '已发布',
@@ -348,7 +348,7 @@ export const copy: Record<Locale, LocaleCopy> = {
     appsPage: {
       title: '应用：为在场而设计的工具',
       intro: '不是催促效率，而是帮你在日常里更稳地呼吸、专注与选择。',
-      sectionTitle: '产品方向',
+      sectionTitle: '全部产品',
       faqTitle: '常见问题',
       faqs: [
         {
@@ -385,7 +385,7 @@ export const copy: Record<Locale, LocaleCopy> = {
     blog: {
       title: '博客',
       intro: '关于在场、设计与可持续改变的短文。',
-      empty: '暂时还没有文章，正在准备中。',
+      empty: '暂时还没有文章。等它们准备好时，会慢慢出现在这里。',
       readMore: '阅读全文',
       exampleBadge: '选读',
       back: '返回博客',
@@ -396,7 +396,7 @@ export const copy: Record<Locale, LocaleCopy> = {
       title: '隐私说明',
       updated: '最后更新：2026 年 2 月 25 日',
       paragraphs: [
-        'Flow the Moment 重视你的隐私。当前网站为静态展示站，默认不追踪个人行为。',
+        'Flow the Moment 重视你的隐私。这个网站以静态内容为主，默认不追踪个人行为。',
         '若你通过邮件订阅更新，你的邮箱仅用于发送产品进展通知。',
         '后续接入正式服务前，会补充完整隐私政策与数据处理细则。'
       ]
@@ -508,7 +508,7 @@ export const copy: Record<Locale, LocaleCopy> = {
     },
     apps: {
       title: 'Products',
-      intro: 'A mix of live and in-progress products, all moving toward freer attention in daily life.',
+      intro: 'A growing collection of tools for freer attention, calmer routines, and more choice in daily life.',
       badgeComing: 'Coming soon',
       badgeProgress: 'In progress',
       badgeReleased: 'Released',
@@ -532,7 +532,7 @@ export const copy: Record<Locale, LocaleCopy> = {
     appsPage: {
       title: 'Apps: tools for presence',
       intro: 'Built for breathing room, agency, and sustainable habits.',
-      sectionTitle: 'Product directions',
+      sectionTitle: 'All products',
       faqTitle: 'FAQ',
       faqs: [
         {
@@ -569,7 +569,7 @@ export const copy: Record<Locale, LocaleCopy> = {
     blog: {
       title: 'Blog',
       intro: 'Short notes on presence and humane design.',
-      empty: 'No posts yet. New writing is in progress.',
+      empty: 'No posts yet. Writing will arrive here when it is ready.',
       readMore: 'Read post',
       exampleBadge: 'Note',
       back: 'Back to blog',
@@ -580,7 +580,7 @@ export const copy: Record<Locale, LocaleCopy> = {
       title: 'Privacy',
       updated: 'Last updated: February 25, 2026',
       paragraphs: [
-        'Flow the Moment respects your privacy. This is currently a static website with no default behavioral tracking.',
+        'Flow the Moment respects your privacy. This site is mostly static and does not use behavioral tracking by default.',
         'If you subscribe by email, your address is only used for product progress updates.',
         'A full privacy policy and data handling details will be published before launching production services.'
       ]

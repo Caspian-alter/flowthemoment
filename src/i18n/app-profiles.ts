@@ -103,7 +103,7 @@ const cravingCatProfile: AppProfileDefinition = {
           body: '当你快要滑回惯性，成瘾猫会先轻轻叫住你。你可以再给一点时间、这次先放下，或者进入猫猫陪伴与一次呼吸，把注意力慢慢拿回来。'
         }
       ],
-      featureTitle: '当前核心能力',
+      featureTitle: '它会怎样支持你',
       features: [
         '可以为不同习惯设置不同边界，而不是只给一条粗暴总规则',
         '提醒、放下、再给一点时间，都被做成更温和的选择，而不是羞耻测试',
@@ -116,8 +116,8 @@ const cravingCatProfile: AppProfileDefinition = {
         '不想被“你又失败了”这类产品语言二次伤害的人',
         '需要温和边界、而不是强硬封锁或家长式控制的人'
       ],
-      legalTitle: '法律文档',
-      legalIntro: '这里收录了与成瘾猫当前版本相关的隐私协议和使用条款。',
+      legalTitle: '隐私与条款',
+      legalIntro: '这里可以查看成瘾猫的隐私说明和使用条款。',
       legalPrivacyLabel: '隐私协议',
       legalTermsLabel: '使用条款',
       showcaseImages: [
@@ -168,7 +168,7 @@ const cravingCatProfile: AppProfileDefinition = {
           body: 'When the moment starts to speed up, the cat catches it first. You can allow a little more time, put it down for now, or take one guided breath before choosing again.'
         }
       ],
-      featureTitle: 'Current core capabilities',
+      featureTitle: 'How it supports you',
       features: [
         'Set different boundaries for different habits instead of relying on one blunt limit',
         'Make “pause,” “put it down,” and “a little more time” feel like calm choices instead of moral tests',
@@ -181,8 +181,8 @@ const cravingCatProfile: AppProfileDefinition = {
         'People who do not want to be scolded by the very tool that is supposed to help',
         'People who need gentler boundaries instead of hard blocks or parental language'
       ],
-      legalTitle: 'Legal Documents',
-      legalIntro: 'Privacy and terms for the current version of Craving Cat are collected here.',
+      legalTitle: 'Privacy & Terms',
+      legalIntro: 'You can find Craving Cat privacy details and terms here.',
       legalPrivacyLabel: 'Privacy Policy',
       legalTermsLabel: 'Terms of Use',
       showcaseImages: [
@@ -241,7 +241,7 @@ const anchorNowProfile: AppProfileDefinition = {
           body: '通过桌面入口或应用内快捷入口，快速进入需要的流程，而不是先绕一大圈。'
         }
       ],
-      featureTitle: '当前核心能力',
+      featureTitle: '它会怎样支持你',
       features: [
         '三种状态模板：恐慌、焦躁、走神，围绕最常见的过载场景做最小化介入',
         '把呼吸、感官落地、行动清单、定锚计时等步骤拼成自己的支持流程',
@@ -254,8 +254,8 @@ const anchorNowProfile: AppProfileDefinition = {
         '不想面对复杂流程，只想先把自己稳住的人',
         '希望支持工具尊重自主，而不是制造更多压力的人'
       ],
-      legalTitle: '法律文档',
-      legalIntro: '隐私协议和使用条款页面已预留，后续可直接补成正式版本。',
+      legalTitle: '隐私与条款',
+      legalIntro: '正式对外时，隐私说明和使用条款会放在这里。',
       legalPrivacyLabel: '隐私协议',
       legalTermsLabel: '使用条款',
       showcaseImages: [
@@ -306,7 +306,7 @@ const anchorNowProfile: AppProfileDefinition = {
           body: 'Use the home screen entry or the in-app shortcut to open the right flow without extra steps.'
         }
       ],
-      featureTitle: 'Current core capabilities',
+      featureTitle: 'How it supports you',
       features: [
         'Three state templates for panic, anxiety, and drift, covering the most common overload moments',
         'Shape breathing, grounding, checklists, and anchor-timers into a support flow that feels personal',
@@ -319,8 +319,8 @@ const anchorNowProfile: AppProfileDefinition = {
         'People who do not want to face a complex workflow when they are already overwhelmed',
         'People who want support tools that respect autonomy instead of adding pressure'
       ],
-      legalTitle: 'Legal Documents',
-      legalIntro: 'Privacy and terms pages are already reserved and can be turned into formal legal text later.',
+      legalTitle: 'Privacy & Terms',
+      legalIntro: 'When Anchor Now is ready to launch, privacy details and terms will live here.',
       legalPrivacyLabel: 'Privacy Policy',
       legalTermsLabel: 'Terms of Use',
       showcaseImages: [
@@ -379,7 +379,7 @@ const sunnyBreathProfile: AppProfileDefinition = {
           body: '用极简方式标记当下情绪，再决定结束流程。没有排名，没有红色警告，只是给自己一个可见的照面。'
         }
       ],
-      featureTitle: '当前核心能力',
+      featureTitle: '它会怎样支持你',
       features: [
         '首个流程可在约 90 秒内完成设置：时间、音乐、一个启动动作',
         '支持本地音乐与内置音乐，唤醒时长 3-20 分钟，循环、震动和渐亮可调',
@@ -392,8 +392,8 @@ const sunnyBreathProfile: AppProfileDefinition = {
         '想建立规律，但不想再被打卡焦虑、自责叙事和强提醒消耗的人',
         '创作者、自由职业者、学生，以及任何更适合温和结构而非强推节奏的人'
       ],
-      legalTitle: '法律文档',
-      legalIntro: '这里收录了与 Sunny Breath 相关的隐私与使用条款。',
+      legalTitle: '隐私与条款',
+      legalIntro: '这里可以查看 Sunny Breath 的隐私说明和使用条款。',
       legalPrivacyLabel: '隐私协议',
       legalTermsLabel: '使用条款',
       showcaseImages: [
@@ -456,7 +456,7 @@ const sunnyBreathProfile: AppProfileDefinition = {
           body: 'Log your current state with minimal friction, then end the flow. No ranking, no punishment, just visibility.'
         }
       ],
-      featureTitle: 'Current core capabilities',
+      featureTitle: 'How it supports you',
       features: [
         'Set up your first flow in about 90 seconds: wake time, music, and one starter action',
         'Built-in music and local audio import, with 3-20 minute wake duration, repeat, vibration, and optional screen brightening',
@@ -469,8 +469,8 @@ const sunnyBreathProfile: AppProfileDefinition = {
         'People who want consistency without streak pressure, self-attack, or pushy wake tools',
         'Creators, freelancers, students, and anyone who responds better to gentle structure than brute force'
       ],
-      legalTitle: 'Legal Documents',
-      legalIntro: 'Privacy and terms for Sunny Breath are collected here.',
+      legalTitle: 'Privacy & Terms',
+      legalIntro: 'You can find Sunny Breath privacy details and terms here.',
       legalPrivacyLabel: 'Privacy Policy',
       legalTermsLabel: 'Terms of Use',
       showcaseImages: [
@@ -541,12 +541,12 @@ const lightIdeasProfile: AppProfileDefinition = {
           body: '你可以拖动上下分区比例，设置 Bubble 的停留时长，切换材质和配色。需要释放时，也能用简单手势删掉内容，让空间重新变轻。'
         }
       ],
-      featureTitle: '当前核心能力',
+      featureTitle: '它会怎样支持你',
       features: [
         '上方 Bubble 区留给刚出现、还未成形的念头，下方 Glass 区留给你想继续回看的内容',
         'Bubble 可长按凝结，双击删除；Glass 可直接删除，让保留和放手都足够简单',
         'Bubble 停留时长可设为 24 / 48 / 72 小时，让没被继续照看的内容自然淡去',
-        '免费版保持轻量；当前 iOS 版本的永久会员可解锁无限 Bubble、全部材质、全部配色与自定义配色'
+        '免费版保持轻量；iOS 终身会员可解锁无限 Bubble、全部材质、全部配色与自定义配色'
       ],
       audienceTitle: '适合这样的人',
       audience: [
@@ -555,14 +555,14 @@ const lightIdeasProfile: AppProfileDefinition = {
         '更适合 ADHD 节奏、需要轻承接而不是强整理的人',
         '写作者、设计师、创作者，或任何不想错过小火花的人'
       ],
-      legalTitle: '法律文档',
-      legalIntro: '这里收录的是依据当前代码实现撰写的隐私政策与使用条款。',
+      legalTitle: '隐私与条款',
+      legalIntro: '隐私说明和使用条款都放在这里。',
       legalPrivacyLabel: '隐私协议',
       legalTermsLabel: '使用条款',
       storeUrl: 'https://apps.apple.com/us/app/light-ideas-thought-board/id6760224660',
       storeLabel: '前往 App Store',
-      showcaseTitle: '商店预览',
-      showcaseIntro: '这里展示的是简体中文版商店宣传图，顺序与商店页保持一致。',
+      showcaseTitle: 'App Store 展示图',
+      showcaseIntro: '以下是简体中文 App Store 页面里的正式展示图。',
       showcaseImages: [
         {
           src: '/images/light-ideas/icon.png',
@@ -571,8 +571,8 @@ const lightIdeasProfile: AppProfileDefinition = {
       ],
       showcaseGroups: [
         {
-          title: '简体中文商店宣传图',
-          intro: '用于中文商店页的发布预览，保持内容顺序与商店一致。',
+          title: '简体中文 App Store 展示图',
+          intro: '顺序与商店页保持一致。',
           images: [
             {
               src: '/images/light-ideas/store/zh-Hans/01_catch-thoughts.png',
@@ -647,12 +647,12 @@ const lightIdeasProfile: AppProfileDefinition = {
           body: 'You can tune the Bubble/Glass ratio, choose how long Bubbles stay alive, and shift the material or palette. When something no longer needs to stay, a simple gesture lets it go.'
         }
       ],
-      featureTitle: 'Current core capabilities',
+      featureTitle: 'How it supports you',
       features: [
         'A freer upper Bubble space for fresh thoughts and a calmer lower Glass space for the ones you want to keep',
         'Long-press to condense, simple gestures to remove, and a board that treats keeping and releasing as equally valid choices',
         'Set Bubble lifetime to 24 / 48 / 72 hours so unattended thoughts can fade without building pressure',
-        'The free version stays light; the current iOS lifetime unlock opens unlimited bubbles, all materials, all palettes, and custom palettes'
+        'The free version stays light; the iOS lifetime unlock opens unlimited bubbles, all materials, all palettes, and custom palettes'
       ],
       audienceTitle: 'Who this is for',
       audience: [
@@ -661,14 +661,14 @@ const lightIdeasProfile: AppProfileDefinition = {
         'People looking for a gentler, ADHD-friendly capture rhythm instead of a control-heavy notes system',
         'Writers, designers, makers, and anyone who loses small sparks too easily'
       ],
-      legalTitle: 'Legal Documents',
-      legalIntro: 'These documents are written against the current codebase and the product behavior it implements today.',
+      legalTitle: 'Privacy & Terms',
+      legalIntro: 'Privacy details and terms are here.',
       legalPrivacyLabel: 'Privacy Policy',
       legalTermsLabel: 'Terms of Use',
       storeUrl: 'https://apps.apple.com/us/app/light-ideas-thought-board/id6760224660',
       storeLabel: 'View on the App Store',
-      showcaseTitle: 'Store preview',
-      showcaseIntro: 'This page shows the English App Store screenshots used for the live release.',
+      showcaseTitle: 'App Store gallery',
+      showcaseIntro: 'These are the English App Store images from the published listing.',
       showcaseImages: [
         {
           src: '/images/light-ideas/icon.png',
@@ -677,8 +677,8 @@ const lightIdeasProfile: AppProfileDefinition = {
       ],
       showcaseGroups: [
         {
-          title: 'English screenshots',
-          intro: 'The English set mirrors the published App Store sequence.',
+          title: 'English App Store images',
+          intro: 'Shown in the same order as the App Store listing.',
           images: [
             {
               src: '/images/light-ideas/store/en-US/01_catch-thoughts.png',
