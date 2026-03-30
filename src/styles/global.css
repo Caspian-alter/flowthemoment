@@ -652,24 +652,17 @@ section {
   place-items: center;
   gap: 0.85rem;
   min-height: 180px;
-  padding: 1rem;
-  border-radius: 28px;
-  background:
-    radial-gradient(circle at 18% 18%, rgba(214, 194, 145, 0.28), transparent 28%),
-    radial-gradient(circle at 82% 20%, rgba(191, 212, 195, 0.22), transparent 30%),
-    linear-gradient(165deg, rgba(255, 250, 243, 0.98), rgba(236, 230, 221, 0.92));
-  border: 1px solid color-mix(in oklch, var(--surface-border) 78%, white 22%);
-  box-shadow: 0 22px 42px rgba(110, 90, 62, 0.12), var(--inner-highlight);
+  padding: 0.75rem;
 }
 
 .light-ideas-aura {
   position: absolute;
-  inset: 16% 22%;
+  inset: 15% 20%;
   border-radius: 999px;
   background:
     radial-gradient(circle, rgba(242, 214, 156, 0.48), rgba(242, 214, 156, 0) 60%),
     radial-gradient(circle at 64% 44%, rgba(202, 222, 206, 0.34), rgba(202, 222, 206, 0) 60%);
-  filter: blur(10px);
+  filter: blur(14px);
   z-index: 0;
 }
 
@@ -693,11 +686,24 @@ section {
   padding: 1rem 1.05rem;
 }
 
+.light-ideas-icon-float {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+}
+
 .light-ideas-icon-image {
   display: block;
   width: min(100%, 118px);
   height: auto;
   border-radius: 22px;
+}
+
+.light-ideas-icon-image-float {
+  width: min(100%, 152px);
+  border-radius: 30px;
+  filter: drop-shadow(0 18px 26px rgba(117, 92, 66, 0.16));
 }
 
 .light-ideas-icon-shell-hero .light-ideas-icon-image {

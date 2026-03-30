@@ -687,11 +687,6 @@ const lightIdeasProfile: AppProfileDefinition = {
               src: '/images/light-ideas/store/zh-Hans/06_custom-color-templates.png',
               alt: '轻想法简体中文宣传图 6：自定义颜色模板',
               caption: '留下你自己的颜色模板'
-            },
-            {
-              src: '/images/light-ideas/store/zh-Hans/06_lifetime-membership.png',
-              alt: '轻想法简体中文宣传图 7：终身会员',
-              caption: '想继续的时候，再选择解锁'
             }
           ]
         }
@@ -800,11 +795,6 @@ const lightIdeasProfile: AppProfileDefinition = {
               src: '/images/light-ideas/store/en-US/06_custom-color-templates.png',
               alt: 'Light Ideas English screenshot 6: custom color templates',
               caption: 'Save color templates that feel like home'
-            },
-            {
-              src: '/images/light-ideas/store/en-US/06_lifetime-membership.png',
-              alt: 'Light Ideas English screenshot 7: lifetime membership',
-              caption: 'Unlock more only when you want more'
             }
           ]
         }
