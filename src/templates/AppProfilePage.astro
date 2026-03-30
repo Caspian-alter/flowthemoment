@@ -29,8 +29,8 @@ const pageTitle =
 const pageDescription =
   releaseStatus === 'released'
     ? locale === 'zh'
-      ? `${profile.name}：${profile.intro} ${storeUrl ? '现已在 App Store 上线。' : '现已正式发布。'}`
-      : `${profile.name}: ${profile.intro} ${storeUrl ? 'Now available on the App Store.' : 'Now released.'}`
+      ? `${profile.name}：${profile.intro} 现已正式上线。`
+      : `${profile.name}: ${profile.intro} Now available.`
     : locale === 'zh'
       ? `${profile.name}：${profile.intro}`
       : `${profile.name}: ${profile.intro}`;
@@ -97,7 +97,7 @@ const labels =
         capabilities: '支持方式',
         audience: '适合谁',
         visuals: '展示',
-        storePreview: 'App Store',
+        storePreview: '界面预览',
         legal: '隐私与条款'
       }
     : {
@@ -107,7 +107,7 @@ const labels =
         capabilities: 'Support',
         audience: 'Audience',
         visuals: 'Gallery',
-        storePreview: 'App Store',
+        storePreview: 'Screens',
         legal: 'Privacy & Terms'
       };
 ---
@@ -162,7 +162,7 @@ const labels =
       {profile.appId === 'light-ideas' && featuredShowcase ? (
         <figure class="cover-figure cover-figure-editorial cover-figure-light-ideas">
           <div class="light-ideas-icon-stage">
-            <div class="light-ideas-hero-badge">{locale === 'zh' ? '已发布 / App Store' : 'Released / App Store'}</div>
+            <div class="light-ideas-hero-badge">{locale === 'zh' ? '已发布 / 本地优先' : 'Released / Local-first'}</div>
             <div class="light-ideas-icon-shell light-ideas-icon-shell-hero">
               <img src={withBase(featuredShowcase.src)} alt={featuredShowcase.alt} loading="eager" decoding="async" class="light-ideas-icon-image" />
             </div>

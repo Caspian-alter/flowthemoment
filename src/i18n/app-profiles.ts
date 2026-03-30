@@ -121,9 +121,9 @@ const cravingCatProfile: AppProfileDefinition = {
       legalPrivacyLabel: '隐私协议',
       legalTermsLabel: '使用条款',
       storeUrl: 'https://apps.apple.com/us/app/craving-cat-screen-time/id6760655833',
-      storeLabel: '前往 App Store',
-      showcaseTitle: 'App Store 展示图',
-      showcaseIntro: '这些画面来自简体中文 App Store 页面，也把产品真正关心的几个时刻放在同一页里。',
+      storeLabel: '下载成瘾猫',
+      showcaseTitle: '界面预览',
+      showcaseIntro: '把几个关键界面放在一起，先看一眼它会怎样陪你使用。',
       showcaseImages: [
         {
           src: '/images/craving-cat/invitation.png',
@@ -132,8 +132,8 @@ const cravingCatProfile: AppProfileDefinition = {
       ],
       showcaseGroups: [
         {
-          title: '简体中文 App Store 展示图',
-          intro: '顺序与商店页保持一致。',
+          title: '中文界面',
+          intro: '从开始设置，到真正被接住的几个时刻。',
           images: [
             {
               src: '/images/craving-cat/store/zh-Hans/01_home-companion.png',
@@ -228,9 +228,9 @@ const cravingCatProfile: AppProfileDefinition = {
       legalPrivacyLabel: 'Privacy Policy',
       legalTermsLabel: 'Terms of Use',
       storeUrl: 'https://apps.apple.com/us/app/craving-cat-screen-time/id6760655833',
-      storeLabel: 'View on the App Store',
-      showcaseTitle: 'App Store gallery',
-      showcaseIntro: 'These images come from the published English App Store page and show the moments the product is built around.',
+      storeLabel: 'Download Craving Cat',
+      showcaseTitle: 'Screens',
+      showcaseIntro: 'A quick look at the moments this product is built around, from setup to the pause itself.',
       showcaseImages: [
         {
           src: '/images/craving-cat/invitation.png',
@@ -239,8 +239,8 @@ const cravingCatProfile: AppProfileDefinition = {
       ],
       showcaseGroups: [
         {
-          title: 'English App Store images',
-          intro: 'Shown in the same order as the App Store listing.',
+          title: 'English screens',
+          intro: 'From setup to the moment the pause appears.',
           images: [
             {
               src: '/images/craving-cat/store/en-US/01_home-companion.png',
@@ -644,9 +644,9 @@ const lightIdeasProfile: AppProfileDefinition = {
       legalPrivacyLabel: '隐私协议',
       legalTermsLabel: '使用条款',
       storeUrl: 'https://apps.apple.com/us/app/light-ideas-thought-board/id6760224660',
-      storeLabel: '前往 App Store',
-      showcaseTitle: 'App Store 展示图',
-      showcaseIntro: '这些是简体中文 App Store 页面里的正式展示图，也能先让你看见它的真实节奏。',
+      storeLabel: '下载轻想法',
+      showcaseTitle: '界面预览',
+      showcaseIntro: '把几个主要界面放在一起，更容易看见轻想法真正的节奏。',
       showcaseImages: [
         {
           src: '/images/light-ideas/icon.png',
@@ -655,8 +655,8 @@ const lightIdeasProfile: AppProfileDefinition = {
       ],
       showcaseGroups: [
         {
-          title: '简体中文 App Store 展示图',
-          intro: '顺序与商店页保持一致。',
+          title: '中文界面',
+          intro: '从接住念头，到慢慢沉下来。',
           images: [
             {
               src: '/images/light-ideas/store/zh-Hans/01_catch-thoughts.png',
@@ -752,9 +752,9 @@ const lightIdeasProfile: AppProfileDefinition = {
       legalPrivacyLabel: 'Privacy Policy',
       legalTermsLabel: 'Terms of Use',
       storeUrl: 'https://apps.apple.com/us/app/light-ideas-thought-board/id6760224660',
-      storeLabel: 'View on the App Store',
-      showcaseTitle: 'App Store gallery',
-      showcaseIntro: 'These are the English App Store images from the published listing, so you can see the product in its real rhythm.',
+      storeLabel: 'Download Light Ideas',
+      showcaseTitle: 'Screens',
+      showcaseIntro: 'A quieter look at the product, from catching a thought to shaping the space around it.',
       showcaseImages: [
         {
           src: '/images/light-ideas/icon.png',
@@ -763,8 +763,8 @@ const lightIdeasProfile: AppProfileDefinition = {
       ],
       showcaseGroups: [
         {
-          title: 'English App Store images',
-          intro: 'Shown in the same order as the App Store listing.',
+          title: 'English screens',
+          intro: 'From the first captured thought to a space that feels like yours.',
           images: [
             {
               src: '/images/light-ideas/store/en-US/01_catch-thoughts.png',
