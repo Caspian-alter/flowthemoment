@@ -15,16 +15,17 @@ const { locale, path } = Astro.props;
 const t = getCopy(locale);
 const motifs: Array<'cat' | 'wave' | 'rings' | 'breathe'> = ['cat', 'breathe', 'wave', 'rings'];
 const suiteHighlights = t.apps.items.slice(0, 3);
+const releasedIds = new Set(t.apps.items.filter((app) => app.status === 'released').map((app) => app.id));
 const siteOrigin = Astro.site?.toString() ?? 'https://flowthemoment.com';
 const pageUrl = new URL(withBase(path), siteOrigin).toString();
 const pageTitle =
   locale === 'zh'
-    ? '应用 | Light Ideas 已发布的产品组合 | Flow the Moment'
-    : 'Apps | Light Ideas is live, gentle tools for presence | Flow the Moment';
+    ? '应用 | 轻想法与成瘾猫已发布 | Flow the Moment'
+    : 'Apps | Light Ideas and Craving Cat are live | Flow the Moment';
 const pageDescription =
   locale === 'zh'
-    ? '探索 Flow the Moment 的产品：轻想法、成瘾猫、此刻锚、阳光呼吸与稳流。轻想法已正式上线，其余产品按不同节奏陆续推进。'
-    : 'Explore Flow the Moment apps: Light Ideas, Craving Cat, Anchor Now, Sunny Breath, and Steady Flow. Light Ideas is live, and the rest are moving at their own pace.';
+    ? '探索 Flow the Moment 的产品：轻想法、成瘾猫、此刻锚、阳光呼吸与稳流。轻想法与成瘾猫已正式上线，其余产品按不同节奏继续生长。'
+    : 'Explore Flow the Moment apps: Light Ideas, Craving Cat, Anchor Now, Sunny Breath, and Steady Flow. Light Ideas and Craving Cat are live, while the rest continue to grow at their own pace.';
 const jsonLd = [
   {
     '@context': 'https://schema.org',
@@ -148,7 +149,7 @@ const labels =
               ? t.apps.badgeProgress
               : t.apps.badgeComing;
         return (
-          <article class={`product-row product-row-detailed ${index === 0 ? 'product-row-featured' : ''}`} id={app.id}>
+          <article class={`product-row product-row-detailed ${releasedIds.has(app.id) ? 'product-row-featured' : ''}`} id={app.id}>
             <div class="product-row-index">
               <span>{String(index + 1).padStart(2, '0')}</span>
             </div>

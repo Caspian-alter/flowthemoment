@@ -554,6 +554,11 @@ section {
   align-content: start;
 }
 
+.hero-stage-main-grid {
+  display: grid;
+  gap: 1rem;
+}
+
 .hero-stage-main,
 .hero-stage-note,
 .page-hero-note {
@@ -567,6 +572,7 @@ section {
 .hero-stage-main {
   display: grid;
   gap: 1rem;
+  height: 100%;
   padding: 1.2rem;
   border-radius: calc(var(--radius) + 4px);
 }
@@ -1793,7 +1799,7 @@ details p {
 }
 
 .promo-grid-store {
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .promo-card {
@@ -2046,8 +2052,22 @@ details p {
   }
 
   .hero-stage {
-    grid-template-columns: minmax(0, 1.08fr) minmax(240px, 0.72fr);
+    grid-template-columns: 1fr;
     gap: 1rem;
+  }
+
+  .hero-stage-main-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero-stage-side {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+
+  .hero-stage-side > .tile-kicker {
+    grid-column: 1 / -1;
+    margin-bottom: 0;
   }
 
   .story-head {
@@ -2100,6 +2120,10 @@ details p {
 
   .page-hero-notes {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .promo-grid-store {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .principle-grid {

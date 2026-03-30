@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getAppLegalLinks } from '../i18n/app-legal';
+import { getCopy } from '../i18n/copy';
 import { withBase, type Locale } from '../i18n/utils';
 import type { AppProfile } from '../i18n/app-profiles';
 import FlowMotif from '../components/FlowMotif.astro';
@@ -13,33 +14,36 @@ interface Props {
 
 const { locale, path, profile } = Astro.props;
 const legalLinks = getAppLegalLinks(locale, profile.appId);
+const appSummary = getCopy(locale).apps.items.find((item) => item.id === profile.appId);
+const releaseStatus = appSummary?.status;
 const backHome = locale === 'zh' ? '/' : '/en';
 const backApps = locale === 'zh' ? '/apps' : '/en/apps';
 const siteOrigin = Astro.site?.toString() ?? 'https://flowthemoment.com';
+const storeUrl = profile.storeUrl;
 const pageTitle =
-  profile.appId === 'light-ideas'
+  releaseStatus === 'released'
     ? locale === 'zh'
-      ? '轻想法 Light Ideas | 已发布 | Flow the Moment'
-      : 'Light Ideas | Released | Flow the Moment'
+      ? `${profile.name} ${profile.altName} | 已发布 | Flow the Moment`
+      : `${profile.name} | Released | Flow the Moment`
     : `${profile.name} | ${profile.tagline} | Flow the Moment`;
 const pageDescription =
-  profile.appId === 'light-ideas'
+  releaseStatus === 'released'
     ? locale === 'zh'
-      ? `${profile.name}：${profile.intro} 这是一款已经正式上线的本地优先想法板。`
-      : `${profile.name}: ${profile.intro} A live, local-first thought board.`
+      ? `${profile.name}：${profile.intro} ${storeUrl ? '现已在 App Store 上线。' : '现已正式发布。'}`
+      : `${profile.name}: ${profile.intro} ${storeUrl ? 'Now available on the App Store.' : 'Now released.'}`
     : locale === 'zh'
       ? `${profile.name}：${profile.intro}`
       : `${profile.name}: ${profile.intro}`;
 const featuredShowcase = profile.showcaseImages?.[0];
 const galleryShowcase = profile.showcaseImages?.slice(1) ?? [];
 const storeShowcaseGroups = profile.showcaseGroups ?? [];
+const shareImage = storeShowcaseGroups[0]?.images[0]?.src ?? featuredShowcase?.src;
 const hasVisualShowcase = galleryShowcase.length > 0 || storeShowcaseGroups.length > 0;
 const showcaseAnchor = storeShowcaseGroups.length > 0 ? '#profile-store-title' : '#profile-showcase-title';
 const openingInHero = profile.opening[0];
 const remainingOpening = profile.opening.slice(1);
 const applicationCategory = profile.appId === 'light-ideas' ? 'ProductivityApplication' : 'HealthApplication';
 const pageUrl = new URL(path, siteOrigin).toString();
-const storeUrl = profile.storeUrl;
 const jsonLdImages = [
   featuredShowcase?.src ? new URL(withBase(featuredShowcase.src), siteOrigin).toString() : null,
   ...galleryShowcase.map((image) => new URL(withBase(image.src), siteOrigin).toString()),
@@ -114,7 +118,7 @@ const labels =
   locale={locale}
   path={path}
   jsonLd={jsonLd}
-  ogImage={featuredShowcase?.src}
+  ogImage={shareImage}
 >
   <section class="shell page-hero product-hero">
     <div class="product-hero-copy">
@@ -130,9 +134,9 @@ const labels =
           </a>
         )}
         <a href={withBase(backHome)} class={storeUrl ? 'btn btn-secondary' : 'btn btn-primary'}>
-          {locale === 'zh' ? '回到主页' : 'Back to Home'}
+          {locale === 'zh' ? '工作室首页' : 'Studio home'}
         </a>
-        <a href={withBase(backApps)} class="btn btn-secondary">{locale === 'zh' ? '回到应用列表' : 'Back to Apps'}</a>
+        <a href={withBase(backApps)} class="btn btn-secondary">{locale === 'zh' ? '全部产品' : 'All products'}</a>
       </div>
       <div class="profile-jump">
         <a href="#profile-principles-title" class="tag-pill">{labels.principles}</a>
@@ -184,7 +188,7 @@ const labels =
       ) : profile.appId === 'craving-cat' && featuredShowcase ? (
         <figure class="cover-figure cover-figure-editorial cover-figure-cat-sprite">
           <div class="cat-sprite-stage">
-            <div class="cat-hero-badge">{locale === 'zh' ? '温和打断 / 轻陪伴' : 'Gentle interrupt / Soft company'}</div>
+            <div class="cat-hero-badge">{locale === 'zh' ? '已发布 / 温和守护' : 'Released / Gentle protection'}</div>
             <div
               class="cat-sprite-window"
               role="img"
@@ -219,7 +223,7 @@ const labels =
         </div>
       ) : profile.appId === 'craving-cat' ? (
         <div class="cover-fallback cover-fallback-editorial cover-fallback-cat" aria-hidden="true">
-          <div class="cat-hero-badge">{locale === 'zh' ? '温和打断 / 轻陪伴' : 'Gentle interrupt / Soft company'}</div>
+          <div class="cat-hero-badge">{locale === 'zh' ? '已发布 / 温和守护' : 'Released / Gentle protection'}</div>
           <FlowMotif kind="cat" />
           <div class="cat-hero-notes">
             <span>{locale === 'zh' ? '轻边界' : 'Gentle boundaries'}</span>
@@ -272,6 +276,7 @@ const labels =
               {group.images.map((image) => (
                 <figure class="promo-card promo-card-store">
                   <img src={withBase(image.src)} alt={image.alt} loading="lazy" decoding="async" />
+                  {image.caption && <figcaption>{image.caption}</figcaption>}
                 </figure>
               ))}
             </div>

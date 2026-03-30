@@ -68,7 +68,7 @@ const cravingCatProfile: AppProfileDefinition = {
       name: '成瘾猫',
       altName: 'Craving Cat',
       tagline: '让暂停更像被陪着，而不是被惩罚。',
-      intro: '一个把冲动时刻变得更可选择的温和中断应用，用猫猫陪伴替代羞辱式防沉迷。',
+      intro: '一个温和的中断应用，在你快要重新点开那些最难停下来的 App 时，先留出一个还能自己决定的停顿。',
       opening: [
         '成瘾猫不是为了把你“管住”，而是为了在冲动开始加速前，先轻轻把你接住。',
         '它不做羞耻排行榜，也不把人当成需要被修正的对象。它只在你快要滑回惯性时，留出一个真实、温柔、还能自己决定下一步的停顿。'
@@ -88,7 +88,7 @@ const cravingCatProfile: AppProfileDefinition = {
           body: '你可以为不同习惯设置不同边界，但界面和语言都保持温和，不把限制做成压迫感。'
         }
       ],
-      flowTitle: '典型使用流',
+      flowTitle: '使用起来会是这样',
       flow: [
         {
           title: '1. 找到最容易滑进去的入口',
@@ -117,13 +117,55 @@ const cravingCatProfile: AppProfileDefinition = {
         '需要温和边界、而不是强硬封锁或家长式控制的人'
       ],
       legalTitle: '隐私与条款',
-      legalIntro: '这里可以查看成瘾猫的隐私说明和使用条款。',
+      legalIntro: '隐私说明和使用条款都整理在这里。',
       legalPrivacyLabel: '隐私协议',
       legalTermsLabel: '使用条款',
+      storeUrl: 'https://apps.apple.com/us/app/craving-cat-screen-time/id6760655833',
+      storeLabel: '前往 App Store',
+      showcaseTitle: 'App Store 展示图',
+      showcaseIntro: '这些画面来自简体中文 App Store 页面，也把产品真正关心的几个时刻放在同一页里。',
       showcaseImages: [
         {
           src: '/images/craving-cat/invitation.png',
           alt: '成瘾猫动态预览：三花猫的轻陪伴画面'
+        }
+      ],
+      showcaseGroups: [
+        {
+          title: '简体中文 App Store 展示图',
+          intro: '顺序与商店页保持一致。',
+          images: [
+            {
+              src: '/images/craving-cat/store/zh-Hans/01_home-companion.png',
+              alt: '成瘾猫简体中文宣传图 1：在滑下去之前，先被温柔接住',
+              caption: '在滑下去之前，先被温柔接住'
+            },
+            {
+              src: '/images/craving-cat/store/zh-Hans/02_select-apps.png',
+              alt: '成瘾猫简体中文宣传图 2：先从最容易停不下来的 App 开始',
+              caption: '先从最容易停不下来的 App 开始'
+            },
+            {
+              src: '/images/craving-cat/store/zh-Hans/03_tune-rules.png',
+              alt: '成瘾猫简体中文宣传图 3：为每个 App 设一个更稳的节律',
+              caption: '为每个 App 设一个更稳的节律'
+            },
+            {
+              src: '/images/craving-cat/store/zh-Hans/04_intervention.png',
+              alt: '成瘾猫简体中文宣传图 4：在冲动最强的时候，轻一点拦住你',
+              caption: '在冲动最强的时候，轻一点拦住你'
+            },
+            {
+              src: '/images/craving-cat/store/zh-Hans/05_breathing.png',
+              alt: '成瘾猫简体中文宣传图 5：长按猫猫，先做一轮呼吸',
+              caption: '长按猫猫，先做一轮呼吸'
+            },
+            {
+              src: '/images/craving-cat/store/zh-Hans/06_paywall.png',
+              alt: '成瘾猫简体中文宣传图 6：设置始终免费，想继续时再解锁',
+              caption: '设置始终免费，想继续时再解锁'
+            }
+          ]
         }
       ]
     },
@@ -133,7 +175,7 @@ const cravingCatProfile: AppProfileDefinition = {
       name: 'Craving Cat',
       altName: '成瘾猫',
       tagline: 'A pause that feels like company, not punishment.',
-      intro: 'A gentle interruption app that makes craving moments more choosable, using cat companionship instead of shame-based blocking.',
+      intro: 'A gentle interruption app that leaves a real pause before the apps you reopen on impulse, so the next step can still be yours.',
       opening: [
         'Craving Cat is not here to keep you under control. It is here to catch you right before the craving gains speed.',
         'It avoids shame dashboards and does not treat people like problems to be fixed. When autopilot is about to take over, it leaves a real, kind pause where your next step is still yours.'
@@ -153,7 +195,7 @@ const cravingCatProfile: AppProfileDefinition = {
           body: 'Different habits can carry different boundaries, while the interface stays soft, calm, and non-threatening.'
         }
       ],
-      flowTitle: 'Typical use flow',
+      flowTitle: 'How it feels in use',
       flow: [
         {
           title: '1. Notice where time disappears',
@@ -182,13 +224,55 @@ const cravingCatProfile: AppProfileDefinition = {
         'People who need gentler boundaries instead of hard blocks or parental language'
       ],
       legalTitle: 'Privacy & Terms',
-      legalIntro: 'You can find Craving Cat privacy details and terms here.',
+      legalIntro: 'Privacy details and terms are gathered here.',
       legalPrivacyLabel: 'Privacy Policy',
       legalTermsLabel: 'Terms of Use',
+      storeUrl: 'https://apps.apple.com/us/app/craving-cat-screen-time/id6760655833',
+      storeLabel: 'View on the App Store',
+      showcaseTitle: 'App Store gallery',
+      showcaseIntro: 'These images come from the published English App Store page and show the moments the product is built around.',
       showcaseImages: [
         {
           src: '/images/craving-cat/invitation.png',
           alt: 'Craving Cat animated preview featuring a calm calico cat'
+        }
+      ],
+      showcaseGroups: [
+        {
+          title: 'English App Store images',
+          intro: 'Shown in the same order as the App Store listing.',
+          images: [
+            {
+              src: '/images/craving-cat/store/en-US/01_home-companion.png',
+              alt: 'Craving Cat English screenshot 1: a gentler pause before the spiral',
+              caption: 'A gentler pause before the spiral'
+            },
+            {
+              src: '/images/craving-cat/store/en-US/02_select-apps.png',
+              alt: 'Craving Cat English screenshot 2: start with the apps that pull you in',
+              caption: 'Start with the apps that pull you in'
+            },
+            {
+              src: '/images/craving-cat/store/en-US/03_tune-rules.png',
+              alt: 'Craving Cat English screenshot 3: shape a rhythm for each app',
+              caption: 'Shape a rhythm for each app'
+            },
+            {
+              src: '/images/craving-cat/store/en-US/04_intervention.png',
+              alt: 'Craving Cat English screenshot 4: interrupt the urge without shouting',
+              caption: 'Interrupt the urge without shouting'
+            },
+            {
+              src: '/images/craving-cat/store/en-US/05_breathing.png',
+              alt: 'Craving Cat English screenshot 5: long-press the cat to breathe',
+              caption: 'Long-press the cat to breathe'
+            },
+            {
+              src: '/images/craving-cat/store/en-US/06_paywall.png',
+              alt: 'Craving Cat English screenshot 6: keep setup free, unlock when ready',
+              caption: 'Keep setup free, unlock when ready'
+            }
+          ]
         }
       ]
     }
@@ -226,7 +310,7 @@ const anchorNowProfile: AppProfileDefinition = {
           body: '把最常用的支持入口放在最容易触达的位置，让帮助离你更近。'
         }
       ],
-      flowTitle: '典型使用流',
+      flowTitle: '使用起来会是这样',
       flow: [
         {
           title: '1. 选择状态',
@@ -556,13 +640,13 @@ const lightIdeasProfile: AppProfileDefinition = {
         '写作者、设计师、创作者，或任何不想错过小火花的人'
       ],
       legalTitle: '隐私与条款',
-      legalIntro: '隐私说明和使用条款都放在这里。',
+      legalIntro: '隐私说明和使用条款都整理在这里。',
       legalPrivacyLabel: '隐私协议',
       legalTermsLabel: '使用条款',
       storeUrl: 'https://apps.apple.com/us/app/light-ideas-thought-board/id6760224660',
       storeLabel: '前往 App Store',
       showcaseTitle: 'App Store 展示图',
-      showcaseIntro: '以下是简体中文 App Store 页面里的正式展示图。',
+      showcaseIntro: '这些是简体中文 App Store 页面里的正式展示图，也能先让你看见它的真实节奏。',
       showcaseImages: [
         {
           src: '/images/light-ideas/icon.png',
@@ -576,34 +660,41 @@ const lightIdeasProfile: AppProfileDefinition = {
           images: [
             {
               src: '/images/light-ideas/store/zh-Hans/01_catch-thoughts.png',
-              alt: '轻想法简体中文宣传图 1：接住念头'
+              alt: '轻想法简体中文宣传图 1：接住念头',
+              caption: '先接住，不急着整理'
             },
             {
               src: '/images/light-ideas/store/zh-Hans/02_settle-into-glass.png',
-              alt: '轻想法简体中文宣传图 2：沉入 Glass'
+              alt: '轻想法简体中文宣传图 2：沉入 Glass',
+              caption: '让重要的慢慢沉入 Glass'
             },
             {
               src: '/images/light-ideas/store/zh-Hans/03_browse-glass-timeline.png',
-              alt: '轻想法简体中文宣传图 3：浏览 Glass 时间线'
+              alt: '轻想法简体中文宣传图 3：浏览 Glass 时间线',
+              caption: '从时间线上回看已经留下的内容'
             },
             {
               src: '/images/light-ideas/store/zh-Hans/04_shape-your-space.png',
-              alt: '轻想法简体中文宣传图 4：整理空间'
+              alt: '轻想法简体中文宣传图 4：整理空间',
+              caption: '调整上下空间，让节奏更合身'
             },
             {
               src: '/images/light-ideas/store/zh-Hans/05_materials-and-palettes.png',
-              alt: '轻想法简体中文宣传图 5：材质与配色'
+              alt: '轻想法简体中文宣传图 5：材质与配色',
+              caption: '在材质和配色里找到更顺手的氛围'
             },
             {
               src: '/images/light-ideas/store/zh-Hans/06_custom-color-templates.png',
-              alt: '轻想法简体中文宣传图 6：自定义颜色模板'
+              alt: '轻想法简体中文宣传图 6：自定义颜色模板',
+              caption: '留下你自己的颜色模板'
             },
             {
               src: '/images/light-ideas/store/zh-Hans/06_lifetime-membership.png',
-              alt: '轻想法简体中文宣传图 7：终身会员'
+              alt: '轻想法简体中文宣传图 7：终身会员',
+              caption: '想继续的时候，再选择解锁'
             }
           ]
-        },
+        }
       ]
     },
     en: {
@@ -632,7 +723,7 @@ const lightIdeasProfile: AppProfileDefinition = {
           body: 'Bubbles can expire on their own. Glass items can be removed when you no longer want them. Not every thought has to become a project, and not every spark has to stay forever.'
         }
       ],
-      flowTitle: 'Typical use flow',
+      flowTitle: 'How it feels in use',
       flow: [
         {
           title: '1. Drop the thought into Bubble',
@@ -662,13 +753,13 @@ const lightIdeasProfile: AppProfileDefinition = {
         'Writers, designers, makers, and anyone who loses small sparks too easily'
       ],
       legalTitle: 'Privacy & Terms',
-      legalIntro: 'Privacy details and terms are here.',
+      legalIntro: 'Privacy details and terms are gathered here.',
       legalPrivacyLabel: 'Privacy Policy',
       legalTermsLabel: 'Terms of Use',
       storeUrl: 'https://apps.apple.com/us/app/light-ideas-thought-board/id6760224660',
       storeLabel: 'View on the App Store',
       showcaseTitle: 'App Store gallery',
-      showcaseIntro: 'These are the English App Store images from the published listing.',
+      showcaseIntro: 'These are the English App Store images from the published listing, so you can see the product in its real rhythm.',
       showcaseImages: [
         {
           src: '/images/light-ideas/icon.png',
@@ -682,31 +773,38 @@ const lightIdeasProfile: AppProfileDefinition = {
           images: [
             {
               src: '/images/light-ideas/store/en-US/01_catch-thoughts.png',
-              alt: 'Light Ideas English screenshot 1: catch thoughts'
+              alt: 'Light Ideas English screenshot 1: catch thoughts',
+              caption: 'Catch the thought first'
             },
             {
               src: '/images/light-ideas/store/en-US/02_settle-into-glass.png',
-              alt: 'Light Ideas English screenshot 2: settle into Glass'
+              alt: 'Light Ideas English screenshot 2: settle into Glass',
+              caption: 'Let what matters settle into Glass'
             },
             {
               src: '/images/light-ideas/store/en-US/03_browse-glass-timeline.png',
-              alt: 'Light Ideas English screenshot 3: browse the Glass timeline'
+              alt: 'Light Ideas English screenshot 3: browse the Glass timeline',
+              caption: 'Return to what you kept on the timeline'
             },
             {
               src: '/images/light-ideas/store/en-US/04_shape-your-space.png',
-              alt: 'Light Ideas English screenshot 4: shape your space'
+              alt: 'Light Ideas English screenshot 4: shape your space',
+              caption: 'Shape the space until it feels like yours'
             },
             {
               src: '/images/light-ideas/store/en-US/05_materials-and-palettes.png',
-              alt: 'Light Ideas English screenshot 5: materials and palettes'
+              alt: 'Light Ideas English screenshot 5: materials and palettes',
+              caption: 'Find a material and palette that feels right'
             },
             {
               src: '/images/light-ideas/store/en-US/06_custom-color-templates.png',
-              alt: 'Light Ideas English screenshot 6: custom color templates'
+              alt: 'Light Ideas English screenshot 6: custom color templates',
+              caption: 'Save color templates that feel like home'
             },
             {
               src: '/images/light-ideas/store/en-US/06_lifetime-membership.png',
-              alt: 'Light Ideas English screenshot 7: lifetime membership'
+              alt: 'Light Ideas English screenshot 7: lifetime membership',
+              caption: 'Unlock more only when you want more'
             }
           ]
         }

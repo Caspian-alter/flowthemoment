@@ -141,7 +141,7 @@ const sharedAppsZh: AppItem[] = [
     name: '成瘾猫',
     nameEn: 'Craving Cat',
     oneLine: '让暂停更像被陪着，而不是被惩罚。',
-    status: 'coming',
+    status: 'released',
     bullets: ['为最容易停不下来的入口留出一个温柔停顿', '可以按不同习惯分别设置更合身的边界', '猫猫陪伴与一次呼吸，把冲动变成还能选择的片刻'],
     detail:
       '成瘾猫不是强硬封锁器，也不是羞耻统计面板。它在你快要滑回惯性时，替你留出一个真实、温柔、还能自己决定下一步的停顿。'
@@ -194,7 +194,7 @@ const sharedAppsEn: AppItem[] = [
     name: 'Craving Cat',
     nameEn: '成瘾猫',
     oneLine: 'A pause that feels like company, not punishment.',
-    status: 'coming',
+    status: 'released',
     bullets: ['A gentle pause for the places where you most often lose time', 'Different habits can hold different boundaries instead of one blunt limit', 'Cat company and one guided breath restore choice before autopilot wins'],
     detail:
       'Craving Cat is not a hard lock and not a shame dashboard. It leaves a real, kind pause right before autopilot takes over, so you can still make the next choice yourself.'
@@ -324,7 +324,7 @@ export const copy: Record<Locale, LocaleCopy> = {
     },
     apps: {
       title: '产品',
-      intro: '一组已经开始上线、也会继续生长的产品，围绕同一个方向：更自由的注意力。',
+      intro: '两款已经发布的产品，加上几款仍在生长中的作品，围绕同一个方向：更自由的注意力。',
       badgeComing: '即将上线',
       badgeProgress: '开发中',
       badgeReleased: '已发布',
@@ -508,7 +508,7 @@ export const copy: Record<Locale, LocaleCopy> = {
     },
     apps: {
       title: 'Products',
-      intro: 'A growing collection of tools for freer attention, calmer routines, and more choice in daily life.',
+      intro: 'Two released apps and a growing set of products, all moving toward freer attention, calmer routines, and more choice in daily life.',
       badgeComing: 'Coming soon',
       badgeProgress: 'In progress',
       badgeReleased: 'Released',
